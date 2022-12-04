@@ -1,0 +1,153 @@
+@import url(./bootstrap.min.css);
+@import url(./custom.css);
+@import url(./config.css);
+@import url(./global.css);
+@import url(./responsive.css);
+
+/*           Padrão           */
+footer{
+    text-align: center;
+    font-style: italic;
+    margin: 100px;
+}
+
+body .msg{
+    color: black;
+    text-align: center;
+    margin: 50px;
+}
+
+body .CRUD{
+    color: blue;
+}
+
+body, html, header {
+    font-family: 'Roboto Mono', monospace;
+}
+
+Body .accordion-body {
+    text-align: center;
+}
+
+
+
+
+
+
+/*           Nav bar           */
+
+.nav-link:hover{
+    border-bottom: solid 4px var(--secundary);
+}
+
+.accordion-button {
+    margin: 15px;
+    text-align: center;
+    margin: auto;
+}
+
+body #anterior{
+    color: grey;
+}
+
+body .navbar-brand{
+    color: antiquewhite;
+    margin: auto;
+}
+
+body .icone{
+    max-width: 100px;
+}
+
+body #titulo-form{
+    background-color: grey;
+    height: 30px;
+    text-align: center;
+}
+
+body .container-fluid{
+    margin: auto;
+}
+
+
+
+
+/*           Cartas / Clientes           */
+
+
+body .cartas{
+    font-size: 20px;
+}
+
+body #cliente1{
+    margin: 100px;
+}
+
+body #produto {
+    display: inline-block;
+    margin: 20px;
+}
+
+.list-group{
+    background-color: rgba(250, 235, 215, 0.3);
+    margin: 15px;
+}
+
+body #itens{
+    margin-top: 2%;
+    border-style: solid;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    
+}
+
+
+body #dimensao{
+    margin-left: 15px;
+    display: inline-block;
+    width: 100%;
+}
+
+body #numero-preenchido{
+    border-radius: 5px;
+    border-style: solid;
+    margin-left: auto;
+    margin-right: 30px;
+    text-align: center;
+    margin-top: 10px;
+    width: 130px;
+    float: right;
+
+}
+
+body #preenchimento{
+    float: right;
+    margin-top: auto;
+    margin-left: 10%;
+    width: 100px;
+}
+
+
+
+/*           Clientes           */
+
+body .card{
+    display: inline-block;
+}
+
+body .card-img-top{
+    max-height: 200px;
+}
+
+
+/*
+body .img-fluid{
+    text-align: center;
+}
+
+body .mapa-div{
+    margin-left: 300px;
+    margin-right: 300px;
+    margin-bottom: 40px;
+}
+*/

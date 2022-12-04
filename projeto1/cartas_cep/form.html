@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon">
+
+    <!-- Title -->
+    <title>Metrologia</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/main.css">
+
+</head>
+<body>
+    
+    <!-------------------- Header -------------------->
+
+    <section>
+        <div class="collapse" id="navbarToggleExternalContent">
+            <div class="bg-dark p-4">
+            </div>
+        </div>
+        <nav class="navbar navbar-dark bg-dark">
+            <div class="container-fluid">
+                <nav class="nav nav-pills flex-column flex-sm-row">
+                    <a class="flex-sm-fill text-sm-center nav-link active" aria-current="page" href="#" id="botao">Enviar</a>
+                </nav>
+                <h1 class="navbar-brand">Peça: cscsagaev  ----- Ainda não envia para um banco de dados -----</h1>
+
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="../index.html">Home</a>
+                    </li>
+                </ul>
+                
+            </div>
+        </nav>
+    </section>
+
+    <!-------------------- //Header -------------------->
+
+    <!-------------------- scrollspy -------------------->
+
+
+    <!-- Menu lista -->
+    <div class="row">
+        <div class="col-3" >
+            <div id="list-example" class="list-group">
+                <a class="list-group-item list-group-item-action" href="#list-item-1">medida 1</a>
+                <a class="list-group-item list-group-item-action" href="#list-item-2">medida 2</a>
+                <a class="list-group-item list-group-item-action" href="#list-item-3">medida 3</a>
+                <a class="list-group-item list-group-item-action" href="#list-item-4">medida 4</a>
+            </div>
+        </div>
+        <div class="col-3">
+            <div id="list-example" class="list-group">
+                <a class="list-group-item list-group-item-action" href="#list-item-5">cota 1</a>
+                <a class="list-group-item list-group-item-action" href="#list-item-6">medida 1</a>
+                <a class="list-group-item list-group-item-action" href="#list-item-7">medida 2</a>
+                <a class="list-group-item list-group-item-action" href="#list-item-8">medida 3</a>
+            </div>
+        </div>
+    </div>
+    <!-- //Menu lista -->
+
+
+
+
+      
+    <!-- Os forms -->
+    <form action="enviar.php">
+        <div>
+            <section>
+                <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-smooth-scroll="true" class="scrollspy-example"
+                tabindex="0" >
+
+                    <section id="Registro de Inspeção">
+                    <!-- Título do form -->
+                    <div class="container-fluid" id="titulo-form">
+                        <span class="navbar-text">
+                        Registro de Inspeção
+                        </span>
+                    </div>
+                    <!-- //Título do form -->
+
+                        <!-- Cota L -->
+                        <div class="container is-fluid" id="list-item-1">
+                            <div class="notification" id="itens">
+                                <div class="mb-3 row"  id="dimensao">
+                                    medida 1
+
+                                    <!-- Cavidade 4  -->
+                                    <input type="text" onkeypress="return onlynumber();"class="col-sm-1" id="numero-preenchido" id="pin" inputmode="numeric" minlength="1" maxlength="8"
+                                    size="8" placeholder="Cavidade 4">
+
+                                    <!-- Cavidade 3  -->
+                                    <input type="text" onkeypress="return onlynumber();"class="col-sm-1" id="numero-preenchido" id="pin" inputmode="numeric" minlength="1" maxlength="8"
+                                    size="8" placeholder="Cavidade 3">
+
+                                    <!-- Cavidade 2  -->
+                                    <input type="text" onkeypress="return onlynumber();"class="col-sm-1" id="numero-preenchido" id="pin" inputmode="numeric" minlength="1" maxlength="8"
+                                    size="8" placeholder="Cavidade 2">
+
+                                    <!-- Cavidade 1  -->
+                                    <input type="text" onkeypress="return onlynumber();"class="col-sm-1" id="numero-preenchido" id="pin" inputmode="numeric" minlength="1" maxlength="8"
+                                    size="8" placeholder="Cavidade 1">
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- Diâmetro -->
+                        <div class="container is-fluid" id="list-item-2">
+                            <div class="notification" id="itens">
+                                <div class="mb-3 row"  id="dimensao">
+                                    medida 2
+
+                                    <!-- Cavidade 4  -->
+                                    <input type="text" onkeypress="return onlynumber();"class="col-sm-1" id="numero-preenchido" id="pin" inputmode="numeric" minlength="1" maxlength="8"
+                                    size="8" placeholder="Cavidade 4">
+
+                                    <!-- Cavidade 3  -->
+                                    <input type="text" onkeypress="return onlynumber();"class="col-sm-1" id="numero-preenchido" id="pin" inputmode="numeric" minlength="1" maxlength="8"
+                                    size="8" placeholder="Cavidade 3">
+
+                                    <!-- Cavidade 2  -->
+                                    <input type="text" onkeypress="return onlynumber();"class="col-sm-1" id="numero-preenchido" id="pin" inputmode="numeric" minlength="1" maxlength="8"
+                                    size="8" placeholder="Cavidade 2">
+
+                                    <!-- Cavidade 1  -->
+                                    <input type="text" onkeypress="return onlynumber();"class="col-sm-1" id="numero-preenchido" id="pin" inputmode="numeric" minlength="1" maxlength="8"
+                                    size="8" placeholder="Cavidade 1">
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- Batimento Axial -->
+                        <div class="container is-fluid" id="list-item-3">
+                            <div class="notification" id="itens">
+                                <div class="mb-3 row"  id="dimensao">
+                                    medida 3
+
+                                    <!-- Cavidade 4  -->
+                                    <input type="text" onkeypress="return onlynumber();"class="col-sm-1" id="numero-preenchido" id="pin" inputmode="numeric" minlength="1" maxlength="8"
+                                    size="8" placeholder="Cavidade 4">
+
+                                    <!-- Cavidade 3  -->
+                                    <input type="text" onkeypress="return onlynumber();"class="col-sm-1" id="numero-preenchido" id="pin" inputmode="numeric" minlength="1" maxlength="8"
+                                    size="8" placeholder="Cavidade 3">
+
+                                    <!-- Cavidade 2  -->
+                                    <input type="text" onkeypress="return onlynumber();"class="col-sm-1" id="numero-preenchido" id="pin" inputmode="numeric" minlength="1" maxlength="8"
+                                    size="8" placeholder="Cavidade 2">
+
+                                    <!-- Cavidade 1  -->
+                                    <input type="text" onkeypress="return onlynumber();"class="col-sm-1" id="numero-preenchido" id="pin" inputmode="numeric" minlength="1" maxlength="8"
+                                    size="8" placeholder="Cavidade 1">
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- 15,1 ± 0,10 mm -->
+                        <div class="container is-fluid" id="list-item-4">
+                            <div class="notification" id="itens">
+                                <div class="mb-3 row"  id="dimensao">
+                                    medida 4
+
+                                    <!-- Cavidade 4  -->
+                                    <input type="text" onkeypress="return onlynumber();"class="col-sm-1" id="numero-preenchido" id="pin" inputmode="numeric" minlength="1" maxlength="8"
+                                    size="8" placeholder="Cavidade 4">
+
+                                    <!-- Cavidade 3  -->
+                                    <input type="text" onkeypress="return onlynumber();"class="col-sm-1" id="numero-preenchido" id="pin" inputmode="numeric" minlength="1" maxlength="8"
+                                    size="8" placeholder="Cavidade 3">
+
+                                    <!-- Cavidade 2  -->
+                                    <input type="text" onkeypress="return onlynumber();"class="col-sm-1" id="numero-preenchido" id="pin" inputmode="numeric" minlength="1" maxlength="8"
+                                    size="8" placeholder="Cavidade 2">
+
+                                    <!-- Cavidade 1  -->
+                                    <input type="text" onkeypress="return onlynumber();"class="col-sm-1" id="numero-preenchido" id="pin" inputmode="numeric" minlength="1" maxlength="8"
+                                    size="8" placeholder="Cavidade 1">
+
+                                </div>
+                            </div>
+                        </div>
+                        <br> <br>
+                    </section>
+
+                    <section id="Registro de Set - up">
+                    <!-- Título do form -->
+                    <div class="container-fluid" id="titulo-form">
+                        <span class="navbar-text">
+                                 de Set - up
+                        </span>
+                    </div>
+                    <!-- //Título do form -->
+
+                        <!-- Título da dimensão -->
+                        <div class="container is-fluid" id="list-item-5">
+                            <div class="notification" id="itens">
+                                <div class="mb-3 row"  id="dimensao">
+                                    cota 1
+
+                                    <!-- Cavidade 1  -->
+                                    <input type="text" onkeypress="return onlynumber();"class="col-sm-1" id="numero-preenchido" id="pin" inputmode="numeric" minlength="1" maxlength="8"
+                                    size="8" placeholder="Cavidade 4">
+
+                                    <!-- Cavidade 2  -->
+                                    <input type="text" onkeypress="return onlynumber();"class="col-sm-1" id="numero-preenchido" id="pin" inputmode="numeric" minlength="1" maxlength="8"
+                                    size="8" placeholder="Cavidade 3">
+
+                                    <!-- Cavidade 3  -->
+                                    <input type="text" onkeypress="return onlynumber();"class="col-sm-1" id="numero-preenchido" id="pin" inputmode="numeric" minlength="1" maxlength="8"
+                                    size="8" placeholder="Cavidade 2">
+
+                                    <!-- Cavidade 4  -->
+                                    <input type="text" onkeypress="return onlynumber();"class="col-sm-1" id="numero-preenchido" id="pin" inputmode="numeric" minlength="1" maxlength="8"
+                                    size="8" placeholder="Cavidade 1">
+
+                                </div>
+                            </div>
+                        </div>
+                    <br> <br>
+                    </section>
+
+                    <section id="FI Maior - MDK - fi menor">
+                    <!-- Título do form -->
+                    <div class="container-fluid" id="titulo-form">
+                        <span class="navbar-text">
+                            Cotas menor e maior
+                        </span>
+                    </div>
+                    <!-- //Título do form -->
+
+                        <!-- Título da dimensão -->
+                        <div class="container is-fluid" id="list-item-6">
+                            <div class="notification" id="itens">
+                                <div class="mb-5 row"  id="dimensao">
+                                    medida 1
+
+                                    <div id="preenchimento">
+                                        <!-- Cavidade 1  -->
+                                        <input type="text" onkeypress="return onlynumber();"class="col-sm-1" id="numero-preenchido" id="pin" inputmode="numeric" minlength="1" maxlength="8"
+                                        size="8" placeholder="Cavidade 1">
+        
+                                        <!-- Cavidade 2  -->
+                                        <input type="text" onkeypress="return onlynumber();"class="col-sm-1" id="numero-preenchido" id="pin" inputmode="numeric" minlength="1" maxlength="8"
+                                        size="8" placeholder="Cavidade 2">
+        
+                                        <!-- Cavidade 3  -->
+                                        <input type="text" onkeypress="return onlynumber();"class="col-sm-1" id="numero-preenchido" id="pin" inputmode="numeric" minlength="1" maxlength="8"
+                                        size="8" placeholder="Cavidade 3">
+        
+                                        <!-- Cavidade 4  -->
+                                        <input type="text" onkeypress="return onlynumber();"class="col-sm-1" id="numero-preenchido" id="pin" inputmode="numeric" minlength="1" maxlength="8"
+                                        size="8" placeholder="Cavidade 4">
+                                    </div>
+
+                                    <div id="preenchimento">
+                                        <!-- Cavidade 1  -->
+                                        <input type="text" onkeypress="return onlynumber();"class="col-sm-1" id="numero-preenchido" id="pin" inputmode="numeric" minlength="1" maxlength="8"
+                                        size="8" placeholder="Cavidade 1">
+
+                                        <!-- Cavidade 2  -->
+                                        <input type="text" onkeypress="return onlynumber();"class="col-sm-1" id="numero-preenchido" id="pin" inputmode="numeric" minlength="1" maxlength="8"
+                                        size="8" placeholder="Cavidade 2">
+
+                                        <!-- Cavidade 3  -->
+                                        <input type="text" onkeypress="return onlynumber();"class="col-sm-1" id="numero-preenchido" id="pin" inputmode="numeric" minlength="1" maxlength="8"
+                                        size="8" placeholder="Cavidade 3">
+
+                                        <!-- Cavidade 4  -->
+                                        <input type="text" onkeypress="return onlynumber();"class="col-sm-1" id="numero-preenchido" id="pin" inputmode="numeric" minlength="1" maxlength="8"
+                                        size="8" placeholder="Cavidade 4">
+                                    </div>
+
+
+                                    <div id="preenchimento">
+                                        <!-- Cavidade 1  -->
+                                        <input type="text" onkeypress="return onlynumber();"class="col-sm-1" id="numero-preenchido" id="pin" inputmode="numeric" minlength="1" maxlength="8"
+                                        size="8" placeholder="Cavidade 1">
+
+                                        <!-- Cavidade 2  -->
+                                        <input type="text" onkeypress="return onlynumber();"class="col-sm-1" id="numero-preenchido" id="pin" inputmode="numeric" minlength="1" maxlength="8"
+                                        size="8" placeholder="Cavidade 2">
+
+                                        <!-- Cavidade 3  -->
+                                        <input type="text" onkeypress="return onlynumber();"class="col-sm-1" id="numero-preenchido" id="pin" inputmode="numeric" minlength="1" maxlength="8"
+                                        size="8" placeholder="Cavidade 3">
+
+                                        <!-- Cavidade 4  -->
+                                        <input type="text" onkeypress="return onlynumber();"class="col-sm-1" id="numero-preenchido" id="pin" inputmode="numeric" minlength="1" maxlength="8"
+                                        size="8" placeholder="Cavidade 4">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- Título da dimensão -->
+                        <div class="container is-fluid" id="list-item-7">
+                            <div class="notification" id="itens">
+                                <div class="mb-5 row"  id="dimensao">
+                                    medida 2
+
+                                    <div id="preenchimento">
+                                        <!-- Cavidade 1  -->
+                                        <input type="text" onkeypress="return onlynumber();"class="col-sm-1" id="numero-preenchido" id="pin" inputmode="numeric" minlength="1" maxlength="8"
+                                        size="8" placeholder="Cavidade 1">
+        
+                                        <!-- Cavidade 2  -->
+                                        <input type="text" onkeypress="return onlynumber();"class="col-sm-1" id="numero-preenchido" id="pin" inputmode="numeric" minlength="1" maxlength="8"
+                                        size="8" placeholder="Cavidade 2">
+        
+                                        <!-- Cavidade 3  -->
+                                        <input type="text" onkeypress="return onlynumber();"class="col-sm-1" id="numero-preenchido" id="pin" inputmode="numeric" minlength="1" maxlength="8"
+                                        size="8" placeholder="Cavidade 3">
+        
+                                        <!-- Cavidade 4  -->
+                                        <input type="text" onkeypress="return onlynumber();"class="col-sm-1" id="numero-preenchido" id="pin" inputmode="numeric" minlength="1" maxlength="8"
+                                        size="8" placeholder="Cavidade 4">
+                                    </div>
+
+                                    <div id="preenchimento">
+                                        <!-- Cavidade 1  -->
+                                        <input type="text" onkeypress="return onlynumber();"class="col-sm-1" id="numero-preenchido" id="pin" inputmode="numeric" minlength="1" maxlength="8"
+                                        size="8" placeholder="Cavidade 1">
+
+                                        <!-- Cavidade 2  -->
+                                        <input type="text" onkeypress="return onlynumber();"class="col-sm-1" id="numero-preenchido" id="pin" inputmode="numeric" minlength="1" maxlength="8"
+                                        size="8" placeholder="Cavidade 2">
+
+                                        <!-- Cavidade 3  -->
+                                        <input type="text" onkeypress="return onlynumber();"class="col-sm-1" id="numero-preenchido" id="pin" inputmode="numeric" minlength="1" maxlength="8"
+                                        size="8" placeholder="Cavidade 3">
+
+                                        <!-- Cavidade 4  -->
+                                        <input type="text" onkeypress="return onlynumber();"class="col-sm-1" id="numero-preenchido" id="pin" inputmode="numeric" minlength="1" maxlength="8"
+                                        size="8" placeholder="Cavidade 4">
+                                    </div>
+
+
+                                    <div id="preenchimento">
+                                        <!-- Cavidade 1  -->
+                                        <input type="text" onkeypress="return onlynumber();"class="col-sm-1" id="numero-preenchido" id="pin" inputmode="numeric" minlength="1" maxlength="8"
+                                        size="8" placeholder="Cavidade 1">
+
+                                        <!-- Cavidade 2  -->
+                                        <input type="text" onkeypress="return onlynumber();"class="col-sm-1" id="numero-preenchido" id="pin" inputmode="numeric" minlength="1" maxlength="8"
+                                        size="8" placeholder="Cavidade 2">
+
+                                        <!-- Cavidade 3  -->
+                                        <input type="text" onkeypress="return onlynumber();"class="col-sm-1" id="numero-preenchido" id="pin" inputmode="numeric" minlength="1" maxlength="8"
+                                        size="8" placeholder="Cavidade 3">
+
+                                        <!-- Cavidade 4  -->
+                                        <input type="text" onkeypress="return onlynumber();"class="col-sm-1" id="numero-preenchido" id="pin" inputmode="numeric" minlength="1" maxlength="8"
+                                        size="8" placeholder="Cavidade 4">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>   
+
+
+
+                        <!-- Título da dimensão -->
+                        <div class="container is-fluid" id="list-item-8">
+                            <div class="notification" id="itens">
+                                <div class="mb-5 row"  id="dimensao">
+                                    medida 3
+
+                                    <div id="preenchimento">
+                                        <!-- Cavidade 1  -->
+                                        <input type="text" onkeypress="return onlynumber();"class="col-sm-1" id="numero-preenchido" id="pin" inputmode="numeric" minlength="1" maxlength="8"
+                                        size="8" placeholder="Cavidade 1">
+        
+                                        <!-- Cavidade 2  -->
+                                        <input type="text" onkeypress="return onlynumber();"class="col-sm-1" id="numero-preenchido" id="pin" inputmode="numeric" minlength="1" maxlength="8"
+                                        size="8" placeholder="Cavidade 2">
+        
+                                        <!-- Cavidade 3  -->
+                                        <input type="text" onkeypress="return onlynumber();"class="col-sm-1" id="numero-preenchido" id="pin" inputmode="numeric" minlength="1" maxlength="8"
+                                        size="8" placeholder="Cavidade 3">
+        
+                                        <!-- Cavidade 4  -->
+                                        <input type="text" onkeypress="return onlynumber();"class="col-sm-1" id="numero-preenchido" id="pin" inputmode="numeric" minlength="1" maxlength="8"
+                                        size="8" placeholder="Cavidade 4">
+                                    </div>
+
+                                    <div id="preenchimento">
+                                        <!-- Cavidade 1  -->
+                                        <input type="text" onkeypress="return onlynumber();"class="col-sm-1" id="numero-preenchido" id="pin" inputmode="numeric" minlength="1" maxlength="8"
+                                        size="8" placeholder="Cavidade 1">
+
+                                        <!-- Cavidade 2  -->
+                                        <input type="text" onkeypress="return onlynumber();"class="col-sm-1" id="numero-preenchido" id="pin" inputmode="numeric" minlength="1" maxlength="8"
+                                        size="8" placeholder="Cavidade 2">
+
+                                        <!-- Cavidade 3  -->
+                                        <input type="text" onkeypress="return onlynumber();"class="col-sm-1" id="numero-preenchido" id="pin" inputmode="numeric" minlength="1" maxlength="8"
+                                        size="8" placeholder="Cavidade 3">
+
+                                        <!-- Cavidade 4  -->
+                                        <input type="text" onkeypress="return onlynumber();"class="col-sm-1" id="numero-preenchido" id="pin" inputmode="numeric" minlength="1" maxlength="8"
+                                        size="8" placeholder="Cavidade 4">
+                                    </div>
+
+
+                                    <div id="preenchimento">
+                                        <!-- Cavidade 1  -->
+                                        <input type="text" onkeypress="return onlynumber();"class="col-sm-1" id="numero-preenchido" id="pin" inputmode="numeric" minlength="1" maxlength="8"
+                                        size="8" placeholder="Cavidade 1">
+
+                                        <!-- Cavidade 2  -->
+                                        <input type="text" onkeypress="return onlynumber();"class="col-sm-1" id="numero-preenchido" id="pin" inputmode="numeric" minlength="1" maxlength="8"
+                                        size="8" placeholder="Cavidade 2">
+
+                                        <!-- Cavidade 3  -->
+                                        <input type="text" onkeypress="return onlynumber();"class="col-sm-1" id="numero-preenchido" id="pin" inputmode="numeric" minlength="1" maxlength="8"
+                                        size="8" placeholder="Cavidade 3">
+
+                                        <!-- Cavidade 4  -->
+                                        <input type="text" onkeypress="return onlynumber();"class="col-sm-1" id="numero-preenchido" id="pin" inputmode="numeric" minlength="1" maxlength="8"
+                                        size="8" placeholder="Cavidade 4">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>   
+
+                    <br> <br>
+                    </section>
+                </div>
+            </section>
+        </div>
+    </form>
+
+    <!-- //Os forms -->
+
+
+
+
+    <!-------------------- //scrollspy -------------------->
+
+
+</body>
+</html>
