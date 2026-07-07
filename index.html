@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Felipe Roberto Soares | Portfólio</title>
 
+    <!-- Favicon -->
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+
     <!-- jQuery para o efeito de Chuva -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
@@ -341,89 +344,27 @@
         }
 
         @keyframes noise-anim-2 {
-            0% {
-                clip: rect(69px, 9999px, 73px, 0);
-            }
-
-            5% {
-                clip: rect(74px, 9999px, 20px, 0);
-            }
-
-            10% {
-                clip: rect(49px, 9999px, 57px, 0);
-            }
-
-            15% {
-                clip: rect(4px, 9999px, 14px, 0);
-            }
-
-            20% {
-                clip: rect(93px, 9999px, 60px, 0);
-            }
-
-            25% {
-                clip: rect(21px, 9999px, 25px, 0);
-            }
-
-            30% {
-                clip: rect(51px, 9999px, 99px, 0);
-            }
-
-            35% {
-                clip: rect(8px, 9999px, 86px, 0);
-            }
-
-            40% {
-                clip: rect(2px, 9999px, 61px, 0);
-            }
-
-            45% {
-                clip: rect(38px, 9999px, 11px, 0);
-            }
-
-            50% {
-                clip: rect(18px, 9999px, 45px, 0);
-            }
-
-            55% {
-                clip: rect(84px, 9999px, 94px, 0);
-            }
-
-            60% {
-                clip: rect(31px, 9999px, 35px, 0);
-            }
-
-            65% {
-                clip: rect(46px, 9999px, 63px, 0);
-            }
-
-            70% {
-                clip: rect(100px, 9999px, 30px, 0);
-            }
-
-            75% {
-                clip: rect(59px, 9999px, 79px, 0);
-            }
-
-            80% {
-                clip: rect(12px, 9999px, 4px, 0);
-            }
-
-            85% {
-                clip: rect(67px, 9999px, 2px, 0);
-            }
-
-            90% {
-                clip: rect(89px, 9999px, 70px, 0);
-            }
-
-            95% {
-                clip: rect(41px, 9999px, 83px, 0);
-            }
-
-            100% {
-                clip: rect(50px, 9999px, 50px, 0);
-            }
+            0% { clip: rect(69px, 9999px, 73px, 0); }
+            5% { clip: rect(74px, 9999px, 20px, 0); }
+            10% { clip: rect(49px, 9999px, 57px, 0); }
+            15% { clip: rect(4px, 9999px, 14px, 0); }
+            20% { clip: rect(93px, 9999px, 60px, 0); }
+            25% { clip: rect(21px, 9999px, 25px, 0); }
+            30% { clip: rect(51px, 9999px, 99px, 0); }
+            35% { clip: rect(8px, 9999px, 86px, 0); }
+            40% { clip: rect(2px, 9999px, 61px, 0); }
+            45% { clip: rect(38px, 9999px, 11px, 0); }
+            50% { clip: rect(18px, 9999px, 45px, 0); }
+            55% { clip: rect(84px, 9999px, 94px, 0); }
+            60% { clip: rect(31px, 9999px, 35px, 0); }
+            65% { clip: rect(46px, 9999px, 63px, 0); }
+            70% { clip: rect(100px, 9999px, 30px, 0); }
+            75% { clip: rect(59px, 9999px, 79px, 0); }
+            80% { clip: rect(12px, 9999px, 4px, 0); }
+            85% { clip: rect(67px, 9999px, 2px, 0); }
+            90% { clip: rect(89px, 9999px, 70px, 0); }
+            95% { clip: rect(41px, 9999px, 83px, 0); }
+            100% { clip: rect(50px, 9999px, 50px, 0); }
         }
 
         /* ================= NAVEGAÇÃO ================= */
@@ -528,17 +469,9 @@
         }
 
         @keyframes float {
-            0% {
-                transform: translateY(0px);
-            }
-
-            50% {
-                transform: translateY(-15px);
-            }
-
-            100% {
-                transform: translateY(0px);
-            }
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
         }
 
         /* Botões */
@@ -698,7 +631,15 @@
             font-size: 1.2rem;
         }
 
-        /* ================= GRID DE CARDS (Projetos e Cursos) ================= */
+        /* ================= LISTA DE PROJETOS (1 por linha) ================= */
+        .projects-list {
+            display: flex;
+            flex-direction: column;
+            gap: 3.5rem;
+            padding: 2rem 0;
+        }
+
+        /* ================= GRID DE CARDS (Cursos) ================= */
         .cards-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -727,6 +668,142 @@
             transform: translateY(0) scale(0.98);
         }
 
+        /* Estilo do container de vídeos (Thumbnails dos Projetos) */
+        .video-container {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 9; /* Mantém a proporção sem cortar */
+            max-height: 768px; /* Respeita a altura máxima informada */
+            margin-top: 1.5rem;
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: #050505;
+            border: 1px solid var(--surface-border);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: border-color 0.3s ease;
+        }
+
+        .video-container:hover {
+            border-color: var(--accent-color);
+        }
+
+        .project-video {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* Evita que as bordas da imagem sejam cortadas */
+            display: block;
+        }
+
+        /* Overlay Escuro para Projetos "Em breve" */
+        .coming-soon-overlay {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .coming-soon-text {
+            color: #fff;
+            font-weight: 600;
+            background: rgba(16, 185, 129, 0.8);
+            padding: 10px 25px;
+            border-radius: 30px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        /* Botão de Play centralizado */
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 70px;
+            height: 70px;
+            background: rgba(16, 185, 129, 0.8);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+            z-index: 2;
+        }
+
+        .play-button::after {
+            content: '';
+            width: 0;
+            height: 0;
+            border-top: 12px solid transparent;
+            border-bottom: 12px solid transparent;
+            border-left: 20px solid #fff;
+            margin-left: 5px; /* Ajuste óptico do triângulo */
+        }
+
+        .video-container:hover .play-button {
+            transform: translate(-50%, -50%) scale(1.1);
+            background: rgba(16, 185, 129, 1);
+            box-shadow: 0 0 20px rgba(16, 185, 129, 0.6);
+        }
+
+        /* ================= MODAL MODO FOCO (Vídeo Ampliado do YouTube) ================= */
+        #video-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(10px);
+        }
+
+        #video-modal.active {
+            display: flex;
+        }
+
+        .modal-video-wrapper {
+            position: relative;
+            width: 90%;
+            max-width: 1000px;
+            aspect-ratio: 16/9;
+            background: #000;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            border: 1px solid var(--accent-color);
+        }
+
+        .modal-video-wrapper iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .close-video-modal {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: #fff;
+            font-size: 40px;
+            cursor: pointer;
+            transition: color 0.3s;
+            z-index: 2001;
+        }
+
+        .close-video-modal:hover {
+            color: var(--accent-color);
+        }
+
         /* ================= EFEITO MÁQUINA DE ESCREVER ================= */
         #typewriter::after {
             content: '|';
@@ -735,9 +812,7 @@
         }
 
         @keyframes blink {
-            50% {
-                opacity: 0;
-            }
+            50% { opacity: 0; }
         }
 
         /* ================= ANIMAÇÕES DE SCROLL ================= */
@@ -754,9 +829,7 @@
 
         /* ================= RESPONSIVIDADE ================= */
         @media (max-width: 900px) {
-            .glitch {
-                font-size: 60px;
-            }
+            .glitch { font-size: 60px; }
 
             .hero-wrapper {
                 flex-direction: column-reverse;
@@ -764,28 +837,56 @@
                 margin-top: 4rem;
             }
 
-            .btn-group {
-                justify-content: center;
-            }
+            .btn-group { justify-content: center; }
 
             .profile-photo-container {
                 width: 250px;
                 height: 250px;
             }
 
-            .nav-links {
-                display: none;
-            }
+            .nav-links { display: none; }
+
+            .video-container { height: auto; }
         }
 
         @media (max-width: 480px) {
-            .glitch {
-                font-size: 45px;
-            }
+            .glitch { font-size: 45px; }
+            h2 { font-size: 2rem; }
+        }
 
-            h2 {
-                font-size: 2rem;
+        /* ================= ESTILOS DE IMPRESSÃO (GERADOR DE CV EM PDF) ================= */
+        #cv-print-template { display: none; }
+
+        @media print {
+            body > *:not(#cv-print-template) { display: none !important; }
+            body {
+                background: white !important;
+                color: black !important;
+                min-height: auto;
+                overflow: visible !important;
             }
+            #cv-print-template {
+                display: block !important;
+                font-family: 'Inter', Helvetica, Arial, sans-serif;
+                color: black;
+                line-height: 1.5;
+                padding: 0;
+            }
+            #cv-print-template h1 { 
+                font-size: 24pt; border-bottom: 2px solid #333; margin-bottom: 10px; padding-bottom: 5px; color: #111;
+            }
+            #cv-print-template h2 { 
+                font-size: 16pt; border-bottom: 1px solid #ccc; margin-top: 20px; margin-bottom: 10px; color: #222; background: none; -webkit-text-fill-color: initial; text-transform: uppercase; letter-spacing: normal; display: block;
+            }
+            #cv-print-template h3 { font-size: 12pt; margin-bottom: 5px; font-weight: 600; color: #333; }
+            #cv-print-template p { margin-bottom: 10px; color: #222; font-weight: normal; font-size: 10pt; }
+            #cv-print-template ul { margin-left: 20px; margin-bottom: 15px; }
+            #cv-print-template li { margin-bottom: 5px; font-size: 10pt; }
+            #cv-print-template .contact-info { margin-bottom: 20px; font-size: 10pt; color: #444; }
+            #cv-print-template .contact-info a { color: #444; text-decoration: none; }
+            #cv-print-template .date-location { float: right; font-weight: normal; font-style: italic; font-size: 10pt; }
+            #cv-print-template .item-header { display: flex; justify-content: space-between; align-items: baseline; }
+            @page { margin: 1.5cm 1.5cm; size: A4 portrait; }
         }
     </style>
 </head>
@@ -821,6 +922,10 @@
                     <p id="typewriter" style="font-size: 1.2rem; max-width: 600px; min-height: 3rem;"></p>
                     <div class="btn-group">
                         <a href="#projetos" class="btn">Ver Projetos</a>
+                        
+                        <!-- BOTÃO QUE CHAMA A IMPRESSÃO (GERAÇÃO DO PDF) -->
+                        <a href="#" onclick="window.print(); return false;" class="btn btn-outline" style="border-color: var(--accent-color); color: var(--accent-color);">Gerar CV (PDF)</a>
+                        
                         <a href="https://www.linkedin.com/in/felipe-soares-018986346/" target="_blank"
                             class="btn btn-outline">LinkedIn</a>
                     </div>
@@ -929,52 +1034,52 @@
             </div>
         </section>
 
-        <!-- Projetos -->
+        <!-- Projetos (1 por linha e modo foco com YouTube) -->
         <section id="projetos" class="container fade-in">
             <h2>Projetos</h2>
-            <p>Confira alguns dos meus trabalhos. (Vídeos em breve)</p>
+            <p>Confira alguns dos meus trabalhos.</p>
 
-            <div class="cards-grid">
+            <div class="projects-list">
 
+                <!-- Projeto 1: Marketplace Scout AI -->
                 <div class="card">
-                    <h3>Automação de Processos</h3>
-
+                    <h3>Marketplace Scout AI</h3>
                     <p>
-                        Desenvolvimento de automações em Python para redução de tarefas repetitivas e otimização de
-                        processos internos.
+                        Solução autônoma para arbitragem e vendas no ecossistema Meta. Integra web scraping com Selenium, pipeline de dados com Gemini 1.5/Ultra para análise de ROI, bot de WhatsApp para comando remoto e algoritmos de NLP para negociação persuasiva.
                     </p>
-
-                    <div
-                        style="flex-grow: 1; height: 150px; background: rgba(0,0,0,0.3); border: 1px solid var(--surface-border); border-radius: 8px; margin-top: 1rem; display: flex; align-items: center; justify-content: center; color: #555;">
-                        [ Vídeo em breve ]
+                    
+                    <!-- Capa (Thumbnail) e Botão de Play para acionar o Modal do YouTube -->
+                    <div class="video-container" onclick="openYouTubeModal('OpUwh9T7zxI')">
+                        <img class="project-video" src="projetos-videos/Marketplace%20Scout%20AI.png" alt="Capa Marketplace Scout AI">
+                        <div class="play-button"></div>
                     </div>
                 </div>
 
+                <!-- Projeto 2: Sistema de Laudos -->
                 <div class="card">
-                    <h3>Sistema SGQI</h3>
-
+                    <h3>Sistema de Laudos</h3>
                     <p>
-                        Aplicação interna para apoio ao controle de documentação, processos e indicadores do Sistema de
-                        Gestão da Qualidade.
+                        Em breve.
                     </p>
-
-                    <div
-                        style="flex-grow: 1; height: 150px; background: rgba(0,0,0,0.3); border: 1px solid var(--surface-border); border-radius: 8px; margin-top: 1rem; display: flex; align-items: center; justify-content: center; color: #555;">
-                        [ Vídeo em breve ]
+                    <div class="video-container" style="cursor: default;">
+                        <img class="project-video" src="projetos-videos/Sistema%20de%20Laudos.png" alt="Capa Sistema de Laudos">
+                        <div class="coming-soon-overlay">
+                            <span class="coming-soon-text">Vídeo em breve</span>
+                        </div>
                     </div>
                 </div>
 
+                <!-- Projeto 3: Sistema de 5S -->
                 <div class="card">
-                    <h3>Sistema de Rifas e Vendas</h3>
-
+                    <h3>Sistema de 5S</h3>
                     <p>
-                        Projeto freelancer utilizando Node.js, integração com API WhatsApp e dashboard administrativo
-                        para acompanhamento das vendas.
+                        Em breve.
                     </p>
-
-                    <div
-                        style="flex-grow: 1; height: 150px; background: rgba(0,0,0,0.3); border: 1px solid var(--surface-border); border-radius: 8px; margin-top: 1rem; display: flex; align-items: center; justify-content: center; color: #555;">
-                        [ Vídeo em breve ]
+                    <div class="video-container" style="cursor: default;">
+                        <img class="project-video" src="projetos-videos/Sistema%20de%205S.png" alt="Capa Sistema de 5S">
+                        <div class="coming-soon-overlay">
+                            <span class="coming-soon-text">Vídeo em breve</span>
+                        </div>
                     </div>
                 </div>
 
@@ -1016,6 +1121,15 @@
                         Abrir Certificado</span>
                 </a>
 
+                <a href="certificados/Introdução a Engenharia de prompts.pdf"
+                    target="_blank" class="card" style="border-color: rgba(16, 185, 129, 0.3);">
+                    <h3 style="color: var(--accent-color);">Introdução à Engenharia de Prompts</h3>
+                    <p style="font-weight: 500; color: #e0e0e0; margin-bottom: 0.5rem;">Instituição: DIO</p>
+                    <p style="flex-grow: 1;"> Visão Geral da Engenharia de Prompts; Aplicações Práticas da Engenharia de Prompts; Leve seus Prompts ao Próximo Nível.</p>
+                    <span style="font-size: 0.85rem; color: var(--accent-color); font-weight: 600; margin-top: 1rem;">🔗
+                        Abrir Certificado</span>
+                </a>
+
                 <div class="card">
                     <h3>Cibersegurança & Ataques</h3>
                     <p style="font-weight: 500; color: #e0e0e0; margin-bottom: 0.5rem;">Instituição: MBX Academy</p>
@@ -1042,81 +1156,186 @@
             </div>
         </section>
 
-        <footer
-            style="text-align: center; padding: 2rem; border-top: 1px solid var(--surface-border); margin-top: 2rem;">
-            <p>felipe.r.soares03@gmail.com | (11) 99631-8958</p>
-            <p style="margin-top: 1rem; font-size: 0.9rem; color: #666;">© 2026 Felipe Roberto Soares. Todos os direitos
-                reservados.</p>
-        </footer>
+    </main>
 
-        <!-- SCRIPT PARA ANIMAÇÕES -->
-        <script>
-            // Efeito Chuva Chill (jQuery)
-            $(document).ready(function () {
-                function makeItRain() {
-                    $('.rain').empty();
+    <footer
+        style="text-align: center; padding: 2rem; border-top: 1px solid var(--surface-border); margin-top: 2rem;">
+        <p>felipe.r.soares03@gmail.com | (11) 99631-8958</p>
+        <p style="margin-top: 1rem; font-size: 0.9rem; color: #666;">© 2026 Felipe Roberto Soares. Todos os direitos
+            reservados.</p>
+    </footer>
 
-                    let increment = 0;
-                    let drops = "";
-                    let backDrops = "";
+    <!-- MODAL DE VÍDEO DO YOUTUBE (MODO FOCO) -->
+    <div id="video-modal">
+        <span class="close-video-modal" onclick="closeVideoModal()">&times;</span>
+        <div class="modal-video-wrapper">
+            <!-- Iframe para reproduzir o vídeo do YouTube -->
+            <iframe id="modal-youtube" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+    </div>
 
-                    while (increment < 100) {
-                        let randoFiver = Math.floor(Math.random() * 5) + 3;
-                        increment += randoFiver;
+    <!-- ========================================================================= -->
+    <!-- TEMPLATE OCULTO PARA GERAÇÃO DO CURRÍCULO EM PDF VIA CTRL+P / window.print() -->
+    <!-- ========================================================================= -->
+    <div id="cv-print-template">
+        <h1>Felipe Roberto Soares</h1>
+        <div class="contact-info">
+            Alumínio - SP | (11) 99631-8958 | felipe.r.soares03@gmail.com <br>
+            LinkedIn: <a href="https://www.linkedin.com/in/felipe-soares-018986346/">felipe-soares-018986346</a> | GitHub: <a href="https://fezoka.github.io">fezoka.github.io</a> | Portfólio: <a href="https://fezoka.com">Fezoka.com</a>
+        </div>
 
-                        let duration = (Math.random() * 1.5 + 1).toFixed(2);
-                        let delay = (Math.random() * 2).toFixed(2);
-                        let bottomStart = 100 + (Math.random() * 20);
+        <h2>Resumo Profissional</h2>
+        <p>Estudante de Ciência da Computação apaixonado por tecnologia, com sólida experiência prática em desenvolvimento de software, criação de automações (Python) e infraestrutura. Possui vivência no alinhamento entre tecnologia e negócios por meio do Sistema de Gestão da Qualidade Integrado (SGQI), garantindo eficiência e conformidade em processos exigentes (ISO 9001 e IATF 16949). Busca atuar em projetos inovadores de engenharia de software, cibersegurança e análise de dados.</p>
 
-                        drops += `
-                        <div class="drop" style="left:${increment}%; bottom:${bottomStart}%; animation-delay:${delay}s; animation-duration:${duration}s;">
-                            <div class="stem" style="animation-delay:${delay}s; animation-duration:${duration}s;"></div>
-                            <div class="splat" style="animation-delay:${delay}s; animation-duration:${duration}s;"></div>
-                        </div>
-                    `;
+        <h2>Experiência Profissional</h2>
+        
+        <div class="item-header">
+            <h3>Desenvolvedor Freelancer</h3>
+            <span class="date-location">Autônomo | 2025</span>
+        </div>
+        <ul>
+            <li><strong>Sistema de Rifas e Vendas:</strong> Arquitetura end-to-end utilizando Node.js.</li>
+            <li><strong>Integração com API WhatsApp:</strong> Automação de cadastro de clientes, confirmação de compras e envio de resultados.</li>
+            <li><strong>Business Intelligence:</strong> Desenvolvimento de dashboards para acompanhamento de métricas operacionais e desempenho de vendas.</li>
+            <li><strong>Infraestrutura:</strong> Deploy da aplicação, monitoramento de disponibilidade (Health Check) e implementação de protocolos básicos de antifraude.</li>
+        </ul>
 
-                        backDrops += `
-                        <div class="drop" style="right:${increment}%; bottom:${bottomStart}%; animation-delay:${delay}s; animation-duration:${duration}s;">
-                            <div class="stem" style="animation-delay:${delay}s; animation-duration:${duration}s;"></div>
-                            <div class="splat" style="animation-delay:${delay}s; animation-duration:${duration}s;"></div>
-                        </div>
-                    `;
-                    }
+        <div class="item-header">
+            <h3>Assistente de Desenvolvimento Pleno</h3>
+            <span class="date-location">Ferplast | Setembro 2023 - Atual</span>
+        </div>
+        <ul>
+            <li>Desenvolvimento de soluções internas em modelo SaaS e automações em Python para otimização da eficiência operacional.</li>
+            <li>Atuação ativa no SGQI, conduzindo auditorias internas e garantindo conformidade com normas ISO 9001 e IATF 16949.</li>
+            <li>Controle de documentação de processos e desenvolvimento de PPAP (Processo de Aprovação de Peça) para projetos automotivos.</li>
+        </ul>
 
-                    $('.rain.front-row').append(drops);
-                    $('.rain.back-row').append(backDrops);
-                }
+        <div class="item-header">
+            <h3>Jovem Aprendiz</h3>
+            <span class="date-location">Ferplast | Junho 2022 - Setembro 2023</span>
+        </div>
+        <ul>
+            <li>Apoio em rotinas administrativas, controle de informações e padronização de documentos, contribuindo para a disciplina operacional do setor.</li>
+        </ul>
 
-                makeItRain();
-            });
+        <h2>Formação Acadêmica</h2>
+        <div class="item-header">
+            <h3>Bacharelado em Ciência da Computação</h3>
+            <span class="date-location">Faculdade Estácio | Previsão: Dezembro 2030</span>
+        </div>
+        <div class="item-header">
+            <h3>Técnico em Logística (Integrado ao EM)</h3>
+            <span class="date-location">Etec de Mairinque | Concluído em 2021</span>
+        </div>
 
-            // Efeito Máquina de Escrever
-            const textToType = "Estudante de Ciência da Computação | Desenvolvimento de Sistemas | Segurança da Informação";
-            const typewriterElement = document.getElementById('typewriter');
-            let typingIndex = 0;
+        <h2>Competências Técnicas</h2>
+        <ul>
+            <li><strong>Desenvolvimento:</strong> Python, JavaScript, HTML5, CSS3, Node.js, Integração de APIs.</li>
+            <li><strong>Segurança e Infra:</strong> Cibersegurança (Estudos), Pentest, Linux, Automação (Web Scraping).</li>
+            <li><strong>Gestão e Qualidade:</strong> SGQI, PPAP Automotivo, Auditoria (ISO 9001 / IATF 16949).</li>
+        </ul>
 
-            function typeWriter() {
-                if (typingIndex < textToType.length) {
-                    typewriterElement.innerHTML += textToType.charAt(typingIndex);
-                    typingIndex++;
-                    setTimeout(typeWriter, 50);
-                }
+        <h2>Cursos e Certificações</h2>
+        <ul>
+            <li>Bootcamp Bradesco: GenAI, Dados & Cyber – DIO (Em andamento)</li>
+            <li>Fundamentos da IA Moderna e Modelos de Linguagem – DIO (Em andamento)</li>
+            <li>Cibersegurança & Ataques (52 horas) – MBX Academy (Concluído)</li>
+            <li>Desenvolvimento Web: HTML5, CSS3 e JS (80 horas) – Curso em Vídeo (Concluído)</li>
+        </ul>
+    </div>
+    <!-- FIM DO TEMPLATE DE IMPRESSÃO -->
+
+    <!-- SCRIPT PARA ANIMAÇÕES -->
+    <script>
+        // Lógica do Modal de Vídeo (Usando YouTube Iframe)
+        const videoModal = document.getElementById('video-modal');
+        const modalYoutube = document.getElementById('modal-youtube');
+
+        function openYouTubeModal(videoId) {
+            // O parâmetro autoplay=1 faz o vídeo rodar imediatamente ao abrir o modal
+            modalYoutube.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+            videoModal.classList.add('active');
+        }
+
+        function closeVideoModal() {
+            videoModal.classList.remove('active');
+            // Remove a fonte do iframe para que o vídeo do YouTube pare de tocar e de carregar em background
+            modalYoutube.src = ''; 
+        }
+
+        // Fechar ao clicar no fundo escuro fora do vídeo
+        videoModal.addEventListener('click', function(e) {
+            if (e.target === videoModal) {
+                closeVideoModal();
             }
-            window.addEventListener('load', typeWriter);
+        });
 
-            // Fade-In ao rolar a página
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            }, { threshold: 0.1 });
+        // Efeito Chuva Chill (jQuery)
+        $(document).ready(function () {
+            function makeItRain() {
+                $('.rain').empty();
 
-            document.querySelectorAll('.fade-in').forEach(element => {
-                observer.observe(element);
+                let increment = 0;
+                let drops = "";
+                let backDrops = "";
+
+                while (increment < 100) {
+                    let randoFiver = Math.floor(Math.random() * 5) + 3;
+                    increment += randoFiver;
+
+                    let duration = (Math.random() * 1.5 + 1).toFixed(2);
+                    let delay = (Math.random() * 2).toFixed(2);
+                    let bottomStart = 100 + (Math.random() * 20);
+
+                    drops += `
+                    <div class="drop" style="left:${increment}%; bottom:${bottomStart}%; animation-delay:${delay}s; animation-duration:${duration}s;">
+                        <div class="stem" style="animation-delay:${delay}s; animation-duration:${duration}s;"></div>
+                        <div class="splat" style="animation-delay:${delay}s; animation-duration:${duration}s;"></div>
+                    </div>
+                `;
+
+                    backDrops += `
+                    <div class="drop" style="right:${increment}%; bottom:${bottomStart}%; animation-delay:${delay}s; animation-duration:${duration}s;">
+                        <div class="stem" style="animation-delay:${delay}s; animation-duration:${duration}s;"></div>
+                        <div class="splat" style="animation-delay:${delay}s; animation-duration:${duration}s;"></div>
+                    </div>
+                `;
+                }
+
+                $('.rain.front-row').append(drops);
+                $('.rain.back-row').append(backDrops);
+            }
+
+            makeItRain();
+        });
+
+        // Efeito Máquina de Escrever
+        const textToType = "Estudante de Ciência da Computação | Desenvolvimento de Sistemas | Segurança da Informação";
+        const typewriterElement = document.getElementById('typewriter');
+        let typingIndex = 0;
+
+        function typeWriter() {
+            if (typingIndex < textToType.length) {
+                typewriterElement.innerHTML += textToType.charAt(typingIndex);
+                typingIndex++;
+                setTimeout(typeWriter, 50);
+            }
+        }
+        window.addEventListener('load', typeWriter);
+
+        // Fade-In ao rolar a página
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
             });
-        </script>
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in').forEach(element => {
+            observer.observe(element);
+        });
+    </script>
 </body>
 
 </html>
