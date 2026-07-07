@@ -1,39 +1,64 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Felipe Roberto Soares | Portfólio</title>
+
+    <!-- jQuery para o efeito de Chuva -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <!-- Fontes: Exo 2 (Glitch) e Inter (Textos e UI) -->
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@600&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
     <style>
         /* ================= VARIÁVEIS E BASE ================= */
         :root {
-            --bg-color: #131313;
-            --surface-color: #1e1e1e;
-            --text-color: #ffffff;
+            --bg-color: #0d0d12;
+            --surface-color: rgba(30, 30, 35, 0.6);
+            /* Transparente para o efeito vidro */
+            --surface-border: rgba(255, 255, 255, 0.08);
+            --text-color: #f1f1f1;
             --text-muted: #a0a0a0;
-            --accent-color: #10b981; /* Verde Esmeralda */
-            --accent-hover: #34d399; /* Verde mais claro */
+            --accent-color: #10b981;
+            /* Verde Esmeralda */
+            --accent-hover: #34d399;
+            /* Verde mais claro */
+            --cyan-glow: #00ffff;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Inter', sans-serif;
             scroll-behavior: smooth;
         }
 
         body {
-            background-color: var(--bg-color);
+            background: linear-gradient(to bottom, #1a1a24, #0d0d12);
             color: var(--text-color);
-            line-height: 1.6;
+            line-height: 1.7;
             overflow-x: hidden;
+            min-height: 100vh;
         }
 
         /* Scrollbar customizada */
-        ::-webkit-scrollbar { width: 8px; height: 8px; }
-        ::-webkit-scrollbar-track { background: var(--bg-color); }
-        ::-webkit-scrollbar-thumb { background: var(--accent-color); border-radius: 4px; }
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-color);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--accent-color);
+            border-radius: 4px;
+        }
 
         /* Animação de Seleção */
         ::selection {
@@ -41,25 +66,375 @@
             color: #fff;
         }
 
+        /* Para garantir que o conteúdo fique na frente da chuva */
+        header,
+        main,
+        footer {
+            position: relative;
+            z-index: 10;
+        }
+
+        /* ================= EFEITO DE CHUVA CHILL (BACKGROUND) ================= */
+        .rain {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .rain.back-row {
+            display: block;
+            z-index: -1;
+            bottom: 60px;
+            opacity: 0.3;
+        }
+
+        .drop {
+            position: absolute;
+            bottom: 100%;
+            width: 15px;
+            height: 120px;
+            pointer-events: none;
+            animation: drop 0.5s linear infinite;
+        }
+
+        @keyframes drop {
+            0% {
+                transform: translateY(0vh);
+            }
+
+            75% {
+                transform: translateY(90vh);
+            }
+
+            100% {
+                transform: translateY(90vh);
+            }
+        }
+
+        .stem {
+            width: 1px;
+            height: 40%;
+            margin-left: 7px;
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.15));
+            animation: stem 0.5s linear infinite;
+        }
+
+        @keyframes stem {
+            0% {
+                opacity: 1;
+            }
+
+            65% {
+                opacity: 1;
+            }
+
+            75% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+        .splat {
+            width: 15px;
+            height: 10px;
+            border-top: 2px dotted rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            opacity: 1;
+            transform: scale(0);
+            animation: splat 0.5s linear infinite;
+            display: block;
+        }
+
+        @keyframes splat {
+            0% {
+                opacity: 1;
+                transform: scale(0);
+            }
+
+            80% {
+                opacity: 1;
+                transform: scale(0);
+            }
+
+            90% {
+                opacity: 0.4;
+                transform: scale(1);
+            }
+
+            100% {
+                opacity: 0;
+                transform: scale(1.5);
+            }
+        }
+
         /* ================= TIPOGRAFIA E LAYOUT ================= */
-        h1, h2, h3 { font-weight: 700; margin-bottom: 1rem; }
-        h2 { font-size: 2.5rem; color: var(--accent-color); text-transform: uppercase; letter-spacing: 2px; }
-        p { color: var(--text-muted); margin-bottom: 1rem; }
-        a { text-decoration: none; color: inherit; }
+        h2,
+        h3 {
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            background: linear-gradient(90deg, var(--accent-color), var(--cyan-glow));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+
+        p {
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            font-weight: 300;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 4rem 2rem;
+            padding: 6rem 2rem;
+            /* Mais respiro entre as secções */
+        }
+
+        /* ================= EFEITO GLITCH ================= */
+        .glitch {
+            font-family: 'Exo 2', sans-serif;
+            font-weight: 600;
+            color: white;
+            font-size: 100px;
+            position: relative;
+            margin: 1rem 0;
+            text-shadow:
+                0px -5px 10px rgba(255, 255, 255, 1),
+                0px 0px 5px rgba(255, 255, 255, 0),
+                0px 0px 10px rgba(255, 255, 255, 0),
+                0px 0px 15px rgba(255, 255, 255, 0),
+                0px 0px 20px rgba(255, 255, 255, 0);
+            animation: noise-anim-2 3s infinite linear alternate-reverse, shift 4s ease-in-out infinite alternate, blur 8s ease-in-out infinite alternate;
+            transform: skewX(0deg);
+        }
+
+        .glitch:after {
+            content: attr(data-text);
+            position: absolute;
+            left: 3px;
+            text-shadow: -1px 0 red;
+            top: 0;
+            color: transparent;
+            background: transparent;
+            overflow: hidden;
+            clip: rect(0, 900px, 0, 0);
+            animation: noise-anim-2 3s infinite linear alternate-reverse, shift 4s ease-in-out infinite alternate;
+            transform: skewX(0deg);
+            z-index: -2;
+            opacity: .7;
+        }
+
+        .glitch:before {
+            content: attr(data-text);
+            position: absolute;
+            left: 1px;
+            text-shadow: -3px 0 cyan;
+            top: 0;
+            color: transparent;
+            background: transparent;
+            overflow: hidden;
+            clip: rect(0, 900px, 0, 0);
+            animation: noise-anim-2 3s infinite linear alternate-reverse, shift 4s ease-in-out infinite alternate;
+            transform: skewX(0deg);
+            z-index: -1;
+            opacity: .8;
+        }
+
+        @keyframes blur {
+
+            0%,
+            40%,
+            50%,
+            60%,
+            90%,
+            95%,
+            100% {
+                text-shadow:
+                    0px -5px 10px rgba(255, 255, 255, 1),
+                    0px 0px 5px rgba(255, 255, 255, 0),
+                    0px 0px 10px rgba(255, 255, 255, 0),
+                    2px 1px 15px rgba(100, 240, 255, 0),
+                    0px 0px 20px rgba(255, 255, 255, 0);
+            }
+
+            45%,
+            75% {
+                text-shadow:
+                    0px -5px 10px rgba(255, 255, 255, 1),
+                    0px 0px 5px rgba(255, 255, 255, 1),
+                    0px 0px 10px rgba(255, 255, 255, 1),
+                    2px 1px 15px rgba(100, 240, 255, 1),
+                    0px 0px 20px rgba(255, 255, 255, 1);
+            }
+
+            97.5% {
+                text-shadow:
+                    0px -5px 10px rgba(255, 255, 255, 0),
+                    0px 0px 5px rgba(255, 255, 255, 0),
+                    0px 0px 10px rgba(255, 255, 255, 0),
+                    2px 1px 4px rgba(255, 100, 100, 1),
+                    0px 0px 20px rgba(255, 255, 255, 0);
+            }
+        }
+
+        @keyframes shift {
+
+            0%,
+            40%,
+            44%,
+            58%,
+            61%,
+            65%,
+            69%,
+            73%,
+            100% {
+                transform: skewX(0deg);
+            }
+
+            41% {
+                transform: skewX(10deg);
+            }
+
+            42% {
+                transform: skewX(-10deg);
+            }
+
+            59% {
+                transform: skewX(40deg) skewY(10deg);
+            }
+
+            60% {
+                transform: skewX(-40deg) skewY(-10deg);
+            }
+
+            63% {
+                transform: skewX(10deg) skewY(-5deg);
+            }
+
+            70% {
+                transform: skewX(-50deg) skewY(-20deg);
+            }
+
+            71% {
+                transform: skewX(10deg) skewY(-10deg);
+            }
+        }
+
+        @keyframes noise-anim-2 {
+            0% {
+                clip: rect(69px, 9999px, 73px, 0);
+            }
+
+            5% {
+                clip: rect(74px, 9999px, 20px, 0);
+            }
+
+            10% {
+                clip: rect(49px, 9999px, 57px, 0);
+            }
+
+            15% {
+                clip: rect(4px, 9999px, 14px, 0);
+            }
+
+            20% {
+                clip: rect(93px, 9999px, 60px, 0);
+            }
+
+            25% {
+                clip: rect(21px, 9999px, 25px, 0);
+            }
+
+            30% {
+                clip: rect(51px, 9999px, 99px, 0);
+            }
+
+            35% {
+                clip: rect(8px, 9999px, 86px, 0);
+            }
+
+            40% {
+                clip: rect(2px, 9999px, 61px, 0);
+            }
+
+            45% {
+                clip: rect(38px, 9999px, 11px, 0);
+            }
+
+            50% {
+                clip: rect(18px, 9999px, 45px, 0);
+            }
+
+            55% {
+                clip: rect(84px, 9999px, 94px, 0);
+            }
+
+            60% {
+                clip: rect(31px, 9999px, 35px, 0);
+            }
+
+            65% {
+                clip: rect(46px, 9999px, 63px, 0);
+            }
+
+            70% {
+                clip: rect(100px, 9999px, 30px, 0);
+            }
+
+            75% {
+                clip: rect(59px, 9999px, 79px, 0);
+            }
+
+            80% {
+                clip: rect(12px, 9999px, 4px, 0);
+            }
+
+            85% {
+                clip: rect(67px, 9999px, 2px, 0);
+            }
+
+            90% {
+                clip: rect(89px, 9999px, 70px, 0);
+            }
+
+            95% {
+                clip: rect(41px, 9999px, 83px, 0);
+            }
+
+            100% {
+                clip: rect(50px, 9999px, 50px, 0);
+            }
         }
 
         /* ================= NAVEGAÇÃO ================= */
         header {
-            background-color: rgba(19, 19, 19, 0.9);
-            backdrop-filter: blur(10px);
+            background-color: rgba(13, 13, 18, 0.8);
+            backdrop-filter: blur(15px);
             position: fixed;
-            top: 0; width: 100%; z-index: 1000;
-            border-bottom: 1px solid #333;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 1px solid var(--surface-border);
         }
 
         nav {
@@ -71,19 +446,37 @@
             align-items: center;
         }
 
-        .logo { font-size: 1.5rem; font-weight: bold; color: var(--accent-color); }
-        
-        .nav-links { display: flex; gap: 2rem; }
-        .nav-links a { font-weight: 500; transition: color 0.3s ease; }
-        .nav-links a:hover { color: var(--accent-color); }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            font-family: 'Exo 2', sans-serif;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
 
         /* ================= SEÇÕES ================= */
-        /* Hero (Início) com Foto */
         #inicio {
             min-height: 100vh;
             display: flex;
             align-items: center;
         }
+
         .hero-wrapper {
             display: flex;
             align-items: center;
@@ -91,25 +484,43 @@
             gap: 3rem;
             width: 100%;
         }
+
         .hero-text {
             flex: 1;
             min-width: 300px;
         }
-        .hero-subtitle { font-size: 1.2rem; color: var(--text-muted); }
-        .hero-title { font-size: 4rem; margin: 1rem 0; line-height: 1.1; }
-        .hero-title span { color: var(--accent-color); }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: var(--accent-color);
+            font-weight: 500;
+            letter-spacing: 2px;
+        }
 
         /* Estilos da Foto de Perfil */
         .profile-photo-container {
-            width: 300px;
-            height: 300px;
+            width: 320px;
+            height: 320px;
             border-radius: 50%;
             overflow: hidden;
-            border: 4px solid var(--accent-color);
-            box-shadow: 0 0 30px rgba(16, 185, 129, 0.3);
+            border: 3px solid rgba(16, 185, 129, 0.5);
+            box-shadow: 0 0 40px rgba(16, 185, 129, 0.2);
             flex-shrink: 0;
             animation: float 6s ease-in-out infinite;
+            position: relative;
         }
+
+        .profile-photo-container::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 50%;
+            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
         .profile-photo {
             width: 100%;
             height: 100%;
@@ -117,40 +528,63 @@
         }
 
         @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
-            100% { transform: translateY(0px); }
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
         }
 
-        /* Botões com animação Hover e Click */
-        .btn-group { margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap; }
+        /* Botões */
+        .btn-group {
+            margin-top: 2.5rem;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
         .btn {
             display: inline-block;
-            padding: 0.8rem 2rem;
+            padding: 0.8rem 2.2rem;
             background-color: var(--accent-color);
             color: #fff;
-            border-radius: 5px;
-            font-weight: bold;
+            border-radius: 4px;
+            font-weight: 600;
             transition: all 0.3s ease;
             cursor: pointer;
-            border: 2px solid var(--accent-color);
+            border: 1px solid var(--accent-color);
             text-align: center;
+            letter-spacing: 1px;
         }
+
         .btn-outline {
             background-color: transparent;
+            border-color: rgba(255, 255, 255, 0.3);
+            color: #e0e0e0;
         }
+
         .btn:hover {
             background-color: var(--accent-hover);
             border-color: var(--accent-hover);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(16, 185, 129, 0.4);
-        }
-        .btn-outline:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(16, 185, 129, 0.3);
             color: #fff;
         }
+
+        .btn-outline:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-color: #fff;
+            box-shadow: none;
+        }
+
         .btn:active {
-            transform: translateY(2px) scale(0.98);
-            box-shadow: 0 2px 5px rgba(16, 185, 129, 0.4);
+            transform: translateY(1px);
         }
 
         /* Grid de Habilidades */
@@ -160,60 +594,135 @@
             gap: 1rem;
             margin-top: 2rem;
         }
+
         .skill-tag {
             background: var(--surface-color);
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            border: 1px solid #333;
+            backdrop-filter: blur(5px);
+            padding: 0.6rem 1.2rem;
+            border-radius: 30px;
+            border: 1px solid var(--surface-border);
+            font-size: 0.9rem;
+            font-weight: 500;
             transition: all 0.3s;
         }
+
         .skill-tag:hover {
             border-color: var(--accent-color);
             transform: translateY(-3px);
             color: var(--accent-color);
+            box-shadow: 0 5px 15px rgba(16, 185, 129, 0.15);
         }
 
         /* Timeline de Experiência */
         .timeline {
-            border-left: 2px solid var(--accent-color);
-            padding-left: 2rem;
-            margin-top: 2rem;
+            border-left: 2px solid rgba(255, 255, 255, 0.1);
+            padding-left: 2.5rem;
+            margin-top: 3rem;
+            position: relative;
         }
+
         .timeline-item {
             position: relative;
-            margin-bottom: 3rem;
+            margin-bottom: 3.5rem;
+            background: var(--surface-color);
+            backdrop-filter: blur(10px);
+            padding: 2.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--surface-border);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
+
         .timeline-item::before {
             content: '';
             position: absolute;
-            left: -2.4rem;
-            top: 0;
-            width: 16px;
-            height: 16px;
-            background: var(--accent-color);
+            left: calc(-2.5rem - 10px);
+            top: 2.5rem;
+            width: 18px;
+            height: 18px;
+            background: var(--bg-color);
+            border: 2px solid var(--accent-color);
             border-radius: 50%;
+            transition: all 0.4s ease;
+            z-index: 2;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: calc(-2.5rem - 2px);
+            top: 2.5rem;
+            width: 2px;
+            height: 0;
+            background: var(--accent-color);
+            transition: height 0.4s ease;
+            z-index: 1;
+            box-shadow: 0 0 10px var(--accent-color);
+        }
+
+        .timeline-item:hover {
+            transform: translateX(10px);
+            border-color: rgba(16, 185, 129, 0.4);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .timeline-item:hover::before {
+            background: var(--accent-color);
+            box-shadow: 0 0 15px var(--accent-color);
+            transform: scale(1.3);
+        }
+
+        .timeline-item:hover::after {
+            height: calc(100% + 3.5rem);
+        }
+
+        .timeline-list {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+
+        .timeline-list li {
+            margin-bottom: 1rem;
+            padding-left: 1.8rem;
+            position: relative;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .timeline-list li::before {
+            content: '▹';
+            color: var(--accent-color);
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-weight: bold;
+            font-size: 1.2rem;
         }
 
         /* ================= GRID DE CARDS (Projetos e Cursos) ================= */
         .cards-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
             padding: 2rem 0;
         }
 
         .card {
             background-color: var(--surface-color);
-            padding: 2rem;
-            border-radius: 10px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 1px solid #333;
+            backdrop-filter: blur(10px);
+            padding: 2.5rem;
+            border-radius: 12px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            border: 1px solid var(--surface-border);
+            display: flex;
+            flex-direction: column;
         }
+
         .card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            border-color: var(--accent-color);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+            border-color: rgba(16, 185, 129, 0.4);
         }
+
         .card:active {
             transform: translateY(0) scale(0.98);
         }
@@ -222,40 +731,70 @@
         #typewriter::after {
             content: '|';
             animation: blink 1s step-start infinite;
+            color: var(--accent-color);
         }
+
         @keyframes blink {
-            50% { opacity: 0; }
+            50% {
+                opacity: 0;
+            }
         }
 
         /* ================= ANIMAÇÕES DE SCROLL ================= */
         .fade-in {
             opacity: 0;
             transform: translateY(30px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
+
         .fade-in.visible {
             opacity: 1;
             transform: translateY(0);
         }
 
         /* ================= RESPONSIVIDADE ================= */
-        @media (max-width: 768px) {
+        @media (max-width: 900px) {
+            .glitch {
+                font-size: 60px;
+            }
+
             .hero-wrapper {
-                flex-direction: column-reverse; /* Foto acima do texto no telemóvel */
+                flex-direction: column-reverse;
                 text-align: center;
                 margin-top: 4rem;
             }
-            .hero-title { font-size: 3rem; }
-            .btn-group { justify-content: center; }
-            .profile-photo-container {
-                width: 220px;
-                height: 220px;
+
+            .btn-group {
+                justify-content: center;
             }
-            .nav-links { display: none; } /* Pode adicionar um menu hambúrguer futuramente */
+
+            .profile-photo-container {
+                width: 250px;
+                height: 250px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .glitch {
+                font-size: 45px;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
+
 <body>
+
+    <!-- Container da Chuva Chill (Fundo) -->
+    <div class="rain front-row"></div>
+    <div class="rain back-row"></div>
 
     <header>
         <nav>
@@ -276,11 +815,14 @@
             <div class="hero-wrapper">
                 <div class="hero-text">
                     <p class="hero-subtitle">Olá, eu sou</p>
-                    <h1 class="hero-title">Felipe <span>Soares</span></h1>
+
+                    <h1 class="glitch" data-text="Felipe Soares">Felipe Soares</h1>
+
                     <p id="typewriter" style="font-size: 1.2rem; max-width: 600px; min-height: 3rem;"></p>
                     <div class="btn-group">
                         <a href="#projetos" class="btn">Ver Projetos</a>
-                        <a href="https://www.linkedin.com/in/felipe-soares-018986346/" target="_blank" class="btn btn-outline">LinkedIn</a>
+                        <a href="https://www.linkedin.com/in/felipe-soares-018986346/" target="_blank"
+                            class="btn btn-outline">LinkedIn</a>
                     </div>
                 </div>
                 <div class="profile-photo-container">
@@ -292,146 +834,289 @@
         <!-- Sobre Mim -->
         <section id="sobre" class="container fade-in">
             <h2>Sobre Mim</h2>
+
             <p>
-                Estudante de Bacharelado em Ciência da Computação, com experiência em desenvolvimento de soluções internas, automação de processos, SGQI e apoio a projetos automotivos.
+                Estudante de Bacharelado em Ciência da Computação, com experiência em desenvolvimento de soluções
+                internas, automação de processos e Sistema de Gestão da Qualidade Integrado (SGQI).
             </p>
+
             <p>
-                Vivência com organização de dados, documentação técnica, melhoria contínua e rotinas administrativas, unindo visão de negócio, qualidade e tecnologia. Interesse em atuar com desenvolvimento de sistemas, segurança da informação, análise de dados e arquitetura de software.
+                Atualmente atuo no desenvolvimento de aplicações internas, criação de automações em Python e apoio à
+                gestão da qualidade, envolvendo documentação técnica, auditorias internas, PPAP e conformidade com as
+                normas ISO 9001 e IATF 16949.
+            </p>
+
+            <p>
+                Tenho interesse em desenvolver minha carreira nas áreas de desenvolvimento de software, segurança da
+                informação e governança de TI, com objetivo de me especializar futuramente em Cibersegurança ou Sistemas
+                de Gestão Integrados (SGI), aplicando tecnologia para aumentar a eficiência, a segurança e a qualidade
+                dos processos.
             </p>
 
             <div class="skills-grid">
+                <span class="skill-tag">Python</span>
                 <span class="skill-tag">HTML5 & CSS3</span>
                 <span class="skill-tag">JavaScript</span>
-                <span class="skill-tag">Cibersegurança & Pentest</span>
                 <span class="skill-tag">Linux</span>
                 <span class="skill-tag">Automação de Processos</span>
-                <span class="skill-tag">SGQI & PPAP</span>
+                <span class="skill-tag">SGQI • PPAP</span>
+                <span class="skill-tag">ISO 9001 • IATF 16949</span>
+                <span class="skill-tag">Cibersegurança (Estudos)</span>
             </div>
         </section>
 
         <!-- Experiência -->
         <section id="experiencia" class="container fade-in">
             <h2>Experiência Profissional</h2>
+
             <div class="timeline">
+
+                <!-- Experiência 1 -->
+                <div class="timeline-item">
+                    <h3>Desenvolvedor Freelancer</h3>
+                    <p style="color: var(--accent-color); font-weight: 500;">
+                        Freelance | 2025
+                    </p>
+
+                    <ul class="timeline-list">
+                        <li><strong>Sistema de Rifas e Vendas:</strong> Desenvolvimento de aplicação utilizando Node.js.
+                        </li>
+
+                        <li><strong>Integração com API WhatsApp:</strong> Automação de cadastro de clientes, confirmação
+                            de compras e envio de resultados.</li>
+
+                        <li><strong>Business Intelligence:</strong> Desenvolvimento de dashboards para acompanhamento de
+                            métricas operacionais e desempenho de vendas.</li>
+
+                        <li><strong>Infraestrutura:</strong> Deploy da aplicação, monitoramento de disponibilidade
+                            (Health Check) e implementação de mecanismos básicos de segurança e prevenção a fraudes.
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Experiência 2 -->
                 <div class="timeline-item">
                     <h3>Assistente de Desenvolvimento Pleno</h3>
-                    <p style="color: var(--accent-color); font-weight: bold;">Ferplast | Set 2023 - No momento</p>
-                    <p>Apoio ao desenvolvimento de soluções internas em modelo SaaS e automações voltadas à melhoria de processos. Atuação com SGQI, documentação de processos e suporte a demandas internas. Participação em PPAP de projetos automotivos.</p>
+
+                    <p style="color: var(--accent-color); font-weight: 500;">
+                        Ferplast | Set 2023 - Atual
+                    </p>
+
+                    <p style="margin-top: 1rem;">
+                        Desenvolvimento de soluções internas em modelo SaaS e automações em Python para otimização de
+                        processos e melhoria da eficiência operacional. Atuação no Sistema de Gestão da Qualidade
+                        Integrado (SGQI), conduzindo auditorias internas e apoiando a conformidade com as normas ISO
+                        9001 e IATF 16949. Responsável pela elaboração e controle da documentação de processos,
+                        desenvolvimento de PPAP para projetos automotivos e suporte técnico às demandas internas.
+                    </p>
                 </div>
+
+                <!-- Experiência 3 -->
                 <div class="timeline-item">
                     <h3>Jovem Aprendiz</h3>
-                    <p style="color: var(--accent-color); font-weight: bold;">Ferplast | Jun 2022 - Set 2023</p>
-                    <p>Apoio em rotinas administrativas, organização de documentos e controle de informações do setor. Suporte a processos internos, contribuindo para disciplina operacional e organização de dados.</p>
+
+                    <p style="color: var(--accent-color); font-weight: 500;">
+                        Ferplast | Jun 2022 - Set 2023
+                    </p>
+
+                    <p style="margin-top: 1rem;">
+                        Apoio às rotinas administrativas, organização de documentos e controle de informações do setor.
+                        Suporte aos processos internos, contribuindo para a organização de dados, padronização de
+                        documentos e eficiência das atividades administrativas.
+                    </p>
                 </div>
+
             </div>
         </section>
 
-        <!-- Projetos (Grid responsivo) -->
+        <!-- Projetos -->
         <section id="projetos" class="container fade-in">
             <h2>Projetos</h2>
             <p>Confira alguns dos meus trabalhos. (Vídeos em breve)</p>
+
             <div class="cards-grid">
+
                 <div class="card">
-                    <h3>Projeto Automação 1</h3>
-                    <p>Descrição breve do projeto de automação desenvolvido para melhoria contínua.</p>
-                    <div style="height: 150px; background: #2a2a2a; border-radius: 5px; margin-top: 1rem; display: flex; align-items: center; justify-content: center; color: #555;">[ Vídeo em breve ]</div>
+                    <h3>Automação de Processos</h3>
+
+                    <p>
+                        Desenvolvimento de automações em Python para redução de tarefas repetitivas e otimização de
+                        processos internos.
+                    </p>
+
+                    <div
+                        style="flex-grow: 1; height: 150px; background: rgba(0,0,0,0.3); border: 1px solid var(--surface-border); border-radius: 8px; margin-top: 1rem; display: flex; align-items: center; justify-content: center; color: #555;">
+                        [ Vídeo em breve ]
+                    </div>
                 </div>
+
                 <div class="card">
-                    <h3>Dashboard SGQI</h3>
-                    <p>Interface desenvolvida para controle de documentação de qualidade e processos.</p>
-                    <div style="height: 150px; background: #2a2a2a; border-radius: 5px; margin-top: 1rem; display: flex; align-items: center; justify-content: center; color: #555;">[ Vídeo em breve ]</div>
+                    <h3>Sistema SGQI</h3>
+
+                    <p>
+                        Aplicação interna para apoio ao controle de documentação, processos e indicadores do Sistema de
+                        Gestão da Qualidade.
+                    </p>
+
+                    <div
+                        style="flex-grow: 1; height: 150px; background: rgba(0,0,0,0.3); border: 1px solid var(--surface-border); border-radius: 8px; margin-top: 1rem; display: flex; align-items: center; justify-content: center; color: #555;">
+                        [ Vídeo em breve ]
+                    </div>
                 </div>
+
                 <div class="card">
-                    <h3>Em breve</h3>
-                    <p>Mais projetos sendo documentados.</p>
-                    <div style="height: 150px; background: #2a2a2a; border-radius: 5px; margin-top: 1rem;"></div>
+                    <h3>Sistema de Rifas e Vendas</h3>
+
+                    <p>
+                        Projeto freelancer utilizando Node.js, integração com API WhatsApp e dashboard administrativo
+                        para acompanhamento das vendas.
+                    </p>
+
+                    <div
+                        style="flex-grow: 1; height: 150px; background: rgba(0,0,0,0.3); border: 1px solid var(--surface-border); border-radius: 8px; margin-top: 1rem; display: flex; align-items: center; justify-content: center; color: #555;">
+                        [ Vídeo em breve ]
+                    </div>
                 </div>
+
             </div>
         </section>
 
-        <!-- Cursos (Grid responsivo) -->
+        <!-- Cursos -->
         <section id="cursos" class="container fade-in">
-            <h2>Cursos</h2>
-            <p>Clique nos cards em destaque para abrir os certificados em PDF.</p>
+            <h2>Cursos e Certificações</h2>
+            <p>Clique nos cartões em destaque para abrir os certificados em PDF.</p>
+
             <div class="cards-grid">
-                <!-- Certificados da DIO (Clicáveis com PDF anexado) -->
-                <a href="certificados/Boas vindas ao Bootcamp Bradesco - GenAI, Dados e Cyber.pdf" target="_blank" class="card" style="text-decoration: none; color: inherit; display: block; border-color: var(--accent-color);">
-                    <h3 style="color: var(--accent-color);">Boas vindas ao Bootcamp Bradesco</h3>
-                    <p style="font-weight: bold; color: #e0e0e0; margin-bottom: 0.5rem;">Instituição: DIO</p>
-                    <p>GenAI, Dados e Cyber.</p>
-                    <span style="font-size: 0.85rem; color: var(--accent-color); font-weight: bold; margin-top: 1rem; display: inline-block;">🔗 Abrir Certificado</span>
+
+                <!-- Certificados DIO -->
+                <a href="certificados/Boas%20vindas%20ao%20Bootcamp%20Bradesco%20-%20GenAI,%20Dados%20e%20Cyber.pdf"
+                    target="_blank" class="card" style="border-color: rgba(16, 185, 129, 0.3);">
+                    <h3 style="color: var(--accent-color);">Boas-vindas ao Bootcamp Bradesco</h3>
+                    <p style="font-weight: 500; color: #e0e0e0; margin-bottom: 0.5rem;">Instituição: DIO</p>
+                    <p style="flex-grow: 1;">GenAI, Dados e Cyber.</p>
+                    <span style="font-size: 0.85rem; color: var(--accent-color); font-weight: 600; margin-top: 1rem;">🔗
+                        Abrir Certificado</span>
                 </a>
 
-                <a href="certificados/Fundamentos da IA Moderna - Machine Learning, LLMs, IA Generativa e Agentes.pdf" target="_blank" class="card" style="text-decoration: none; color: inherit; display: block; border-color: var(--accent-color);">
+                <a href="certificados/Fundamentos%20da%20IA%20Moderna%20-%20Machine%20Learning,%20LLMs,%20IA%20Generativa%20e%20Agentes.pdf"
+                    target="_blank" class="card" style="border-color: rgba(16, 185, 129, 0.3);">
                     <h3 style="color: var(--accent-color);">Fundamentos da IA Moderna</h3>
-                    <p style="font-weight: bold; color: #e0e0e0; margin-bottom: 0.5rem;">Instituição: DIO</p>
-                    <p>Machine Learning, LLMs, IA Generativa e Agentes.</p>
-                    <span style="font-size: 0.85rem; color: var(--accent-color); font-weight: bold; margin-top: 1rem; display: inline-block;">🔗 Abrir Certificado</span>
+                    <p style="font-weight: 500; color: #e0e0e0; margin-bottom: 0.5rem;">Instituição: DIO</p>
+                    <p style="flex-grow: 1;">Machine Learning, LLMs, IA Generativa e Agentes.</p>
+                    <span style="font-size: 0.85rem; color: var(--accent-color); font-weight: 600; margin-top: 1rem;">🔗
+                        Abrir Certificado</span>
                 </a>
 
-                <a href="certificados/Fundamentos de Modelos de Linguagem de Grande Escala.pdf" target="_blank" class="card" style="text-decoration: none; color: inherit; display: block; border-color: var(--accent-color);">
-                    <h3 style="color: var(--accent-color);">Fundamentos de Modelos de Linguagem</h3>
-                    <p style="font-weight: bold; color: #e0e0e0; margin-bottom: 0.5rem;">Instituição: DIO</p>
-                    <p>Modelos de Linguagem de Grande Escala (LLMs).</p>
-                    <span style="font-size: 0.85rem; color: var(--accent-color); font-weight: bold; margin-top: 1rem; display: inline-block;">🔗 Abrir Certificado</span>
+                <a href="certificados/Fundamentos%20de%20Modelos%20de%20Linguagem%20de%20Grande%20Escala.pdf"
+                    target="_blank" class="card" style="border-color: rgba(16, 185, 129, 0.3);">
+                    <h3 style="color: var(--accent-color);">Fundamentos de LLMs</h3>
+                    <p style="font-weight: 500; color: #e0e0e0; margin-bottom: 0.5rem;">Instituição: DIO</p>
+                    <p style="flex-grow: 1;">Modelos de Linguagem de Grande Escala.</p>
+                    <span style="font-size: 0.85rem; color: var(--accent-color); font-weight: 600; margin-top: 1rem;">🔗
+                        Abrir Certificado</span>
                 </a>
 
-                <!-- Cursos Existentes (Não clicáveis, sem PDF) -->
                 <div class="card">
-                    <h3 style="color: var(--text-color);">Cibersegurança & Ataques</h3>
-                    <p style="font-weight: bold; color: #e0e0e0; margin-bottom: 0.5rem;">Instituição: MBX Academy</p>
-                    <p>Segurança da Informação - 52 horas</p>
-                    <span style="font-size: 0.85rem; color: var(--text-muted); margin-top: 1rem; display: inline-block;">(Em andamento)</span>
+                    <h3>Cibersegurança & Ataques</h3>
+                    <p style="font-weight: 500; color: #e0e0e0; margin-bottom: 0.5rem;">Instituição: MBX Academy</p>
+                    <p style="flex-grow: 1;">Segurança da Informação - 52 horas</p>
+                    <span style="font-size: 0.85rem; color: var(--text-muted); margin-top: 1rem;">(Em andamento)</span>
                 </div>
+
                 <div class="card">
-                    <h3 style="color: var(--text-color);">Desenvolvimento Web</h3>
-                    <p style="font-weight: bold; color: #e0e0e0; margin-bottom: 0.5rem;">Instituição: Curso em Vídeo</p>
-                    <p>40 Horas</p>
-                    <span style="font-size: 0.85rem; color: var(--text-muted); margin-top: 1rem; display: inline-block;">(Certificado não anexado)</span>
+                    <h3>Desenvolvimento Web</h3>
+                    <p style="font-weight: 500; color: #e0e0e0; margin-bottom: 0.5rem;">Instituição: Curso em Vídeo</p>
+                    <p style="flex-grow: 1;">HTML5 e CSS3 - 40 horas</p>
+                    <span style="font-size: 0.85rem; color: var(--text-muted); margin-top: 1rem;">(Certificado não
+                        anexado)</span>
                 </div>
+
                 <div class="card">
-                    <h3 style="color: var(--text-color);">JavaScript</h3>
-                    <p style="font-weight: bold; color: #e0e0e0; margin-bottom: 0.5rem;">Instituição: Curso em Vídeo</p>
-                    <p>40 Horas</p>
-                    <span style="font-size: 0.85rem; color: var(--text-muted); margin-top: 1rem; display: inline-block;">(Certificado não anexado)</span>
+                    <h3>JavaScript</h3>
+                    <p style="font-weight: 500; color: #e0e0e0; margin-bottom: 0.5rem;">Instituição: Curso em Vídeo</p>
+                    <p style="flex-grow: 1;">40 horas</p>
+                    <span style="font-size: 0.85rem; color: var(--text-muted); margin-top: 1rem;">(Certificado não
+                        anexado)</span>
                 </div>
+
             </div>
         </section>
-    </main>
 
-    <footer style="text-align: center; padding: 2rem; background: #0a0a0a; border-top: 1px solid #333;">
-        <p>felipe.r.soares03@gmail.com | (11) 99631-8958</p>
-        <p style="margin-top: 1rem;">© 2026 Felipe Roberto Soares.</p>
-    </footer>
+        <footer
+            style="text-align: center; padding: 2rem; border-top: 1px solid var(--surface-border); margin-top: 2rem;">
+            <p>felipe.r.soares03@gmail.com | (11) 99631-8958</p>
+            <p style="margin-top: 1rem; font-size: 0.9rem; color: #666;">© 2026 Felipe Roberto Soares. Todos os direitos
+                reservados.</p>
+        </footer>
 
-    <!-- SCRIPT PARA ANIMAÇÕES -->
-    <script>
-        // Efeito Máquina de Escrever
-        const textToType = "Estudante de Ciência da Computação | Desenvolvimento de Sistemas | Segurança da Informação";
-        const typewriterElement = document.getElementById('typewriter');
-        let typingIndex = 0;
+        <!-- SCRIPT PARA ANIMAÇÕES -->
+        <script>
+            // Efeito Chuva Chill (jQuery)
+            $(document).ready(function () {
+                function makeItRain() {
+                    $('.rain').empty();
 
-        function typeWriter() {
-            if (typingIndex < textToType.length) {
-                typewriterElement.innerHTML += textToType.charAt(typingIndex);
-                typingIndex++;
-                setTimeout(typeWriter, 50); // Velocidade de digitação
-            }
-        }
-        window.addEventListener('load', typeWriter);
+                    let increment = 0;
+                    let drops = "";
+                    let backDrops = "";
 
-        // Efeito Fade-In ao rolar a página
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
+                    while (increment < 100) {
+                        let randoFiver = Math.floor(Math.random() * 5) + 3;
+                        increment += randoFiver;
+
+                        let duration = (Math.random() * 1.5 + 1).toFixed(2);
+                        let delay = (Math.random() * 2).toFixed(2);
+                        let bottomStart = 100 + (Math.random() * 20);
+
+                        drops += `
+                        <div class="drop" style="left:${increment}%; bottom:${bottomStart}%; animation-delay:${delay}s; animation-duration:${duration}s;">
+                            <div class="stem" style="animation-delay:${delay}s; animation-duration:${duration}s;"></div>
+                            <div class="splat" style="animation-delay:${delay}s; animation-duration:${duration}s;"></div>
+                        </div>
+                    `;
+
+                        backDrops += `
+                        <div class="drop" style="right:${increment}%; bottom:${bottomStart}%; animation-delay:${delay}s; animation-duration:${duration}s;">
+                            <div class="stem" style="animation-delay:${delay}s; animation-duration:${duration}s;"></div>
+                            <div class="splat" style="animation-delay:${delay}s; animation-duration:${duration}s;"></div>
+                        </div>
+                    `;
+                    }
+
+                    $('.rain.front-row').append(drops);
+                    $('.rain.back-row').append(backDrops);
                 }
-            });
-        }, { threshold: 0.1 });
 
-        document.querySelectorAll('.fade-in').forEach(element => {
-            observer.observe(element);
-        });
-    </script>
+                makeItRain();
+            });
+
+            // Efeito Máquina de Escrever
+            const textToType = "Estudante de Ciência da Computação | Desenvolvimento de Sistemas | Segurança da Informação";
+            const typewriterElement = document.getElementById('typewriter');
+            let typingIndex = 0;
+
+            function typeWriter() {
+                if (typingIndex < textToType.length) {
+                    typewriterElement.innerHTML += textToType.charAt(typingIndex);
+                    typingIndex++;
+                    setTimeout(typeWriter, 50);
+                }
+            }
+            window.addEventListener('load', typeWriter);
+
+            // Fade-In ao rolar a página
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.fade-in').forEach(element => {
+                observer.observe(element);
+            });
+        </script>
 </body>
+
 </html>
