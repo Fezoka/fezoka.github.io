@@ -344,27 +344,69 @@
         }
 
         @keyframes noise-anim-2 {
-            0% { clip: rect(69px, 9999px, 73px, 0); }
-            5% { clip: rect(74px, 9999px, 20px, 0); }
-            10% { clip: rect(49px, 9999px, 57px, 0); }
-            15% { clip: rect(4px, 9999px, 14px, 0); }
-            20% { clip: rect(93px, 9999px, 60px, 0); }
-            25% { clip: rect(21px, 9999px, 25px, 0); }
-            30% { clip: rect(51px, 9999px, 99px, 0); }
-            35% { clip: rect(8px, 9999px, 86px, 0); }
-            40% { clip: rect(2px, 9999px, 61px, 0); }
-            45% { clip: rect(38px, 9999px, 11px, 0); }
-            50% { clip: rect(18px, 9999px, 45px, 0); }
-            55% { clip: rect(84px, 9999px, 94px, 0); }
-            60% { clip: rect(31px, 9999px, 35px, 0); }
-            65% { clip: rect(46px, 9999px, 63px, 0); }
-            70% { clip: rect(100px, 9999px, 30px, 0); }
-            75% { clip: rect(59px, 9999px, 79px, 0); }
-            80% { clip: rect(12px, 9999px, 4px, 0); }
-            85% { clip: rect(67px, 9999px, 2px, 0); }
-            90% { clip: rect(89px, 9999px, 70px, 0); }
-            95% { clip: rect(41px, 9999px, 83px, 0); }
-            100% { clip: rect(50px, 9999px, 50px, 0); }
+            0% {
+                clip: rect(69px, 9999px, 73px, 0);
+            }
+            5% {
+                clip: rect(74px, 9999px, 20px, 0);
+            }
+            10% {
+                clip: rect(49px, 9999px, 57px, 0);
+            }
+            15% {
+                clip: rect(4px, 9999px, 14px, 0);
+            }
+            20% {
+                clip: rect(93px, 9999px, 60px, 0);
+            }
+            25% {
+                clip: rect(21px, 9999px, 25px, 0);
+            }
+            30% {
+                clip: rect(51px, 9999px, 99px, 0);
+            }
+            35% {
+                clip: rect(8px, 9999px, 86px, 0);
+            }
+            40% {
+                clip: rect(2px, 9999px, 61px, 0);
+            }
+            45% {
+                clip: rect(38px, 9999px, 11px, 0);
+            }
+            50% {
+                clip: rect(18px, 9999px, 45px, 0);
+            }
+            55% {
+                clip: rect(84px, 9999px, 94px, 0);
+            }
+            60% {
+                clip: rect(31px, 9999px, 35px, 0);
+            }
+            65% {
+                clip: rect(46px, 9999px, 63px, 0);
+            }
+            70% {
+                clip: rect(100px, 9999px, 30px, 0);
+            }
+            75% {
+                clip: rect(59px, 9999px, 79px, 0);
+            }
+            80% {
+                clip: rect(12px, 9999px, 4px, 0);
+            }
+            85% {
+                clip: rect(67px, 9999px, 2px, 0);
+            }
+            90% {
+                clip: rect(89px, 9999px, 70px, 0);
+            }
+            95% {
+                clip: rect(41px, 9999px, 83px, 0);
+            }
+            100% {
+                clip: rect(50px, 9999px, 50px, 0);
+            }
         }
 
         /* ================= NAVEGAÇÃO ================= */
@@ -469,9 +511,15 @@
         }
 
         @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
-            100% { transform: translateY(0px); }
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
         }
 
         /* Botões */
@@ -520,7 +568,7 @@
             transform: translateY(1px);
         }
 
-        /* Grid de Habilidades */
+        /* Grid de Habilidades (tags rápidas) - ainda usaremos abaixo */
         .skills-grid {
             display: flex;
             flex-wrap: wrap;
@@ -544,6 +592,68 @@
             transform: translateY(-3px);
             color: var(--accent-color);
             box-shadow: 0 5px 15px rgba(16, 185, 129, 0.15);
+        }
+
+        /* Nova seção Habilidades Detalhadas */
+        .habilidades-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .habilidade-card {
+            background-color: var(--surface-color);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--surface-border);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+
+        .habilidade-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+            border-color: rgba(16, 185, 129, 0.4);
+        }
+
+        .habilidade-card h3 {
+            color: var(--accent-color);
+            font-size: 1.3rem;
+            margin-bottom: 1.2rem;
+            border-bottom: 1px solid var(--surface-border);
+            padding-bottom: 0.6rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .habilidade-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .habilidade-card ul li {
+            padding: 0.4rem 0;
+            padding-left: 1.8rem;
+            position: relative;
+            color: var(--text-muted);
+            line-height: 1.5;
+            font-size: 0.95rem;
+        }
+
+        .habilidade-card ul li::before {
+            content: '▹';
+            color: var(--accent-color);
+            position: absolute;
+            left: 0;
+            top: 0.4rem;
+            font-weight: bold;
+        }
+
+        .habilidade-card ul li strong {
+            color: #e0e0e0;
+            font-weight: 500;
         }
 
         /* Timeline de Experiência */
@@ -672,8 +782,10 @@
         .video-container {
             position: relative;
             width: 100%;
-            aspect-ratio: 16 / 9; /* Mantém a proporção sem cortar */
-            max-height: 768px; /* Respeita a altura máxima informada */
+            aspect-ratio: 16 / 9;
+            /* Mantém a proporção sem cortar */
+            max-height: 768px;
+            /* Respeita a altura máxima informada */
             margin-top: 1.5rem;
             border-radius: 8px;
             overflow: hidden;
@@ -693,14 +805,18 @@
         .project-video {
             width: 100%;
             height: 100%;
-            object-fit: contain; /* Evita que as bordas da imagem sejam cortadas */
+            object-fit: contain;
+            /* Evita que as bordas da imagem sejam cortadas */
             display: block;
         }
 
         /* Overlay Escuro para Projetos "Em breve" */
         .coming-soon-overlay {
             position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
             background: rgba(0, 0, 0, 0.6);
             display: flex;
             align-items: center;
@@ -743,13 +859,79 @@
             border-top: 12px solid transparent;
             border-bottom: 12px solid transparent;
             border-left: 20px solid #fff;
-            margin-left: 5px; /* Ajuste óptico do triângulo */
+            margin-left: 5px;
+            /* Ajuste óptico do triângulo */
         }
 
         .video-container:hover .play-button {
             transform: translate(-50%, -50%) scale(1.1);
             background: rgba(16, 185, 129, 1);
             box-shadow: 0 0 20px rgba(16, 185, 129, 0.6);
+        }
+
+        /* ================= BOTÃO E CONTEÚDO EXPANSÍVEL (PROJETOS) ================= */
+        .more-content {
+            display: none;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--surface-border);
+        }
+
+        .more-content.visible {
+            display: block;
+        }
+
+        .more-content h4 {
+            font-weight: 600;
+            color: var(--accent-color);
+            margin: 1rem 0 0.5rem 0;
+            font-size: 1.05rem;
+        }
+
+        .more-content h4:first-of-type {
+            margin-top: 0;
+        }
+
+        .more-content ul {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 1rem;
+        }
+
+        .more-content ul li {
+            padding-left: 1.8rem;
+            position: relative;
+            margin-bottom: 0.6rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .more-content ul li::before {
+            content: '▹';
+            color: var(--accent-color);
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-weight: bold;
+        }
+
+        .btn-more {
+            background: transparent;
+            border: 1px solid var(--accent-color);
+            color: var(--accent-color);
+            padding: 0.4rem 1.2rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            margin-top: 0.5rem;
+            align-self: flex-start;
+            font-size: 0.9rem;
+        }
+
+        .btn-more:hover {
+            background: var(--accent-color);
+            color: #fff;
         }
 
         /* ================= MODAL MODO FOCO (Vídeo Ampliado do YouTube) ================= */
@@ -779,7 +961,7 @@
             background: #000;
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
             border: 1px solid var(--accent-color);
         }
 
@@ -812,7 +994,9 @@
         }
 
         @keyframes blink {
-            50% { opacity: 0; }
+            50% {
+                opacity: 0;
+            }
         }
 
         /* ================= ANIMAÇÕES DE SCROLL ================= */
@@ -829,7 +1013,9 @@
 
         /* ================= RESPONSIVIDADE ================= */
         @media (max-width: 900px) {
-            .glitch { font-size: 60px; }
+            .glitch {
+                font-size: 60px;
+            }
 
             .hero-wrapper {
                 flex-direction: column-reverse;
@@ -837,28 +1023,42 @@
                 margin-top: 4rem;
             }
 
-            .btn-group { justify-content: center; }
+            .btn-group {
+                justify-content: center;
+            }
 
             .profile-photo-container {
                 width: 250px;
                 height: 250px;
             }
 
-            .nav-links { display: none; }
+            .nav-links {
+                display: none;
+            }
 
-            .video-container { height: auto; }
+            .video-container {
+                height: auto;
+            }
         }
 
         @media (max-width: 480px) {
-            .glitch { font-size: 45px; }
-            h2 { font-size: 2rem; }
+            .glitch {
+                font-size: 45px;
+            }
+            h2 {
+                font-size: 2rem;
+            }
         }
 
         /* ================= ESTILOS DE IMPRESSÃO (GERADOR DE CV EM PDF) ================= */
-        #cv-print-template { display: none; }
+        #cv-print-template {
+            display: none;
+        }
 
         @media print {
-            body > *:not(#cv-print-template) { display: none !important; }
+            body>*:not(#cv-print-template) {
+                display: none !important;
+            }
             body {
                 background: white !important;
                 color: black !important;
@@ -872,21 +1072,69 @@
                 line-height: 1.5;
                 padding: 0;
             }
-            #cv-print-template h1 { 
-                font-size: 24pt; border-bottom: 2px solid #333; margin-bottom: 10px; padding-bottom: 5px; color: #111;
+            #cv-print-template h1 {
+                font-size: 24pt;
+                border-bottom: 2px solid #333;
+                margin-bottom: 10px;
+                padding-bottom: 5px;
+                color: #111;
             }
-            #cv-print-template h2 { 
-                font-size: 16pt; border-bottom: 1px solid #ccc; margin-top: 20px; margin-bottom: 10px; color: #222; background: none; -webkit-text-fill-color: initial; text-transform: uppercase; letter-spacing: normal; display: block;
+            #cv-print-template h2 {
+                font-size: 16pt;
+                border-bottom: 1px solid #ccc;
+                margin-top: 20px;
+                margin-bottom: 10px;
+                color: #222;
+                background: none;
+                -webkit-text-fill-color: initial;
+                text-transform: uppercase;
+                letter-spacing: normal;
+                display: block;
             }
-            #cv-print-template h3 { font-size: 12pt; margin-bottom: 5px; font-weight: 600; color: #333; }
-            #cv-print-template p { margin-bottom: 10px; color: #222; font-weight: normal; font-size: 10pt; }
-            #cv-print-template ul { margin-left: 20px; margin-bottom: 15px; }
-            #cv-print-template li { margin-bottom: 5px; font-size: 10pt; }
-            #cv-print-template .contact-info { margin-bottom: 20px; font-size: 10pt; color: #444; }
-            #cv-print-template .contact-info a { color: #444; text-decoration: none; }
-            #cv-print-template .date-location { float: right; font-weight: normal; font-style: italic; font-size: 10pt; }
-            #cv-print-template .item-header { display: flex; justify-content: space-between; align-items: baseline; }
-            @page { margin: 1.5cm 1.5cm; size: A4 portrait; }
+            #cv-print-template h3 {
+                font-size: 12pt;
+                margin-bottom: 5px;
+                font-weight: 600;
+                color: #333;
+            }
+            #cv-print-template p {
+                margin-bottom: 10px;
+                color: #222;
+                font-weight: normal;
+                font-size: 10pt;
+            }
+            #cv-print-template ul {
+                margin-left: 20px;
+                margin-bottom: 15px;
+            }
+            #cv-print-template li {
+                margin-bottom: 5px;
+                font-size: 10pt;
+            }
+            #cv-print-template .contact-info {
+                margin-bottom: 20px;
+                font-size: 10pt;
+                color: #444;
+            }
+            #cv-print-template .contact-info a {
+                color: #444;
+                text-decoration: none;
+            }
+            #cv-print-template .date-location {
+                float: right;
+                font-weight: normal;
+                font-style: italic;
+                font-size: 10pt;
+            }
+            #cv-print-template .item-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: baseline;
+            }
+            @page {
+                margin: 1.5cm 1.5cm;
+                size: A4 portrait;
+            }
         }
     </style>
 </head>
@@ -903,6 +1151,7 @@
             <div class="nav-links">
                 <a href="#inicio">Início</a>
                 <a href="#sobre">Sobre Mim</a>
+                <a href="#habilidades">Habilidades</a>
                 <a href="#experiencia">Experiência</a>
                 <a href="#projetos">Projetos</a>
                 <a href="#cursos">Cursos</a>
@@ -922,10 +1171,10 @@
                     <p id="typewriter" style="font-size: 1.2rem; max-width: 600px; min-height: 3rem;"></p>
                     <div class="btn-group">
                         <a href="#projetos" class="btn">Ver Projetos</a>
-                        
+
                         <!-- BOTÃO QUE CHAMA A IMPRESSÃO (GERAÇÃO DO PDF) -->
                         <a href="#" onclick="window.print(); return false;" class="btn btn-outline" style="border-color: var(--accent-color); color: var(--accent-color);">Gerar CV (PDF)</a>
-                        
+
                         <a href="https://www.linkedin.com/in/felipe-soares-018986346/" target="_blank"
                             class="btn btn-outline">LinkedIn</a>
                     </div>
@@ -957,16 +1206,81 @@
                 de Gestão Integrados (SGI), aplicando tecnologia para aumentar a eficiência, a segurança e a qualidade
                 dos processos.
             </p>
+        </section>
 
-            <div class="skills-grid">
-                <span class="skill-tag">Python</span>
-                <span class="skill-tag">HTML5 & CSS3</span>
-                <span class="skill-tag">JavaScript</span>
-                <span class="skill-tag">Linux</span>
-                <span class="skill-tag">Automação de Processos</span>
-                <span class="skill-tag">SGQI • PPAP</span>
-                <span class="skill-tag">ISO 9001 • IATF 16949</span>
-                <span class="skill-tag">Cibersegurança (Estudos)</span>
+        <!-- ================= NOVA SEÇÃO HABILIDADES DETALHADAS ================= -->
+        <section id="habilidades" class="container fade-in">
+            <h2>Habilidades</h2>
+            <p style="margin-bottom: 1.5rem;">Conhecimentos técnicos e competências que desenvolvi ao longo da minha trajetória.</p>
+
+            <div class="habilidades-grid">
+                <!-- Card 1: Linguagens e Desenvolvimento -->
+                <div class="habilidade-card">
+                    <h3>💻 Linguagens &amp; Desenvolvimento</h3>
+                    <ul>
+                        <li><strong>Python</strong> – Automação, scripts, integração com APIs e análise de dados.</li>
+                        <li><strong>JavaScript (Vanilla, Node.js)</strong> – Criação de aplicações web e automações com Puppeteer.</li>
+                        <li><strong>HTML5 &amp; CSS3</strong> – Construção de interfaces responsivas e acessíveis.</li>
+                        <li><strong>SQL (SQLite, PostgreSQL)</strong> – Modelagem e consultas complexas para dashboards.</li>
+                    </ul>
+                </div>
+
+                <!-- Card 2: Frameworks e Bibliotecas -->
+                <div class="habilidade-card">
+                    <h3>⚙️ Frameworks &amp; Bibliotecas</h3>
+                    <ul>
+                        <li><strong>Flask (Python)</strong> – Desenvolvimento de APIs e sistemas web completos.</li>
+                        <li><strong>FastAPI</strong> – Criação de APIs assíncronas com documentação automática.</li>
+                        <li><strong>Express.js</strong> – Backend RESTful para aplicações Node.js.</li>
+                        <li><strong>Bootstrap 5 &amp; Chart.js</strong> – UI responsiva e visualização de dados interativa.</li>
+                        <li><strong>Selenium &amp; Puppeteer</strong> – Automação de navegadores e RPA.</li>
+                    </ul>
+                </div>
+
+                <!-- Card 3: Ferramentas e Infraestrutura -->
+                <div class="habilidade-card">
+                    <h3>🛠️ Ferramentas &amp; Infraestrutura</h3>
+                    <ul>
+                        <li><strong>Linux (Ubuntu, Debian)</strong> – Administração de servidores e scripts shell.</li>
+                        <li><strong>Git &amp; GitHub</strong> – Controle de versão e fluxos de trabalho colaborativos.</li>
+                        <li><strong>Docker (básico)</strong> – Containerização de aplicações para ambientes consistentes.</li>
+                        <li><strong>WebSockets &amp; Threading</strong> – Comunicação em tempo real e processamento concorrente.</li>
+                    </ul>
+                </div>
+
+                <!-- Card 4: Gestão e Qualidade -->
+                <div class="habilidade-card">
+                    <h3>📊 Gestão &amp; Qualidade</h3>
+                    <ul>
+                        <li><strong>SGQI (Sistema de Gestão da Qualidade Integrado)</strong> – Implantação e auditoria interna.</li>
+                        <li><strong>ISO 9001 &amp; IATF 16949</strong> – Conformidade e documentação de processos.</li>
+                        <li><strong>PPAP (Processo de Aprovação de Peça)</strong> – Desenvolvimento para projetos automotivos.</li>
+                        <li><strong>Metodologia 5S</strong> – Implementação e auditoria de sensos.</li>
+                        <li><strong>Análise de Dados &amp; BI</strong> – Dashboards e indicadores de desempenho.</li>
+                    </ul>
+                </div>
+
+                <!-- Card 5: Segurança da Informação -->
+                <div class="habilidade-card">
+                    <h3>🔒 Segurança da Informação</h3>
+                    <ul>
+                        <li><strong>Fundamentos de Cibersegurança</strong> – Conceitos de confidencialidade, integridade e disponibilidade.</li>
+                        <li><strong>Pentest (estudos)</strong> – Identificação de vulnerabilidades em aplicações web.</li>
+                        <li><strong>Autenticação e MFA</strong> – Implementação de login seguro com verificação em duas etapas.</li>
+                        <li><strong>Boas práticas de desenvolvimento seguro</strong> – Prevenção contra XSS, SQL Injection e CSRF.</li>
+                    </ul>
+                </div>
+
+                <!-- Card 6: Idiomas e Comunicação -->
+                <div class="habilidade-card">
+                    <h3>🌐 Idiomas &amp; Comunicação</h3>
+                    <ul>
+                        <li><strong>Português</strong> – Nativo.</li>
+                        <li><strong>Inglês</strong> – Leitura técnica intermediária, compreensão oral e escrita intermediária.</li>
+                        <li><strong>Espanhol</strong> – Compreensão básica.</li>
+                        <li><strong>Comunicação técnica</strong> – Documentação, apresentações e relatórios claros.</li>
+                    </ul>
+                </div>
             </div>
         </section>
 
@@ -1045,41 +1359,123 @@
                 <div class="card">
                     <h3>Marketplace Scout AI</h3>
                     <p>
-                        Solução autônoma para arbitragem e vendas no ecossistema Meta. Integra web scraping com Selenium, pipeline de dados com Gemini 1.5/Ultra para análise de ROI, bot de WhatsApp para comando remoto e algoritmos de NLP para negociação persuasiva.
+                        Um ecossistema completo de RPA desenvolvido em Python que automatiza operações de arbitragem, compra e venda no Facebook Marketplace, integrando web scraping, IA e mensageria.
                     </p>
-                    
-                    <!-- Capa (Thumbnail) e Botão de Play para acionar o Modal do YouTube -->
+
+                    <button class="btn-more">Ver mais</button>
+                    <div class="more-content">
+                        <h4>⚙️ Principais Funcionalidades</h4>
+                        <ul>
+                            <li><strong>Motor de Arbitragem e Compras:</strong> Scraping inteligente de anúncios com foco em eletrônicos de alta liquidez; análise de mercado com Gemini para calcular ROI e gerar ranking de oportunidades; negociação automatizada via WhatsApp com abordagens persuasivas geradas por IA.</li>
+                            <li><strong>Motor de Vendas e Engajamento:</strong> Garimpo e entrada automática em grupos locais do Facebook; divulgação em massa de anúncios ativos respeitando limites diários e evitando bloqueios por duplicidade.</li>
+                            <li><strong>Dashboard Web em Tempo Real:</strong> Painel FastAPI para orquestrar robôs sem terminal; execução assíncrona com WebSockets, Threads e Subprocesses para rodar Selenium em segundo plano transmitindo logs ao front-end.</li>
+                        </ul>
+
+                        <h4>🛠️ Stack Tecnológico</h4>
+                        <ul>
+                            <li><strong>Linguagem Core:</strong> Python.</li>
+                            <li><strong>Web Scraping &amp; RPA:</strong> Selenium WebDriver, Webdriver Manager, técnicas de bypass de detecção (undetected-chromedriver).</li>
+                            <li><strong>Backend &amp; API:</strong> FastAPI, Uvicorn, WebSockets.</li>
+                            <li><strong>IA:</strong> Google Gemini (engenharia de prompt para JSON e análise financeira).</li>
+                            <li><strong>Mensageria:</strong> Automação de WhatsApp Web via injeção de DOM.</li>
+                            <li><strong>Armazenamento:</strong> JSON (cache e histórico).</li>
+                        </ul>
+
+                        <h4>💡 Destaques Técnicos</h4>
+                        <ul>
+                            <li>Bypass de sistemas anti-bot com configurações específicas no Chrome Options e tempos randomizados.</li>
+                            <li>Concorrência e assincronismo: filas de mensagens (queue) e processamento multithread para rodar automações bloqueantes dentro de uma aplicação assíncrona (FastAPI).</li>
+                            <li>Engenharia de prompt dinâmica: injeção de histórico de preços via Clipboard para forçar respostas em JSON sem APIs pagas.</li>
+                        </ul>
+                    </div>
+
                     <div class="video-container" onclick="openYouTubeModal('OpUwh9T7zxI')">
-                        <img class="project-video" src="projetos-videos/Marketplace%20Scout%20AI.png" alt="Capa Marketplace Scout AI">
+                        <img class="project-video" src="src/Marketplace%20Scout%20AI.png" alt="Capa Marketplace Scout AI">
                         <div class="play-button"></div>
                     </div>
                 </div>
 
-                <!-- Projeto 2: Sistema de Laudos -->
+                <!-- Projeto 2: Sistema de Gestão de Laudos e Garantias (RMA Automator) -->
                 <div class="card">
-                    <h3>Sistema de Laudos</h3>
+                    <h3>Sistema de Gestão de Laudos e Garantias (RMA Automator)</h3>
                     <p>
-                        Em breve.
+                        Uma aplicação web full-stack desenvolvida para digitalizar e gerenciar o ciclo de vida de garantias e devoluções (RMA) da empresa Royalstar, com geração automatizada de laudos em PDF e notificações via RPA.
                     </p>
-                    <div class="video-container" style="cursor: default;">
-                        <img class="project-video" src="projetos-videos/Sistema%20de%20Laudos.png" alt="Capa Sistema de Laudos">
-                        <div class="coming-soon-overlay">
-                            <span class="coming-soon-text">Vídeo em breve</span>
-                        </div>
+
+                    <button class="btn-more">Ver mais</button>
+                    <div class="more-content">
+                        <h4>⚙️ Principais Funcionalidades</h4>
+                        <ul>
+                            <li><strong>Gestão do Ciclo de Vida de Garantias:</strong> Criação e acompanhamento de laudos com cálculo automático de status (Aberto, Em Processo, Fechado).</li>
+                            <li><strong>Geração Automatizada de PDFs:</strong> Conversão de laudos HTML para PDF profissional com navegador headless, incluindo fallback para Base64 de imagens.</li>
+                            <li><strong>Automação de E-mails via RPA:</strong> Robôs (Puppeteer) que simulam comportamento humano para acessar o webmail do Gmail e disparar notificações sobre criação/atualização de laudos.</li>
+                            <li><strong>Dashboards e Visualização:</strong> Gráficos dinâmicos apontando problemas mais frequentes, distribuição de status, top clientes e evolução mensal.</li>
+                            <li><strong>Upload Inteligente:</strong> Upload assíncrono com validação de formato e tamanho, preview em tempo real e visualização em tela cheia.</li>
+                            <li><strong>Controle de Acesso (RBAC):</strong> Perfis "Vendas" e "Técnico" com permissões distintas para abertura e preenchimento de chamados.</li>
+                        </ul>
+
+                        <h4>🛠️ Stack Tecnológico</h4>
+                        <ul>
+                            <li><strong>Backend &amp; API:</strong> Node.js com Express.js (RESTful).</li>
+                            <li><strong>RPA &amp; Geração de Documentos:</strong> Puppeteer (Headless Chrome) para automação web e renderização de PDFs.</li>
+                            <li><strong>Frontend:</strong> HTML5, Vanilla JavaScript (Fetch API), CSS customizado e Bootstrap 5 (SPA).</li>
+                            <li><strong>Visualização de Dados:</strong> Chart.js.</li>
+                            <li><strong>Armazenamento:</strong> JSON (NoSQL-like) e Multer para upload de arquivos.</li>
+                            <li><strong>Autenticação:</strong> Login customizado com sessão via Tokens e LocalStorage.</li>
+                        </ul>
+
+                        <h4>💡 Destaques Técnicos</h4>
+                        <ul>
+                            <li>RPA inovador para mensageria: script que contorna limitações SMTP abrindo instâncias do Chrome em background, navegando pelo DOM do Gmail, preenchendo templates e enviando.</li>
+                            <li>Resolução de problemas de renderização em PDFs: algoritmo de fallback que converte imagens para Base64 ou URLs absolutas em tempo de execução.</li>
+                            <li>Arquitetura SPA sem frameworks pesados: manipulação da DOM com Vanilla JS, componentes modais responsivos e tratamento assíncrono rigoroso para uploads pesados.</li>
+                        </ul>
+                    </div>
+
+                    <div class="video-container" onclick="openYouTubeModal('i4xkfjd5acg')">
+                        <img class="project-video" src="src/Sistema%20de%20Gestão%20de%20Laudos%20e%20Garantias%20(RMA%20Automator).png" alt="Capa Sistema de Gestão de Laudos e Garantias (RMA Automator)">
+                        <div class="play-button"></div>
                     </div>
                 </div>
 
-                <!-- Projeto 3: Sistema de 5S -->
+                <!-- Projeto 3: Sistema de Gestão e Auditoria 5S Corporativo -->
                 <div class="card">
-                    <h3>Sistema de 5S</h3>
+                    <h3>Sistema de Gestão e Auditoria 5S Corporativo</h3>
                     <p>
-                        Em breve.
+                        Uma aplicação web full-stack desenvolvida para digitalizar, padronizar e automatizar o controle e as auditorias da metodologia 5S em um ambiente corporativo/industrial, substituindo controles manuais por dashboards interativos.
                     </p>
-                    <div class="video-container" style="cursor: default;">
-                        <img class="project-video" src="projetos-videos/Sistema%20de%205S.png" alt="Capa Sistema de 5S">
-                        <div class="coming-soon-overlay">
-                            <span class="coming-soon-text">Vídeo em breve</span>
-                        </div>
+
+                    <button class="btn-more">Ver mais</button>
+                    <div class="more-content">
+                        <h4>⚙️ Principais Funcionalidades</h4>
+                        <ul>
+                            <li><strong>Auditorias Inteligentes:</strong> Checklists estruturados para áreas administrativas e operacionais ("5S Produtivo"), com respostas padronizadas (OK, NOK, N/A) e cálculo automático de pontuação.</li>
+                            <li><strong>Painel de Melhoria Contínua:</strong> Sistema integrado de Planos de Ação que sinaliza áreas com percentual crítico (abaixo de 60%) e gerencia prazos de conclusão.</li>
+                            <li><strong>Dashboards e Visualização:</strong> Gráficos interativos de evolução temporal (linhas) e perfis de conformidade (radar), tendência de desempenho e média geral.</li>
+                            <li><strong>Motor Automático de Alertas:</strong> Rotina em segundo plano que verifica vencimentos diariamente, enviando notificações na plataforma e e-mails automáticos sobre auditorias atrasadas e planos pendentes.</li>
+                            <li><strong>Painel Administrativo:</strong> Área restrita para gestores criarem cronogramas, gerenciarem setores, analisarem rankings automáticos (3 melhores/piores), gráficos agregados e comunicação em massa.</li>
+                            <li><strong>Autenticação e Segurança:</strong> Login seguro com hashes de senha, validação de e-mails autorizados e fluxo de cadastro com MFA via código numérico por e-mail.</li>
+                        </ul>
+
+                        <h4>🛠️ Stack Tecnológico</h4>
+                        <ul>
+                            <li><strong>Backend:</strong> Python com Flask.</li>
+                            <li><strong>Banco de Dados:</strong> SQLite com migrações automáticas.</li>
+                            <li><strong>Frontend:</strong> HTML5, CSS customizado, Bootstrap 5.</li>
+                            <li><strong>Visualização de Dados:</strong> Chart.js (Doughnut, Radar, Linhas, Barras).</li>
+                            <li><strong>Automação e Threads:</strong> threading, smtplib, email.mime para concorrência e mensageria SMTP.</li>
+                        </ul>
+
+                        <h4>💡 Destaques Técnicos</h4>
+                        <ul>
+                            <li>Execução concorrente para tarefas agendadas: threading.Thread(daemon=True) acoplada ao Flask para varreduras diárias sem bloquear o Event Loop.</li>
+                            <li>Extração avançada de KPIs via SQL: queries com LEFT JOINs, GROUP BY e COALESCE para cruzar tabelas e montar rankings de desempenho em tempo real.</li>
+                        </ul>
+                    </div>
+
+                    <div class="video-container" onclick="openYouTubeModal('Hhc9UqmZ88o')">
+                        <img class="project-video" src="src/Sistema%20de%205S.png" alt="Capa Sistema de Gestão e Auditoria 5S Corporativo">
+                        <div class="play-button"></div>
                     </div>
                 </div>
 
@@ -1131,7 +1527,7 @@
                 </a>
 
                 <div class="card">
-                    <h3>Cibersegurança & Ataques</h3>
+                    <h3>Cibersegurança &amp; Ataques</h3>
                     <p style="font-weight: 500; color: #e0e0e0; margin-bottom: 0.5rem;">Instituição: MBX Academy</p>
                     <p style="flex-grow: 1;">Segurança da Informação - 52 horas</p>
                     <span style="font-size: 0.85rem; color: var(--text-muted); margin-top: 1rem;">(Em andamento)</span>
@@ -1188,7 +1584,7 @@
         <p>Estudante de Ciência da Computação apaixonado por tecnologia, com sólida experiência prática em desenvolvimento de software, criação de automações (Python) e infraestrutura. Possui vivência no alinhamento entre tecnologia e negócios por meio do Sistema de Gestão da Qualidade Integrado (SGQI), garantindo eficiência e conformidade em processos exigentes (ISO 9001 e IATF 16949). Busca atuar em projetos inovadores de engenharia de software, cibersegurança e análise de dados.</p>
 
         <h2>Experiência Profissional</h2>
-        
+
         <div class="item-header">
             <h3>Desenvolvedor Freelancer</h3>
             <span class="date-location">Autônomo | 2025</span>
@@ -1237,9 +1633,9 @@
 
         <h2>Cursos e Certificações</h2>
         <ul>
-            <li>Bootcamp Bradesco: GenAI, Dados & Cyber – DIO (Em andamento)</li>
+            <li>Bootcamp Bradesco: GenAI, Dados &amp; Cyber – DIO (Em andamento)</li>
             <li>Fundamentos da IA Moderna e Modelos de Linguagem – DIO (Em andamento)</li>
-            <li>Cibersegurança & Ataques (52 horas) – MBX Academy (Concluído)</li>
+            <li>Cibersegurança &amp; Ataques (52 horas) – MBX Academy (Concluído)</li>
             <li>Desenvolvimento Web: HTML5, CSS3 e JS (80 horas) – Curso em Vídeo (Concluído)</li>
         </ul>
     </div>
@@ -1260,7 +1656,7 @@
         function closeVideoModal() {
             videoModal.classList.remove('active');
             // Remove a fonte do iframe para que o vídeo do YouTube pare de tocar e de carregar em background
-            modalYoutube.src = ''; 
+            modalYoutube.src = '';
         }
 
         // Fechar ao clicar no fundo escuro fora do vídeo
@@ -1271,7 +1667,7 @@
         });
 
         // Efeito Chuva Chill (jQuery)
-        $(document).ready(function () {
+        $(document).ready(function() {
             function makeItRain() {
                 $('.rain').empty();
 
@@ -1288,18 +1684,18 @@
                     let bottomStart = 100 + (Math.random() * 20);
 
                     drops += `
-                    <div class="drop" style="left:${increment}%; bottom:${bottomStart}%; animation-delay:${delay}s; animation-duration:${duration}s;">
-                        <div class="stem" style="animation-delay:${delay}s; animation-duration:${duration}s;"></div>
-                        <div class="splat" style="animation-delay:${delay}s; animation-duration:${duration}s;"></div>
-                    </div>
-                `;
+                            <div class="drop" style="left:${increment}%; bottom:${bottomStart}%; animation-delay:${delay}s; animation-duration:${duration}s;">
+                                <div class="stem" style="animation-delay:${delay}s; animation-duration:${duration}s;"></div>
+                                <div class="splat" style="animation-delay:${delay}s; animation-duration:${duration}s;"></div>
+                            </div>
+                        `;
 
                     backDrops += `
-                    <div class="drop" style="right:${increment}%; bottom:${bottomStart}%; animation-delay:${delay}s; animation-duration:${duration}s;">
-                        <div class="stem" style="animation-delay:${delay}s; animation-duration:${duration}s;"></div>
-                        <div class="splat" style="animation-delay:${delay}s; animation-duration:${duration}s;"></div>
-                    </div>
-                `;
+                            <div class="drop" style="right:${increment}%; bottom:${bottomStart}%; animation-delay:${delay}s; animation-duration:${duration}s;">
+                                <div class="stem" style="animation-delay:${delay}s; animation-duration:${duration}s;"></div>
+                                <div class="splat" style="animation-delay:${delay}s; animation-duration:${duration}s;"></div>
+                            </div>
+                        `;
                 }
 
                 $('.rain.front-row').append(drops);
@@ -1334,6 +1730,17 @@
 
         document.querySelectorAll('.fade-in').forEach(element => {
             observer.observe(element);
+        });
+
+        // ================= BOTÃO "VER MAIS" NOS PROJETOS =================
+        document.querySelectorAll('.btn-more').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const content = this.parentElement.querySelector('.more-content');
+                if (content) {
+                    content.classList.toggle('visible');
+                    this.textContent = content.classList.contains('visible') ? 'Ver menos' : 'Ver mais';
+                }
+            });
         });
     </script>
 </body>
