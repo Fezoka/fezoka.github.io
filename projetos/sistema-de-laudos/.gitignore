@@ -1,0 +1,13 @@
+# Publica somente a demonstração estática. Código operacional, dados e anexos permanecem locais.
+*
+!.gitignore
+!apresentacao/
+apresentacao/*
+!apresentacao/index.html
+!apresentacao/styles.css
+!apresentacao/app.js
+!apresentacao/experiencia/
+apresentacao/experiencia/*
+!apresentacao/experiencia/index.html
+!apresentacao/experiencia/styles.css
+!apresentacao/experiencia/app.js

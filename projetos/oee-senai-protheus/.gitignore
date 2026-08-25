@@ -1,0 +1,10 @@
+*
+!.gitignore
+!index.html
+!styles.css
+!app.js
+!experiencia/
+experiencia/*
+!experiencia/index.html
+!experiencia/styles.css
+!experiencia/app.js

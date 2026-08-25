@@ -891,6 +891,291 @@
             box-shadow: 0 0 20px rgba(16, 185, 129, 0.6);
         }
 
+        /* Capa interativa: mantém o visual escuro/neon das capas existentes. */
+        .project-cover-link {
+            text-decoration: none;
+        }
+
+        .five-s-interactive-badge {
+            position: absolute;
+            right: clamp(12px, 2.4vw, 26px);
+            bottom: clamp(12px, 2.4vw, 24px);
+            z-index: 2;
+            padding: 10px 14px;
+            border: 1px solid rgba(71, 224, 187, .72);
+            border-radius: 4px;
+            color: #89ffe0;
+            background: rgba(5, 13, 20, .88);
+            font-size: clamp(.55rem, 1.2vw, .76rem);
+            font-weight: 800;
+            letter-spacing: .07em;
+            box-shadow: 0 0 18px rgba(71, 224, 187, .15);
+        }
+
+        .refugo-project-cover {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: minmax(0, .86fr) minmax(0, 1.14fr);
+            align-items: center;
+            padding: clamp(22px, 4.4vw, 64px);
+            gap: clamp(15px, 3vw, 40px);
+            background:
+                radial-gradient(circle at 76% 40%, rgba(0, 181, 255, .18), transparent 34%),
+                radial-gradient(circle at 17% 84%, rgba(16, 185, 129, .14), transparent 31%),
+                linear-gradient(135deg, #04080f, #071220 55%, #04080f);
+        }
+
+        .planning-project-cover {
+            background:
+                radial-gradient(circle at 74% 38%, rgba(18, 170, 141, .24), transparent 37%),
+                radial-gradient(circle at 20% 82%, rgba(77, 114, 238, .14), transparent 32%),
+                linear-gradient(135deg, #060c12, #09151b 55%, #050a10);
+        }
+
+        .planning-project-cover .refugo-cover-kicker {
+            border-color: rgba(57, 223, 189, .58);
+            color: #79f0d5;
+        }
+
+        .planning-project-cover .refugo-cover-title span {
+            color: #39dfbd;
+            text-shadow: 0 0 24px rgba(57, 223, 189, .26);
+        }
+
+        .oee-project-cover {
+            background:
+                radial-gradient(circle at 77% 35%, rgba(65, 224, 191, .2), transparent 35%),
+                radial-gradient(circle at 22% 82%, rgba(145, 99, 255, .18), transparent 33%),
+                linear-gradient(135deg, #050a11, #0a151b 54%, #060810);
+        }
+
+        .oee-project-cover .refugo-cover-kicker {
+            border-color: rgba(97, 231, 192, .6);
+            color: #86f0d1;
+        }
+
+        .oee-project-cover .refugo-cover-title span {
+            color: #61e7c0;
+            text-shadow: 0 0 24px rgba(97, 231, 192, .27);
+        }
+
+        .oee-cover-board {
+            position: relative;
+            z-index: 1;
+            padding: clamp(11px, 2vw, 22px);
+            border: 1px solid rgba(97, 231, 192, .5);
+            background: rgba(9, 17, 26, .94);
+            box-shadow: 0 0 35px rgba(75, 229, 194, .15);
+            transform: perspective(850px) rotateY(-8deg);
+        }
+
+        .oee-cover-board > strong {
+            display: block;
+            color: #9ef1d8;
+            font-size: clamp(.41rem, .93vw, .71rem);
+            letter-spacing: .055em;
+        }
+
+        .oee-cover-score {
+            margin: 13px 0 9px;
+            color: #66e9c5;
+            font-size: clamp(1.5rem, 4vw, 3.55rem);
+            font-weight: 800;
+            letter-spacing: -.08em;
+            line-height: .95;
+        }
+
+        .oee-cover-score span {
+            color: #b5f2df;
+            font-size: .46em;
+        }
+
+        .oee-cover-board > div:not(.oee-cover-score) {
+            display: flex;
+            justify-content: space-between;
+            gap: 7px;
+            padding: 8px 0;
+            border-top: 1px solid rgba(149, 174, 192, .17);
+            color: #dce8ec;
+            font-size: clamp(.38rem, .8vw, .64rem);
+        }
+
+        .oee-cover-board > div:not(.oee-cover-score) > span {
+            color: #8da8a5;
+        }
+
+        .planning-cover-board {
+            position: relative;
+            z-index: 1;
+            padding: clamp(10px, 2vw, 21px);
+            border: 1px solid rgba(57, 223, 189, .52);
+            background: rgba(8, 16, 24, .92);
+            box-shadow: 0 0 30px rgba(18, 170, 141, .18);
+            transform: perspective(850px) rotateY(-8deg);
+        }
+
+        .planning-cover-board > strong {
+            display: block;
+            margin-bottom: 13px;
+            color: #91f3de;
+            font-size: clamp(.42rem, .95vw, .72rem);
+            letter-spacing: .06em;
+        }
+
+        .planning-cover-board > div {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 7px;
+            padding: clamp(7px, 1.2vw, 11px) 0;
+            border-top: 1px solid rgba(132, 164, 178, .17);
+            color: #edf6f7;
+            font-size: clamp(.38rem, .82vw, .67rem);
+        }
+
+        .planning-cover-board > div > span {
+            color: #87a99f;
+            white-space: nowrap;
+        }
+
+        .refugo-project-cover::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            opacity: .28;
+            background-image:
+                linear-gradient(rgba(0, 199, 255, .14) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 199, 255, .14) 1px, transparent 1px);
+            background-size: 34px 34px;
+            mask-image: linear-gradient(130deg, transparent 18%, #000 78%);
+        }
+
+        .refugo-cover-content,
+        .refugo-cover-preview {
+            position: relative;
+            z-index: 1;
+        }
+
+        .refugo-cover-kicker {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 7px 10px;
+            border: 1px solid rgba(0, 220, 255, .6);
+            color: #62e8ff;
+            font-size: clamp(.44rem, 1vw, .75rem);
+            font-weight: 700;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            box-shadow: 0 0 15px rgba(0, 215, 255, .14);
+        }
+
+        .refugo-cover-kicker::before {
+            content: '';
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #43e097;
+            box-shadow: 0 0 12px #43e097;
+        }
+
+        .refugo-cover-title {
+            margin: 18px 0 12px;
+            color: #fff;
+            font-size: clamp(1.7rem, 5.3vw, 5.2rem);
+            font-weight: 900;
+            line-height: .91;
+            letter-spacing: -.07em;
+            text-transform: uppercase;
+        }
+
+        .refugo-cover-title span {
+            display: block;
+            color: #12d9f6;
+            text-shadow: 0 0 24px rgba(18, 217, 246, .3);
+        }
+
+        .refugo-cover-description {
+            color: #94a9ba;
+            font-size: clamp(.55rem, 1.12vw, .95rem);
+            line-height: 1.55;
+        }
+
+        .refugo-cover-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 14px;
+        }
+
+        .refugo-cover-stack span {
+            padding: 4px 7px;
+            border: 1px solid rgba(87, 226, 255, .25);
+            color: #9ac3d5;
+            font-size: clamp(.4rem, .82vw, .67rem);
+            font-weight: 600;
+        }
+
+        .refugo-cover-preview {
+            padding: 10px;
+            border: 1px solid rgba(16, 219, 255, .72);
+            background: rgba(5, 14, 23, .88);
+            box-shadow: 0 0 34px rgba(0, 187, 255, .2), 0 22px 70px rgba(0, 0, 0, .55);
+            transform: perspective(850px) rotateY(-8deg);
+            transition: transform .3s ease, box-shadow .3s ease;
+        }
+
+        .project-cover-link:hover .refugo-cover-preview {
+            transform: perspective(850px) rotateY(-3deg) translateY(-4px);
+            box-shadow: 0 0 48px rgba(0, 187, 255, .3), 0 25px 74px rgba(0, 0, 0, .55);
+        }
+
+        .refugo-cover-preview img {
+            display: block;
+            width: 100%;
+        }
+
+        .refugo-cover-preview::after {
+            content: 'PROTHEUS  ←  API REST';
+            position: absolute;
+            right: -5px;
+            bottom: -15px;
+            padding: 7px 10px;
+            border: 1px solid #43e097;
+            color: #43e097;
+            background: #07111b;
+            font-size: clamp(.4rem, .8vw, .66rem);
+            font-weight: 700;
+            letter-spacing: .08em;
+        }
+
+        @media (max-width: 600px) {
+            .refugo-project-cover {
+                padding: 16px;
+                gap: 10px;
+            }
+
+            .refugo-cover-title {
+                margin: 11px 0 7px;
+            }
+
+            .refugo-cover-stack {
+                gap: 4px;
+                margin-top: 8px;
+            }
+
+            .refugo-cover-stack span:last-child {
+                display: none;
+            }
+
+            .refugo-cover-preview {
+                padding: 5px;
+            }
+        }
+
         /* ================= BOTÃO E CONTEÚDO EXPANSÍVEL (PROJETOS) ================= */
         .more-content {
             display: none;
@@ -1073,103 +1358,178 @@
             }
         }
 
-        /* ================= ESTILOS DE IMPRESSÃO (GERADOR DE CV EM PDF) ================= */
-        #cv-print-template {
-            display: none;
-        }
+        /* ================= CURRÍCULO A4 DE UMA PÁGINA ================= */
+        #cv-print-template { display: none; }
 
         @media print {
-            body>*:not(#cv-print-template) {
-                display: none !important;
+            @page { size: A4 portrait; margin: 8mm 10mm; }
+
+            html, body {
+                width: 210mm; min-height: 297mm; margin: 0 !important; padding: 0 !important;
+                overflow: visible !important; background: #fff !important;
             }
 
-            body {
-                background: white !important;
-                color: black !important;
-                min-height: auto;
-                overflow: visible !important;
-            }
+            body>*:not(#cv-print-template) { display: none !important; }
 
             #cv-print-template {
-                display: block !important;
-                font-family: 'Inter', Helvetica, Arial, sans-serif;
-                color: black;
-                line-height: 1.5;
-                padding: 0;
+                display: block !important; width: 190mm; margin: 0; padding: 0; color: #172436;
+                font-family: 'Inter', 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 8.2pt;
+                line-height: 1.34; -webkit-print-color-adjust: exact; print-color-adjust: exact;
+            }
+
+            #cv-print-template * { box-sizing: border-box; }
+
+            #cv-print-template .cv-header {
+                position: relative; margin-bottom: 5mm; padding: 5mm 6mm 4.5mm; overflow: hidden;
+                border-radius: 2.5mm; background: #0b1e3d !important; color: #fff;
+            }
+
+            #cv-print-template .cv-header::after {
+                position: absolute; top: -23mm; right: -15mm; width: 55mm; height: 55mm;
+                border: 1px solid rgba(38, 216, 255, .35); border-radius: 50%; content: '';
             }
 
             #cv-print-template h1 {
-                font-size: 24pt;
-                border-bottom: 2px solid #333;
-                margin-bottom: 10px;
-                padding-bottom: 5px;
-                color: #111;
+                margin: 0; color: #fff; font-size: 23pt; font-weight: 800; line-height: 1;
+                letter-spacing: -.5pt;
             }
 
-            #cv-print-template h2 {
-                font-size: 16pt;
-                border-bottom: 1px solid #ccc;
-                margin-top: 20px;
-                margin-bottom: 10px;
-                color: #222;
-                background: none;
-                -webkit-text-fill-color: initial;
-                text-transform: uppercase;
-                letter-spacing: normal;
-                display: block;
-            }
-
-            #cv-print-template h3 {
-                font-size: 12pt;
-                margin-bottom: 5px;
-                font-weight: 600;
-                color: #333;
-            }
-
-            #cv-print-template p {
-                margin-bottom: 10px;
-                color: #222;
-                font-weight: normal;
-                font-size: 10pt;
-            }
-
-            #cv-print-template ul {
-                margin-left: 20px;
-                margin-bottom: 15px;
-            }
-
-            #cv-print-template li {
-                margin-bottom: 5px;
-                font-size: 10pt;
+            #cv-print-template .cv-role {
+                margin: 1.5mm 0 3.2mm; color: #26d8ff; font-size: 8.2pt; font-weight: 700;
+                letter-spacing: 1.1pt; text-transform: uppercase;
             }
 
             #cv-print-template .contact-info {
-                margin-bottom: 20px;
-                font-size: 10pt;
-                color: #444;
+                display: flex; flex-wrap: wrap; gap: 1.2mm 3.5mm; margin: 0;
+                color: #d2dce8; font-size: 7.2pt;
             }
 
-            #cv-print-template .contact-info a {
-                color: #444;
-                text-decoration: none;
+            #cv-print-template .contact-info span,
+            #cv-print-template .contact-info a { color: inherit; text-decoration: none; white-space: nowrap; }
+
+            #cv-print-template .contact-info span::before,
+            #cv-print-template .contact-info a::before {
+                margin-right: 1.2mm; color: #26d8ff; content: '•';
             }
 
-            #cv-print-template .date-location {
-                float: right;
-                font-weight: normal;
-                font-style: italic;
-                font-size: 10pt;
+            #cv-print-template .cv-grid {
+                display: grid; grid-template-columns: minmax(0, 1.72fr) minmax(0, .88fr);
+                gap: 6mm; align-items: start;
+            }
+
+            #cv-print-template .cv-sidebar {
+                padding: 4mm; border-left: 1.2mm solid #26bce0; border-radius: 1.5mm;
+                background: #f2f6fa !important;
+            }
+
+            #cv-print-template .cv-section {
+                margin: 0 0 4mm; break-inside: avoid; page-break-inside: avoid;
+            }
+
+            #cv-print-template .cv-section:last-child { margin-bottom: 0; }
+
+            #cv-print-template h2 {
+                display: flex; align-items: center; gap: 2.2mm; margin: 0 0 2.2mm; padding: 0;
+                border: 0; background: none; color: #0b1e3d; -webkit-text-fill-color: currentColor;
+                font-size: 9.4pt; font-weight: 800; line-height: 1.1; letter-spacing: .65pt;
+                text-transform: uppercase;
+            }
+
+            #cv-print-template h2::before {
+                width: 3mm; height: 1.2mm; flex: 0 0 auto; border-radius: 2mm;
+                background: #20bada !important; content: '';
+            }
+
+            #cv-print-template h3 {
+                margin: 0; color: #18263a; font-size: 8.5pt; font-weight: 750; line-height: 1.2;
+            }
+
+            #cv-print-template p { margin: 0; color: #39475a; font-size: 8.05pt; line-height: 1.42; }
+
+            #cv-print-template .cv-summary {
+                padding: 3.2mm 3.8mm; border: .3mm solid #dbe5ed; border-radius: 1.5mm;
+                background: #f8fafc !important;
+            }
+
+            #cv-print-template .experience-item {
+                position: relative; margin: 0 0 3mm; padding: 0 0 0 4mm;
+                break-inside: avoid; page-break-inside: avoid;
+            }
+
+            #cv-print-template .experience-item:last-child { margin-bottom: 0; }
+
+            #cv-print-template .experience-item::before {
+                position: absolute; top: .7mm; bottom: 0; left: .8mm; width: .35mm;
+                background: #d3e1eb !important; content: '';
+            }
+
+            #cv-print-template .experience-item::after {
+                position: absolute; top: .7mm; left: 0; width: 1.9mm; height: 1.9mm;
+                border: .55mm solid #20bada; border-radius: 50%; background: #fff !important; content: '';
             }
 
             #cv-print-template .item-header {
-                display: flex;
-                justify-content: space-between;
-                align-items: baseline;
+                display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: baseline;
+                gap: 3mm; margin-bottom: 1.1mm;
             }
 
-            @page {
-                margin: 1.5cm 1.5cm;
-                size: A4 portrait;
+            #cv-print-template .date-location {
+                color: #5c6a7a; font-size: 6.8pt; font-style: normal; font-weight: 650;
+                text-align: right; white-space: nowrap;
+            }
+
+            #cv-print-template ul { margin: 0; padding-left: 4mm; }
+
+            #cv-print-template li {
+                margin: 0 0 .9mm; color: #354457; font-size: 7.65pt; line-height: 1.32;
+            }
+
+            #cv-print-template li:last-child { margin-bottom: 0; }
+            #cv-print-template li::marker { color: #20aecd; }
+
+            #cv-print-template .side-item { margin-bottom: 2.8mm; break-inside: avoid; }
+            #cv-print-template .side-item:last-child { margin-bottom: 0; }
+            #cv-print-template .side-item strong,
+            #cv-print-template .side-item span { display: block; }
+            #cv-print-template .side-item strong { color: #1a2a3f; font-size: 7.9pt; line-height: 1.28; }
+            #cv-print-template .side-item span {
+                margin-top: .5mm; color: #627083; font-size: 6.9pt; line-height: 1.35;
+            }
+
+            #cv-print-template .skill-group { margin-bottom: 2.6mm; }
+            #cv-print-template .skill-group:last-child { margin-bottom: 0; }
+            #cv-print-template .skill-group strong {
+                display: block; margin-bottom: .7mm; color: #0b6780; font-size: 7pt;
+                letter-spacing: .25pt; text-transform: uppercase;
+            }
+            #cv-print-template .skill-group p { color: #39495c; font-size: 7.25pt; line-height: 1.4; }
+
+            #cv-print-template .course-list {
+                display: grid; gap: 1.7mm; margin: 0; padding: 0; list-style: none;
+            }
+            #cv-print-template .course-list li {
+                position: relative; padding-left: 3mm; color: #3c4a5b; font-size: 7pt; line-height: 1.35;
+            }
+            #cv-print-template .course-list li::before {
+                position: absolute; top: .9mm; left: 0; width: 1.4mm; height: 1.4mm;
+                border-radius: 50%; background: #20bada !important; content: '';
+            }
+
+            #cv-print-template .project-list { display: grid; gap: 1.8mm; }
+            #cv-print-template .project-item {
+                display: grid; grid-template-columns: 4.5mm 1fr; gap: 2.2mm; padding: 2.3mm 2.7mm;
+                border: .25mm solid #dce6ee; border-radius: 1.4mm; background: #f8fafc !important;
+                break-inside: avoid; page-break-inside: avoid;
+            }
+            #cv-print-template .project-number {
+                color: #20aecd; font-size: 7pt; font-weight: 800; line-height: 1.4;
+            }
+            #cv-print-template .project-item strong { display: block; color: #18293e; font-size: 7.7pt; }
+            #cv-print-template .project-item p { margin-top: .5mm; font-size: 7.1pt; line-height: 1.35; }
+
+            #cv-print-template .cv-footer {
+                display: flex; justify-content: space-between; gap: 4mm; margin-top: 3.5mm;
+                padding-top: 2mm; border-top: .25mm solid #dce4eb; color: #738092; font-size: 6.2pt;
             }
         }
     </style>
@@ -1466,7 +1826,7 @@
                     <p>
                         Uma aplicação web full-stack desenvolvida para digitalizar e gerenciar o ciclo de vida de
                         garantias e devoluções (RMA) da empresa Royalstar, com geração automatizada de laudos em PDF e
-                        notificações via RPA.
+                        notificações via RPA. A demonstração interativa utiliza exclusivamente informações fictícias.
                     </p>
 
                     <button class="btn-more">Ver mais</button>
@@ -1513,12 +1873,13 @@
                         </ul>
                     </div>
 
-                    <div class="video-container" onclick="openYouTubeModal('i4xkfjd5acg')">
+                    <a class="video-container project-cover-link" href="projetos/sistema-de-laudos/apresentacao/index.html"
+                        aria-label="Abrir apresentação interativa do Sistema de Gestão de Laudos e Garantias">
                         <img class="project-video"
                             src="src/Sistema%20de%20Gestão%20de%20Laudos%20e%20Garantias%20(RMA%20Automator).png"
                             alt="Capa Sistema de Gestão de Laudos e Garantias (RMA Automator)">
-                        <div class="play-button"></div>
-                    </div>
+                        <span class="five-s-interactive-badge">EXPERIÊNCIA INTERATIVA →</span>
+                    </a>
                 </div>
 
                 <!-- Projeto 3: Sistema de Gestão e Auditoria 5S Corporativo -->
@@ -1527,7 +1888,7 @@
                     <p>
                         Uma aplicação web full-stack desenvolvida para digitalizar, padronizar e automatizar o controle
                         e as auditorias da metodologia 5S em um ambiente corporativo/industrial, substituindo controles
-                        manuais por dashboards interativos.
+                        manuais por dashboards interativos. A apresentação utiliza exclusivamente dados fictícios.
                     </p>
 
                     <button class="btn-more">Ver mais</button>
@@ -1571,11 +1932,188 @@
                         </ul>
                     </div>
 
-                    <div class="video-container" onclick="openYouTubeModal('Hhc9UqmZ88o')">
+                    <a class="video-container project-cover-link" href="projetos/5s-saas/index.html"
+                        aria-label="Abrir apresentação interativa do Sistema de Gestão e Auditoria 5S Corporativo">
                         <img class="project-video" src="src/Sistema%20de%205S.png"
                             alt="Capa Sistema de Gestão e Auditoria 5S Corporativo">
-                        <div class="play-button"></div>
+                        <span class="five-s-interactive-badge">EXPERIÊNCIA INTERATIVA →</span>
+                    </a>
+                </div>
+
+                <!-- Projeto 4: Modernização do OEE Industrial SENAI -->
+                <div class="card">
+                    <h3>Modernização do OEE Industrial — Protheus, WISE e Produção Real</h3>
+                    <p>
+                        Atualização completa de uma plataforma industrial originalmente dependente de apontamentos
+                        duplicados: integração automática com o ERP, produção física por sensores, OEE, cavidade real,
+                        monitoramento por célula e relatórios gerenciais. A demonstração utiliza somente dados fictícios.
+                    </p>
+
+                    <button class="btn-more">Ver mais</button>
+                    <div class="more-content">
+                        <h4>⚙️ Principais Funcionalidades</h4>
+                        <ul>
+                            <li><strong>Integração automática:</strong> ordens, eventos, produtos e refugos são recebidos
+                                do Protheus, eliminando a necessidade de repetir apontamentos no sistema de OEE.</li>
+                            <li><strong>Produção física:</strong> coletores WISE registram pulsos e consolidam a produção
+                                incremental conforme a cavidade efetiva existente em cada momento.</li>
+                            <li><strong>Monitoramento industrial:</strong> painéis administrativos e TVs por célula
+                                mostram máquinas, status, OEE, produção, ritmo, histórico, refugo e alertas.</li>
+                            <li><strong>Indicadores confiáveis:</strong> disponibilidade, performance e qualidade,
+                                ciclo real validado, meta horária corrigida e comparação entre planejado e realizado.</li>
+                            <li><strong>Alertas inteligentes:</strong> divergências entre apontamento administrativo e
+                                produção física, ordens sem pulsos e monitores em manutenção.</li>
+                            <li><strong>Relatórios gerenciais:</strong> consolidação por célula, período e máquina, com
+                                equipamentos em manutenção separados dos indicadores produtivos.</li>
+                        </ul>
+
+                        <h4>🛠️ Stack Tecnológico</h4>
+                        <ul>
+                            <li><strong>Aplicação e integrações:</strong> Python, Flask, Protheus e PostgreSQL.</li>
+                            <li><strong>Monitoramento industrial:</strong> coletores WISE, pulsos físicos e processamento
+                                incremental de produção.</li>
+                            <li><strong>Analytics:</strong> dashboards, indicadores OEE, gráficos operacionais e
+                                relatórios HTML por célula.</li>
+                            <li><strong>Demonstração:</strong> HTML, CSS e JavaScript, sem backend nem dados reais.</li>
+                        </ul>
+
+                        <h4>💡 Destaques Técnicos</h4>
+                        <ul>
+                            <li>Produção calculada pela cavidade válida em cada intervalo, preservando todo o histórico.</li>
+                            <li>Metas corrigidas automaticamente quando a cavidade real difere da capacidade padrão.</li>
+                            <li>Separação entre OP administrativamente aberta e produção física efetivamente confirmada.</li>
+                            <li>Máquinas com monitor em manutenção são excluídas das médias e dos gráficos.</li>
+                        </ul>
                     </div>
+
+                    <a class="video-container project-cover-link" href="projetos/oee-senai-protheus/index.html"
+                        aria-label="Abrir apresentação interativa da Modernização do OEE Industrial">
+                        <div class="refugo-project-cover oee-project-cover">
+                            <div class="refugo-cover-content">
+                                <span class="refugo-cover-kicker">Produção conectada</span>
+                                <div class="refugo-cover-title">OEE<br><span>Real</span></div>
+                                <div class="refugo-cover-description">O ERP informa. O sensor confirma.</div>
+                                <div class="refugo-cover-stack"><span>Protheus</span><span>WISE</span><span>OEE</span><span>Tempo real</span></div>
+                            </div>
+                            <div class="oee-cover-board"><strong>MONITORAMENTO · DADOS FICTÍCIOS</strong><div class="oee-cover-score">83<span>% OEE</span></div><div><b>● Célula Verde</b><span>2 máquinas ativas</span></div><div><b>Produção física</b><span>1.840 peças</span></div><div><b>ERP + sensor</b><span>Sincronizados</span></div></div>
+                        </div>
+                        <span class="five-s-interactive-badge">EXPERIÊNCIA INTERATIVA →</span>
+                    </a>
+                </div>
+
+                <!-- Projeto 5: Planejamento Inteligente da Ferramentaria -->
+                <div class="card">
+                    <h3>Planejamento Inteligente da Ferramentaria</h3>
+                    <p>
+                        Plataforma industrial que organiza automaticamente a programação de máquinas conforme as
+                        prioridades do planejador, considerando jornadas, habilitações, setup, duração e capacidade
+                        disponível. Todos os dados da demonstração são fictícios.
+                    </p>
+
+                    <button class="btn-more">Ver mais</button>
+                    <div class="more-content">
+                        <h4>⚙️ Principais Funcionalidades</h4>
+                        <ul>
+                            <li><strong>Planejamento automático:</strong> o usuário define a prioridade, e o sistema
+                                organiza fila, início, término e responsável habilitado sem programação manual.</li>
+                            <li><strong>Filas por máquina:</strong> priorização visual, reordenação das operações e
+                                recálculo imediato dos prazos de toda a sequência.</li>
+                            <li><strong>Capacidade produtiva:</strong> união das jornadas dos funcionários habilitados,
+                                com tratamento de setup, turnos, ausências e exceções.</li>
+                            <li><strong>Perfis e permissões:</strong> planejador completo, funcionário geral com visão
+                                de todas as máquinas e operador individual com acesso apenas às tarefas atribuídas.</li>
+                            <li><strong>Gestão centralizada:</strong> máquinas, funcionários, clientes, moldes,
+                                componentes, cronograma, histórico e cadastros operacionais.</li>
+                        </ul>
+
+                        <h4>🛠️ Stack Tecnológico</h4>
+                        <ul>
+                            <li><strong>Aplicação:</strong> Python, Django e SQLite.</li>
+                            <li><strong>Motor de planejamento:</strong> cálculo de disponibilidade, fila por recurso e
+                                atribuição automática de operadores elegíveis.</li>
+                            <li><strong>Frontend:</strong> HTML, CSS, JavaScript e priorização visual por máquina.</li>
+                            <li><strong>Demonstração:</strong> HTML, CSS e JavaScript, sem backend.</li>
+                        </ul>
+
+                        <h4>💡 Destaques Técnicos</h4>
+                        <ul>
+                            <li>Recálculo independente da programação a partir da prioridade escolhida pelo planejador.</li>
+                            <li>Capacidade por máquina determinada pela união dos horários da equipe habilitada.</li>
+                            <li>Perfil universal consulta todas as tarefas sem ser atribuído como executor.</li>
+                        </ul>
+                    </div>
+
+                    <a class="video-container project-cover-link"
+                        href="projetos/planejamento-ferramentaria/apresentacao/index.html"
+                        aria-label="Abrir apresentação interativa do Planejamento Inteligente da Ferramentaria">
+                        <div class="refugo-project-cover planning-project-cover">
+                            <div class="refugo-cover-content">
+                                <span class="refugo-cover-kicker">Projeto interativo</span>
+                                <div class="refugo-cover-title">Fluxo<br><span>Automático</span></div>
+                                <div class="refugo-cover-description">Você prioriza. O sistema programa.</div>
+                                <div class="refugo-cover-stack"><span>Django</span><span>Fila</span><span>Jornadas</span><span>Máquinas</span></div>
+                            </div>
+                            <div class="planning-cover-board"><strong>MQ-DEMO-01 · FILA AUTOMÁTICA</strong><div><b>01 · Inserto Aurora</b><span>06:00 → 09:30</span></div><div><b>02 · Extrator Prisma</b><span>09:30 → 13:00</span></div><div><b>03 · Base Horizonte</b><span>13:00 → 17:30</span></div></div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Projeto 5: Automação de Refugo e Borra integrada ao TOTVS Protheus -->
+                <div class="card">
+                    <h3>Automação de Refugo e Borra integrada ao TOTVS Protheus</h3>
+                    <p>
+                        Solução industrial que simplifica o apontamento de refugo e borra com um aplicativo guiado
+                        em PowerShell, integra cada lançamento ao Protheus por API e automatiza a análise e o CNQI.
+                        Todos os dados apresentados na demonstração são fictícios.
+                    </p>
+
+                    <button class="btn-more">Ver mais</button>
+                    <div class="more-content">
+                        <h4>⚙️ Principais Funcionalidades</h4>
+                        <ul>
+                            <li><strong>Lançamento guiado:</strong> fluxo linear com um campo por vez, listas de
+                                seleção, ordem de produção e validações claras para os operadores.</li>
+                            <li><strong>Integração com o ERP:</strong> envio dos apontamentos à rotina oficial do
+                                TOTVS Protheus por API REST, sem redigitação posterior.</li>
+                            <li><strong>Automação do CNQI:</strong> consolidação dos registros, comparação com a
+                                produção e preenchimento automático dos indicadores de qualidade.</li>
+                            <li><strong>Análise operacional:</strong> relatórios de refugo por motivo e produto, além
+                                de apontamentos de borra detalhados e consolidados por célula e turno.</li>
+                        </ul>
+
+                        <h4>🛠️ Stack Tecnológico</h4>
+                        <ul>
+                            <li><strong>Aplicativo operacional:</strong> PowerShell e Windows Forms.</li>
+                            <li><strong>Integração:</strong> API REST, TLPP e TOTVS Protheus.</li>
+                            <li><strong>Automação e análise:</strong> Python, Excel/CNQI e relatórios HTML.</li>
+                            <li><strong>Demonstração:</strong> HTML, CSS e JavaScript, sem backend.</li>
+                        </ul>
+
+                        <h4>💡 Resultados apresentados</h4>
+                        <ul>
+                            <li>35 minutos diários de economia em um cenário totalmente fictício.</li>
+                            <li>11,7 horas mensais projetadas apenas como exemplo ilustrativo.</li>
+                            <li>Preenchimento manual eliminado, com maior rastreabilidade e menos retrabalho.</li>
+                        </ul>
+                    </div>
+
+                    <a class="video-container project-cover-link" href="projetos/refugo-borra-protheus/index.html"
+                        aria-label="Abrir apresentação interativa do projeto Refugo e Borra integrado ao Protheus">
+                        <div class="refugo-project-cover">
+                            <div class="refugo-cover-content">
+                                <span class="refugo-cover-kicker">Projeto interativo</span>
+                                <div class="refugo-cover-title">Refugo<br><span>Integrado</span></div>
+                                <div class="refugo-cover-description">Operação guiada, Protheus conectado e CNQI automático.</div>
+                                <div class="refugo-cover-stack">
+                                    <span>PowerShell</span><span>API REST</span><span>TOTVS</span><span>CNQI</span>
+                                </div>
+                            </div>
+                            <div class="refugo-cover-preview">
+                                <img src="projetos/refugo-borra-protheus/assets/aplicativo-refugo-borra.png"
+                                    alt="Aplicativo guiado de lançamento de refugo e borra">
+                            </div>
+                        </div>
+                    </a>
                 </div>
 
             </div>
@@ -1714,84 +2252,141 @@
     <!-- TEMPLATE OCULTO PARA GERAÇÃO DO CURRÍCULO EM PDF VIA CTRL+P / window.print() -->
     <!-- ========================================================================= -->
     <div id="cv-print-template">
-        <h1>Felipe Roberto Soares</h1>
-        <div class="contact-info">
-            Alumínio - SP | (11) 99631-8958 | felipe.r.soares03@gmail.com <br>
-            LinkedIn: <a href="https://www.linkedin.com/in/felipe-soares-018986346/">felipe-soares-018986346</a> |
-            GitHub: <a href="https://fezoka.github.io">fezoka.github.io</a> | Portfólio: <a
-                href="https://fezoka.com">Fezoka.com</a>
+        <header class="cv-header">
+            <h1>Felipe Roberto Soares</h1>
+            <p class="cv-role">Desenvolvimento de Software · Automação · Dados</p>
+            <div class="contact-info">
+                <span>Alumínio - SP</span>
+                <span>(11) 99631-8958</span>
+                <a href="mailto:felipe.r.soares03@gmail.com">felipe.r.soares03@gmail.com</a>
+                <a href="https://www.linkedin.com/in/felipe-soares-018986346/">LinkedIn</a>
+                <a href="https://fezoka.github.io">GitHub</a>
+                <a href="https://fezoka.com">Fezoka.com</a>
+            </div>
+        </header>
+
+        <div class="cv-grid">
+            <div class="cv-main">
+                <section class="cv-section">
+                    <h2>Resumo profissional</h2>
+                    <p class="cv-summary">Estudante de Ciência da Computação com experiência prática em desenvolvimento
+                        de software, automações em Python, integrações de sistemas e infraestrutura. Atua conectando
+                        tecnologia, operação e qualidade em ambientes orientados pelas normas ISO 9001 e IATF 16949.</p>
+                </section>
+
+                <section class="cv-section">
+                    <h2>Experiência profissional</h2>
+                    <article class="experience-item">
+                        <div class="item-header">
+                            <h3>Desenvolvedor Freelancer</h3>
+                            <span class="date-location">Autônomo · 2025</span>
+                        </div>
+                        <ul>
+                            <li>Arquitetura end-to-end de sistema de rifas e vendas com Node.js.</li>
+                            <li>Integração com API do WhatsApp para cadastro, compras e comunicação de resultados.</li>
+                            <li>Dashboards de indicadores operacionais e desempenho comercial.</li>
+                            <li>Deploy, health checks e controles básicos de prevenção a fraudes.</li>
+                        </ul>
+                    </article>
+
+                    <article class="experience-item">
+                        <div class="item-header">
+                            <h3>Assistente de Desenvolvimento Pleno</h3>
+                            <span class="date-location">Ferplast · Set 2023 - Atual</span>
+                        </div>
+                        <ul>
+                            <li>Soluções internas em modelo SaaS, automações em Python e integrações para eficiência
+                                operacional.</li>
+                            <li>Auditorias internas e atuação no SGQI, com foco em ISO 9001 e IATF 16949.</li>
+                            <li>Documentação de processos e desenvolvimento de PPAP para projetos automotivos.</li>
+                        </ul>
+                    </article>
+
+                    <article class="experience-item">
+                        <div class="item-header">
+                            <h3>Jovem Aprendiz</h3>
+                            <span class="date-location">Ferplast · Jun 2022 - Set 2023</span>
+                        </div>
+                        <ul>
+                            <li>Rotinas administrativas, controle de informações e padronização de documentos.</li>
+                        </ul>
+                    </article>
+                </section>
+
+                <section class="cv-section">
+                    <h2>Projetos em destaque</h2>
+                    <div class="project-list">
+                        <article class="project-item">
+                            <span class="project-number">01</span>
+                            <div><strong>Integração OEE, sensores e Protheus</strong>
+                                <p>Automação do apontamento duplicado, produção por pulsos e indicadores para gestão.</p>
+                            </div>
+                        </article>
+                        <article class="project-item">
+                            <span class="project-number">02</span>
+                            <div><strong>Refugo, borra e CNQI automatizados</strong>
+                                <p>Aplicativo guiado, integração via API e consolidação automática da análise de qualidade.</p>
+                            </div>
+                        </article>
+                        <article class="project-item">
+                            <span class="project-number">03</span>
+                            <div><strong>Planejamento inteligente da ferramentaria</strong>
+                                <p>Fila por prioridade com cálculo de capacidade, jornadas, responsável e previsão.</p>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+            </div>
+
+            <aside class="cv-sidebar">
+                <section class="cv-section">
+                    <h2>Formação</h2>
+                    <div class="side-item">
+                        <strong>Bacharelado em Ciência da Computação</strong>
+                        <span>Faculdade Estácio<br>Previsão: dezembro de 2030</span>
+                    </div>
+                    <div class="side-item">
+                        <strong>Técnico em Logística integrado ao Ensino Médio</strong>
+                        <span>Etec de Mairinque<br>Concluído em 2021</span>
+                    </div>
+                </section>
+
+                <section class="cv-section">
+                    <h2>Competências</h2>
+                    <div class="skill-group">
+                        <strong>Desenvolvimento</strong>
+                        <p>Python, JavaScript, HTML5, CSS3, Node.js e integração de APIs.</p>
+                    </div>
+                    <div class="skill-group">
+                        <strong>Dados e infraestrutura</strong>
+                        <p>Dashboards, Linux, automação, web scraping e monitoramento.</p>
+                    </div>
+                    <div class="skill-group">
+                        <strong>Segurança</strong>
+                        <p>Cibersegurança, fundamentos de pentest e boas práticas de infraestrutura.</p>
+                    </div>
+                    <div class="skill-group">
+                        <strong>Gestão e qualidade</strong>
+                        <p>SGQI, PPAP, ISO 9001, IATF 16949 e auditoria interna.</p>
+                    </div>
+                </section>
+
+                <section class="cv-section">
+                    <h2>Cursos</h2>
+                    <ul class="course-list">
+                        <li>Bootcamp Bradesco: GenAI, Dados &amp; Cyber - DIO<br><strong>Em andamento</strong></li>
+                        <li>Fundamentos da IA Moderna e Modelos de Linguagem - DIO<br><strong>Em andamento</strong></li>
+                        <li>Cibersegurança &amp; Ataques · 52 horas - MBX Academy<br><strong>Concluído</strong></li>
+                        <li>HTML5, CSS3 e JavaScript · 80 horas - Curso em Vídeo<br><strong>Concluído</strong></li>
+                    </ul>
+                </section>
+            </aside>
         </div>
 
-        <h2>Resumo Profissional</h2>
-        <p>Estudante de Ciência da Computação apaixonado por tecnologia, com sólida experiência prática em
-            desenvolvimento de software, criação de automações (Python) e infraestrutura. Possui vivência no alinhamento
-            entre tecnologia e negócios por meio do Sistema de Gestão da Qualidade Integrado (SGQI), garantindo
-            eficiência e conformidade em processos exigentes (ISO 9001 e IATF 16949). Busca atuar em projetos inovadores
-            de engenharia de software, cibersegurança e análise de dados.</p>
-
-        <h2>Experiência Profissional</h2>
-
-        <div class="item-header">
-            <h3>Desenvolvedor Freelancer</h3>
-            <span class="date-location">Autônomo | 2025</span>
-        </div>
-        <ul>
-            <li><strong>Sistema de Rifas e Vendas:</strong> Arquitetura end-to-end utilizando Node.js.</li>
-            <li><strong>Integração com API WhatsApp:</strong> Automação de cadastro de clientes, confirmação de compras
-                e envio de resultados.</li>
-            <li><strong>Business Intelligence:</strong> Desenvolvimento de dashboards para acompanhamento de métricas
-                operacionais e desempenho de vendas.</li>
-            <li><strong>Infraestrutura:</strong> Deploy da aplicação, monitoramento de disponibilidade (Health Check) e
-                implementação de protocolos básicos de antifraude.</li>
-        </ul>
-
-        <div class="item-header">
-            <h3>Assistente de Desenvolvimento Pleno</h3>
-            <span class="date-location">Ferplast | Setembro 2023 - Atual</span>
-        </div>
-        <ul>
-            <li>Desenvolvimento de soluções internas em modelo SaaS e automações em Python para otimização da eficiência
-                operacional.</li>
-            <li>Atuação ativa no SGQI, conduzindo auditorias internas e garantindo conformidade com normas ISO 9001 e
-                IATF 16949.</li>
-            <li>Controle de documentação de processos e desenvolvimento de PPAP (Processo de Aprovação de Peça) para
-                projetos automotivos.</li>
-        </ul>
-
-        <div class="item-header">
-            <h3>Jovem Aprendiz</h3>
-            <span class="date-location">Ferplast | Junho 2022 - Setembro 2023</span>
-        </div>
-        <ul>
-            <li>Apoio em rotinas administrativas, controle de informações e padronização de documentos, contribuindo
-                para a disciplina operacional do setor.</li>
-        </ul>
-
-        <h2>Formação Acadêmica</h2>
-        <div class="item-header">
-            <h3>Bacharelado em Ciência da Computação</h3>
-            <span class="date-location">Faculdade Estácio | Previsão: Dezembro 2030</span>
-        </div>
-        <div class="item-header">
-            <h3>Técnico em Logística (Integrado ao EM)</h3>
-            <span class="date-location">Etec de Mairinque | Concluído em 2021</span>
-        </div>
-
-        <h2>Competências Técnicas</h2>
-        <ul>
-            <li><strong>Desenvolvimento:</strong> Python, JavaScript, HTML5, CSS3, Node.js, Integração de APIs.</li>
-            <li><strong>Segurança e Infra:</strong> Cibersegurança (Estudos), Pentest, Linux, Automação (Web Scraping).
-            </li>
-            <li><strong>Gestão e Qualidade:</strong> SGQI, PPAP Automotivo, Auditoria (ISO 9001 / IATF 16949).</li>
-        </ul>
-
-        <h2>Cursos e Certificações</h2>
-        <ul>
-            <li>Bootcamp Bradesco: GenAI, Dados &amp; Cyber – DIO (Em andamento)</li>
-            <li>Fundamentos da IA Moderna e Modelos de Linguagem – DIO (Em andamento)</li>
-            <li>Cibersegurança &amp; Ataques (52 horas) – MBX Academy (Concluído)</li>
-            <li>Desenvolvimento Web: HTML5, CSS3 e JS (80 horas) – Curso em Vídeo (Concluído)</li>
-        </ul>
+        <footer class="cv-footer">
+            <span>Portfólio completo: fezoka.com</span>
+            <span>Currículo gerado pelo portfólio digital</span>
+        </footer>
     </div>
     <!-- FIM DO TEMPLATE DE IMPRESSÃO -->
 

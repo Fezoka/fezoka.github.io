@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Conheça a automação do apontamento de refugo e borra, integrada ao TOTVS Protheus e ao CNQI.">
+    <meta name="theme-color" content="#070b12">
+    <title>Refugo, Borra &amp; Protheus | Felipe Soares</title>
+    <link rel="icon" href="../../favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+    <div class="ambient ambient-one" aria-hidden="true"></div>
+    <div class="ambient ambient-two" aria-hidden="true"></div>
+    <div class="grid-overlay" aria-hidden="true"></div>
+
+    <header class="topbar">
+        <a class="back-link" href="../../index.html#projetos" aria-label="Voltar ao portfólio">
+            <span aria-hidden="true">←</span>
+            <span>Portfólio</span>
+        </a>
+
+        <a class="project-brand" href="#visao-geral" data-slide-link="0">
+            <span class="brand-symbol">F</span>
+            <span>REFUGO <span class="brand-divider">/</span> PROTHEUS</span>
+        </a>
+
+        <span class="demo-label"><span></span> dados 100% fictícios</span>
+    </header>
+
+    <main class="experience" id="experience">
+        <nav class="story-navigation" aria-label="Etapas do projeto">
+            <button class="story-step is-active" type="button" data-slide="0" aria-current="step">
+                <span>01</span> Visão geral
+            </button>
+            <button class="story-step" type="button" data-slide="1"><span>02</span> Antes e depois</button>
+            <button class="story-step" type="button" data-slide="2"><span>03</span> Experimente</button>
+            <button class="story-step" type="button" data-slide="3"><span>04</span> Integração</button>
+            <button class="story-step" type="button" data-slide="4"><span>05</span> CNQI</button>
+            <button class="story-step" type="button" data-slide="5"><span>06</span> Resultados</button>
+        </nav>
+
+        <div class="slides-viewport">
+            <section class="story-slide is-active" id="visao-geral" data-slide-panel="0" aria-labelledby="overview-title">
+                <div class="hero-content">
+                    <div class="eyebrow"><span></span> AUTOMAÇÃO INDUSTRIAL · MELHORIA CONTÍNUA</div>
+                    <div class="fictional-data-notice" role="note">
+                        <strong>DEMONSTRAÇÃO COM DADOS FICTÍCIOS</strong>
+                        <span>Todos os códigos, produtos, ordens, quantidades, custos e indicadores foram inventados para esta simulação. Nenhuma informação operacional real da empresa é exibida.</span>
+                    </div>
+                    <h1 id="overview-title">Menos campos.<br><span>Mais produção.</span></h1>
+                    <p class="hero-description">O lançamento de refugo e borra deixou de ser um processo difícil no TOTVS e passou a ser guiado, integrado e pronto para análise.</p>
+
+                    <div class="technology-row" aria-label="Tecnologias do projeto">
+                        <span>PowerShell</span>
+                        <span>Windows Forms</span>
+                        <span>API REST</span>
+                        <span>TOTVS Protheus</span>
+                        <span>CNQI</span>
+                    </div>
+
+                    <button class="primary-button" type="button" data-next-slide>
+                        Explorar o projeto <span aria-hidden="true">→</span>
+                    </button>
+                </div>
+
+                <div class="hero-visual" aria-label="Visualização do aplicativo de refugo e borra">
+                    <div class="visual-orbit visual-orbit-one"></div>
+                    <div class="visual-orbit visual-orbit-two"></div>
+                    <div class="window-preview">
+                        <div class="window-toolbar"><i></i><i></i><i></i><span>controle-refugo-borra.ps1</span></div>
+                        <img src="./assets/aplicativo-refugo-borra.png" alt="Aplicativo com opções de lançamento de refugo e borra e histórico de registros">
+                    </div>
+                    <div class="floating-stat floating-stat-one"><span>API</span> PROTHEUS CONECTADO</div>
+                    <div class="floating-stat floating-stat-two"><strong>−35 min</strong><span>estimativa / dia</span></div>
+                </div>
+            </section>
+
+            <section class="story-slide" id="antes-e-depois" data-slide-panel="1" aria-labelledby="comparison-title" hidden>
+                <div class="section-heading">
+                    <span class="eyebrow"><span></span> UM PROBLEMA REAL NA OPERAÇÃO</span>
+                    <h2 id="comparison-title">A mesma tarefa. <span>Outra experiência.</span></h2>
+                    <p>O ERP continua sendo a fonte oficial. O que mudou foi o caminho até ele.</p>
+                </div>
+
+                <div class="comparison-switch" role="group" aria-label="Destacar uma etapa da comparação">
+                    <button type="button" class="comparison-focus is-active" data-comparison-focus="both">Comparar</button>
+                    <button type="button" class="comparison-focus" data-comparison-focus="before">Antes</button>
+                    <button type="button" class="comparison-focus" data-comparison-focus="after">Depois</button>
+                </div>
+
+                <div class="comparison-grid" data-comparison-grid>
+                    <article class="comparison-panel comparison-before" data-comparison-panel="before">
+                        <div class="comparison-header"><span>ANTES</span><strong>TOTVS / Protheus</strong></div>
+                        <div class="screenshot-shell"><img src="./assets/totvs-apontamento-antes.png" alt="Tela original de apontamento de perda no TOTVS Protheus, com diversos campos pouco intuitivos"></div>
+                        <div class="comparison-details"><span>Campos demais</span><span>Pouca orientação</span><span>Digitação manual</span></div>
+                    </article>
+
+                    <div class="comparison-arrow" aria-hidden="true">→</div>
+
+                    <article class="comparison-panel comparison-after" data-comparison-panel="after">
+                        <div class="comparison-header"><span>DEPOIS</span><strong>Aplicativo guiado</strong></div>
+                        <div class="screenshot-shell"><img src="./assets/aplicativo-refugo-borra.png" alt="Aplicativo Windows desenvolvido em PowerShell com fluxo guiado para refugo e borra"></div>
+                        <div class="comparison-details"><span>Um campo por vez</span><span>Listas prontas</span><span>Envio via API</span></div>
+                    </article>
+                </div>
+            </section>
+
+            <section class="story-slide" id="experimente" data-slide-panel="2" aria-labelledby="demo-title" hidden>
+                <div class="section-heading compact-heading">
+                    <span class="eyebrow"><span></span> UMA INTERFACE QUE EXPLICA O PRÓXIMO PASSO</span>
+                    <h2 id="demo-title">Experimente o <span>lançamento guiado.</span></h2>
+                    <p>Esta simulação funciona exclusivamente no navegador e não envia dados ao Protheus.</p>
+                </div>
+
+                <div class="demo-workspace">
+                    <div class="wizard-card">
+                        <div class="wizard-topbar"><span>CONTROLE DE REFUGO E BORRA</span><span class="wizard-step-indicator" id="wizard-step-indicator">PASSO 1 DE 5</span></div>
+                        <div class="wizard-progress"><span id="wizard-progress-fill"></span></div>
+
+                        <div class="wizard-screen" id="wizard-screen" aria-live="polite">
+                            <span class="wizard-step-label" id="wizard-step-label">COMECE PELO TIPO DE APONTAMENTO</span>
+                            <h3 id="wizard-question">O que você deseja lançar?</h3>
+                            <div id="wizard-options" class="wizard-options"></div>
+                            <button class="wizard-back" id="wizard-back" type="button" hidden>← Etapa anterior</button>
+                        </div>
+                    </div>
+
+                    <aside class="activity-card">
+                        <div class="activity-header"><span>REGISTROS DA SIMULAÇÃO</span><span id="demo-count">0 lançamentos</span></div>
+                        <div class="activity-empty" id="activity-empty"><span>◎</span><p>Seus lançamentos de demonstração aparecem aqui.</p></div>
+                        <div class="activity-list" id="activity-list" aria-live="polite"></div>
+                        <div class="activity-note"><span></span> Dados fictícios · nenhuma integração real</div>
+                    </aside>
+                </div>
+            </section>
+
+            <section class="story-slide" id="integracao" data-slide-panel="3" aria-labelledby="integration-title" hidden>
+                <div class="section-heading">
+                    <span class="eyebrow"><span></span> UM LANÇAMENTO, UMA FONTE DE VERDADE</span>
+                    <h2 id="integration-title">O operador informa. <span>O sistema integra.</span></h2>
+                    <p>A complexidade fica por trás da interface. O Protheus continua responsável pelo registro oficial.</p>
+                </div>
+
+                <div class="pipeline" id="pipeline" aria-label="Etapas da integração com o TOTVS">
+                    <div class="pipeline-node" data-pipeline-node="0"><span>01</span><strong>Operador</strong><small>Escolhe o tipo e a OP</small></div>
+                    <div class="pipeline-connection" data-pipeline-connection="0"></div>
+                    <div class="pipeline-node" data-pipeline-node="1"><span>02</span><strong>PowerShell</strong><small>Organiza e valida os dados</small></div>
+                    <div class="pipeline-connection" data-pipeline-connection="1"></div>
+                    <div class="pipeline-node" data-pipeline-node="2"><span>03</span><strong>API REST</strong><small>Envia o apontamento</small></div>
+                    <div class="pipeline-connection" data-pipeline-connection="2"></div>
+                    <div class="pipeline-node" data-pipeline-node="3"><span>04</span><strong>Protheus</strong><small>Registra na rotina oficial</small></div>
+                </div>
+
+                <div class="terminal-card">
+                    <div class="terminal-header"><i></i><i></i><i></i><span>fluxo de integração · demonstração</span><button id="run-integration" type="button">Executar fluxo</button></div>
+                    <div class="terminal-output" id="terminal-output" aria-live="polite"><p><span class="terminal-muted">//</span> Execute a simulação para acompanhar a integração.</p></div>
+                </div>
+            </section>
+
+            <section class="story-slide" id="cnqi" data-slide-panel="4" aria-labelledby="cnqi-title" hidden>
+                <div class="section-heading compact-heading">
+                    <span class="eyebrow"><span></span> A INFORMAÇÃO NÃO PARA NO APONTAMENTO</span>
+                    <h2 id="cnqi-title">Dados lançados. <span>Análise pronta.</span></h2>
+                    <p>O que antes exigia buscar, conferir e redigitar informações passa a alimentar a análise e o CNQI automaticamente. Todos os dados abaixo são fictícios.</p>
+                </div>
+
+                <div class="cnqi-layout">
+                    <article class="cnqi-story">
+                        <div class="process-line old-process"><span>ANTES</span><p>Buscar informações no ERP → comparar a produção → preencher planilhas → consolidar o CNQI.</p></div>
+                        <div class="process-line new-process"><span>DEPOIS</span><p>O apontamento integrado fornece os dados para o relatório, a consolidação e o preenchimento automático.</p></div>
+
+                        <div class="report-controls" role="group" aria-label="Escolher relatório">
+                            <button type="button" class="report-tab is-active" data-report="refugo">Análise de refugo</button>
+                            <button type="button" class="report-tab" data-report="borra">Borra por célula</button>
+                        </div>
+
+                        <div class="report-metrics" id="report-metrics"></div>
+                    </article>
+
+                    <article class="report-preview">
+                        <div class="report-preview-header"><span></span><span id="report-title">ANÁLISE CNQI · REFUGO</span><span>FICTÍCIO</span></div>
+                        <div class="report-document" id="report-document" aria-live="polite" aria-label="Modelo de relatório CNQI preenchido exclusivamente com dados fictícios"></div>
+                    </article>
+                </div>
+            </section>
+
+            <section class="story-slide" id="resultados" data-slide-panel="5" aria-labelledby="results-title" hidden>
+                <div class="section-heading">
+                    <span class="eyebrow"><span></span> INDICADORES ILUSTRATIVOS DA DEMONSTRAÇÃO</span>
+                    <h2 id="results-title">Menos retrabalho. <span>Mais gestão.</span></h2>
+                    <p>Os indicadores abaixo são exemplos fictícios, criados apenas para demonstrar como os ganhos podem ser apresentados.</p>
+                </div>
+
+                <div class="impact-grid">
+                    <article class="impact-card impact-card-primary"><span>TEMPO MANUAL ELIMINADO</span><strong><i data-counter="35">0</i> min</strong><p>estimativa fictícia de tempo economizado por dia.</p></article>
+                    <article class="impact-card"><span>CAPACIDADE RECUPERADA</span><strong><i data-counter="11.7" data-counter-decimals="1">0</i> h</strong><p>projeção mensal utilizada apenas como exemplo.</p></article>
+                    <article class="impact-card"><span>PREENCHIMENTO MANUAL</span><strong><i data-counter="100">0</i>%</strong><p>representação ilustrativa de uma etapa automatizada.</p></article>
+                </div>
+
+                <div class="outcome-strip"><span>Fluxo guiado</span><span>Menos erros de digitação</span><span>ERP atualizado</span><span>CNQI automático</span><span>Rastreabilidade</span></div>
+
+                <div class="results-actions"><a class="primary-button" href="../../index.html#projetos">Voltar ao portfólio <span aria-hidden="true">→</span></a><button class="secondary-button" type="button" data-slide="2">Testar novamente</button></div>
+            </section>
+        </div>
+
+        <footer class="story-footer">
+            <button type="button" class="slide-control" id="previous-slide" aria-label="Slide anterior" disabled>←</button>
+            <div class="slide-progress" aria-label="Progresso da apresentação"><span id="slide-progress-fill"></span></div>
+            <span class="slide-counter"><strong id="current-slide-number">01</strong> / 06</span>
+            <button type="button" class="slide-control" id="next-slide" aria-label="Próximo slide">→</button>
+        </footer>
+    </main>
+
+    <script src="./app.js"></script>
+</body>
+
+</html>

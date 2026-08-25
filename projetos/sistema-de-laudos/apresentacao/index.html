@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Apresentação interativa de uma solução corporativa de laudos técnicos, garantias e RMA, demonstrada com informações inteiramente fictícias.">
+    <meta name="theme-color" content="#070b12">
+    <title>Laudos, Garantias e RMA | Felipe Soares</title>
+    <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../refugo-borra-protheus/styles.css">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body class="rma-presentation">
+    <div class="ambient ambient-one" aria-hidden="true"></div>
+    <div class="ambient ambient-two" aria-hidden="true"></div>
+    <div class="grid-overlay" aria-hidden="true"></div>
+
+    <header class="topbar">
+        <a class="back-link" href="../../../index.html#projetos"><span aria-hidden="true">←</span><span>Portfólio</span></a>
+        <a class="project-brand" href="#visao-geral" data-slide-link="0"><span class="brand-symbol">R</span><span>RMA <span class="brand-divider">/</span> AUTOMATOR</span></a>
+        <span class="demo-label"><span></span> dados 100% fictícios</span>
+    </header>
+
+    <main class="experience">
+        <nav class="story-navigation" aria-label="Etapas do projeto de laudos e garantias">
+            <button class="story-step is-active" type="button" data-slide="0" aria-current="step"><span>01</span> Visão geral</button>
+            <button class="story-step" type="button" data-slide="1"><span>02</span> Antes e depois</button>
+            <button class="story-step" type="button" data-slide="2"><span>03</span> Abertura</button>
+            <button class="story-step" type="button" data-slide="3"><span>04</span> Perfis</button>
+            <button class="story-step" type="button" data-slide="4"><span>05</span> Análise</button>
+            <button class="story-step" type="button" data-slide="5"><span>06</span> Laudo e PDF</button>
+            <button class="story-step" type="button" data-slide="6"><span>07</span> Dashboard</button>
+            <button class="story-step" type="button" data-slide="7"><span>08</span> Automação</button>
+            <button class="story-step" type="button" data-slide="8"><span>09</span> Resultados</button>
+        </nav>
+
+        <div class="slides-viewport">
+            <section class="story-slide is-active" id="visao-geral" data-slide-panel="0" aria-labelledby="overview-title">
+                <div class="hero-content">
+                    <div class="eyebrow"><span></span> ENGENHARIA DE SOFTWARE · PÓS-VENDA DIGITAL</div>
+                    <div class="fictional-data-notice" role="note"><strong>DEMONSTRAÇÃO COM DADOS FICTÍCIOS</strong><span>Todos os clientes, pessoas, produtos, códigos, protocolos, documentos, datas e indicadores foram inventados. Nenhuma informação corporativa real é apresentada.</span></div>
+                    <h1 id="overview-title">A garantia virou<br><span>um processo.</span></h1>
+                    <p class="hero-description">Vendas registra. Engenharia investiga. O laudo é gerado e todo mundo acompanha a mesma história.</p>
+                    <div class="technology-row"><span>Garantias e RMA</span><span>Laudos em PDF</span><span>Acesso por perfil</span><span>RPA</span></div>
+                    <button class="primary-button" type="button" data-next-slide>Explorar o projeto <span aria-hidden="true">→</span></button>
+                </div>
+
+                <div class="hero-rma-board" aria-label="Visualização demonstrativa de laudos e garantias">
+                    <div class="board-heading"><span>GESTÃO DE GARANTIAS</span><i>AMBIENTE DEMONSTRATIVO</i></div>
+                    <div class="board-stats"><article><span>ABERTOS</span><strong class="tone-amber">04</strong></article><article><span>EM ANÁLISE</span><strong class="tone-blue">07</strong></article><article><span>CONCLUÍDOS</span><strong class="tone-green">18</strong></article></div>
+                    <div class="board-case"><span>RMA-DEMO-2048</span><strong>Cliente Aurora</strong><i class="status-chip status-process">Em processo</i></div>
+                    <div class="board-case"><span>RMA-DEMO-2047</span><strong>Distribuidora Prisma</strong><i class="status-chip status-open">Aberto</i></div>
+                    <div class="board-case"><span>RMA-DEMO-2046</span><strong>Comércio Horizonte</strong><i class="status-chip status-closed">Fechado</i></div>
+                    <div class="board-flow"><span>Vendas</span><b>→</b><span>Engenharia</span><b>→</b><span>Laudo</span></div>
+                </div>
+            </section>
+
+            <section class="story-slide" id="transformacao" data-slide-panel="1" aria-labelledby="transformation-title" hidden>
+                <div class="section-heading compact-heading"><span class="eyebrow"><span></span> QUANDO CADA GARANTIA ERA UMA NOVA INVESTIGAÇÃO</span><h2 id="transformation-title">Antes, informação dispersa. <span>Depois, um fluxo único.</span></h2><p>Compare uma rotina fragmentada com o acompanhamento centralizado do atendimento técnico.</p></div>
+                <div class="comparison-grid"><article class="comparison-card comparison-before"><div class="comparison-title"><span>ANTES</span><i>PROCESSO DESCONECTADO</i></div><div class="scattered-notes"><div class="floating-note">Qual era o produto?</div><div class="floating-note">Cadê a nota fiscal?</div><div class="floating-note">A engenharia já respondeu?</div><div class="floating-note">O laudo foi enviado?</div></div><ul><li>Reclamações espalhadas em conversas e planilhas.</li><li>Identificação de produto, cliente e problema feita manualmente.</li><li>Sem visibilidade clara do responsável ou do andamento.</li></ul></article><article class="comparison-card comparison-after"><div class="comparison-title"><span>DEPOIS</span><i>FLUXO RASTREÁVEL</i></div><div class="connected-steps"><span><b>01</b> Vendas abre</span><span><b>02</b> Engenharia analisa</span><span><b>03</b> Laudo é consolidado</span><span><b>04</b> Equipes acompanham</span></div><ul><li>Produto, cliente, nota, evidências e reclamação no mesmo registro.</li><li>Diagnóstico técnico protegido por permissão.</li><li>Status, histórico, PDF e indicadores em um único lugar.</li></ul></article></div>
+            </section>
+
+            <section class="story-slide" id="abertura" data-slide-panel="2" aria-labelledby="intake-title" hidden>
+                <div class="section-heading compact-heading"><span class="eyebrow"><span></span> O ATENDIMENTO COMEÇA NO PERFIL COMERCIAL</span><h2 id="intake-title">Uma reclamação vira <span>um protocolo.</span></h2><p>Selecione os dados fictícios e acompanhe a montagem automática da solicitação.</p></div>
+                <div class="intake-layout"><form class="demo-form" id="intake-form"><div class="form-card-heading"><strong>ABERTURA COMERCIAL</strong><span>SIMULAÇÃO · VENDAS</span></div><label>CLIENTE FICTÍCIO<select id="intake-client"><option>Cliente Aurora</option><option>Distribuidora Prisma</option><option>Comércio Horizonte</option></select></label><label>PRODUTO FICTÍCIO<select id="intake-product"><option value="PROD-DEMO-1001|Módulo Térmico Aurora">PROD-DEMO-1001 · Módulo Térmico Aurora</option><option value="PROD-DEMO-1002|Conjunto Hidráulico Prisma">PROD-DEMO-1002 · Conjunto Hidráulico Prisma</option><option value="PROD-DEMO-1003|Painel Digital Horizonte">PROD-DEMO-1003 · Painel Digital Horizonte</option></select></label><label>PADRÃO DE PROBLEMA<select id="intake-problem"><option>Não liga</option><option>Aquecimento insuficiente</option><option>Vazamento</option><option>Display com defeito</option></select></label><button class="primary-button" type="submit">Gerar protocolo fictício <span>→</span></button></form><aside class="protocol-preview"><div class="form-card-heading"><strong>REGISTRO EM TEMPO REAL</strong><span id="intake-state">AGUARDANDO ABERTURA</span></div><div class="protocol-id" id="intake-protocol">RMA-DEMO-2049</div><dl><div><dt>Cliente</dt><dd id="preview-client">Cliente Aurora</dd></div><div><dt>Código</dt><dd id="preview-code">PROD-DEMO-1001</dd></div><div><dt>Produto</dt><dd id="preview-product">Módulo Térmico Aurora</dd></div><div><dt>Ocorrência</dt><dd id="preview-problem">Não liga</dd></div><div><dt>Status inicial</dt><dd><i class="status-chip status-open">Aberto</i></dd></div></dl><div class="protocol-feedback" id="intake-feedback" aria-live="polite">Preencha o cenário e clique para simular a abertura.</div></aside></div>
+            </section>
+
+            <section class="story-slide" id="perfis" data-slide-panel="3" aria-labelledby="profiles-title" hidden>
+                <div class="section-heading compact-heading"><span class="eyebrow"><span></span> CADA EQUIPE ACESSA O QUE PRECISA</span><h2 id="profiles-title">Dois perfis. <span>Responsabilidades claras.</span></h2><p>Alterne os perfis e veja como o sistema protege o conteúdo técnico.</p></div>
+                <div class="role-selector" role="tablist" aria-label="Perfis disponíveis"><button class="role-button is-active" type="button" data-role="vendas" role="tab" aria-selected="true">VENDAS</button><button class="role-button" type="button" data-role="engenharia" role="tab" aria-selected="false">ENGENHARIA</button></div>
+                <div class="role-workspace"><div class="role-header"><div><span id="role-overline">ATENDIMENTO COMERCIAL</span><strong id="role-heading">Bruna Prisma · Vendas</strong></div><i id="role-tag">ACESSO COMERCIAL</i></div><div class="permission-list" id="permission-list"></div><div class="role-note" id="role-note">Campos de análise, causa, ação e responsável técnico ficam protegidos para a equipe de vendas.</div></div>
+            </section>
+
+            <section class="story-slide" id="analise" data-slide-panel="4" aria-labelledby="analysis-title" hidden>
+                <div class="section-heading compact-heading"><span class="eyebrow"><span></span> QUANDO O CASO CHEGA À EQUIPE TÉCNICA</span><h2 id="analysis-title">Diagnóstico claro. <span>Decisão registrada.</span></h2><p>Escolha um cenário de avaliação para atualizar o parecer técnico e o status do laudo.</p></div>
+                <div class="analysis-layout"><article class="analysis-case"><div class="form-card-heading"><strong>RMA-DEMO-2048</strong><span>CLIENTE AURORA</span></div><div class="analysis-product"><span>PROD-DEMO-1001</span><strong>Módulo Térmico Aurora</strong><p>Reclamação fictícia: equipamento apresenta aquecimento abaixo do esperado durante o uso.</p></div><div class="verdict-selector"><button class="verdict-button is-active" type="button" data-verdict="procedente">Garantia procedente</button><button class="verdict-button" type="button" data-verdict="improcedente">Garantia improcedente</button><button class="verdict-button" type="button" data-verdict="complementar">Aguardando evidência</button></div></article><aside class="technical-report"><div class="form-card-heading"><strong>PARECER DA ENGENHARIA</strong><span id="analysis-status">EM PROCESSO</span></div><dl><div><dt>Análise</dt><dd id="analysis-diagnosis"></dd></div><div><dt>Causa identificada</dt><dd id="analysis-cause"></dd></div><div><dt>Ação recomendada</dt><dd id="analysis-action"></dd></div><div><dt>Responsável fictício</dt><dd>Alex Horizonte · Engenharia</dd></div></dl><div class="analysis-result" id="analysis-result"></div></aside></div>
+            </section>
+
+            <section class="story-slide" id="laudo" data-slide-panel="5" aria-labelledby="report-title" hidden>
+                <div class="section-heading compact-heading"><span class="eyebrow"><span></span> INFORMAÇÃO CONSOLIDADA, SEM COPIAR E COLAR</span><h2 id="report-title">O caso inteiro em <span>um laudo.</span></h2><p>Visualize as seções fictícias que compõem o documento técnico gerado pela solução.</p></div>
+                <div class="document-layout"><div class="document-outline" role="tablist" aria-label="Seções do laudo"><button class="outline-button is-active" type="button" data-report-section="identificacao">01 · Identificação</button><button class="outline-button" type="button" data-report-section="ocorrencia">02 · Ocorrência</button><button class="outline-button" type="button" data-report-section="parecer">03 · Parecer técnico</button><button class="outline-button" type="button" data-report-section="fechamento">04 · Fechamento</button><div class="pdf-indicator"><span>PDF</span> Renderização automatizada<br><small>Pré-visualização exclusivamente ilustrativa.</small></div></div><article class="document-sheet"><header><div><span>EMPRESA EXEMPLO</span><strong>LAUDO TÉCNICO DE GARANTIA</strong></div><i>RMA-DEMO-2048</i></header><div class="document-body" id="document-body"></div><footer><span>DOCUMENTO DEMONSTRATIVO · SEM VALIDADE OPERACIONAL</span><span>01 / 01</span></footer></article></div>
+            </section>
+
+            <section class="story-slide" id="dashboard" data-slide-panel="6" aria-labelledby="dashboard-title" hidden>
+                <div class="section-heading compact-heading"><span class="eyebrow"><span></span> A OPERAÇÃO ENXERGADA EM TEMPO REAL</span><h2 id="dashboard-title">O dashboard mostra <span>onde agir.</span></h2><p>Alterne o recorte demonstrativo e acompanhe a distribuição dos atendimentos.</p></div>
+                <div class="dashboard-toolbar"><label for="dashboard-scenario">CENÁRIO DEMONSTRATIVO</label><select id="dashboard-scenario"><option value="geral">Todos os atendimentos</option><option value="aurora">Cliente Aurora</option><option value="prisma">Distribuidora Prisma</option></select><span>DADOS FICTÍCIOS</span></div>
+                <div class="dashboard-cards" id="dashboard-cards"></div><div class="dashboard-charts"><article class="dark-chart-card"><div class="form-card-heading"><strong>PROBLEMAS MAIS FREQUENTES</strong><span>TOP 4</span></div><canvas id="problem-chart" aria-label="Gráfico demonstrativo de problemas mais frequentes"></canvas></article><article class="dark-chart-card"><div class="form-card-heading"><strong>EVOLUÇÃO DOS LAUDOS</strong><span>ÚLTIMOS SEIS CICLOS</span></div><canvas id="monthly-chart" aria-label="Gráfico demonstrativo da evolução dos laudos"></canvas></article></div>
+            </section>
+
+            <section class="story-slide" id="automacao" data-slide-panel="7" aria-labelledby="automation-title" hidden>
+                <div class="section-heading compact-heading"><span class="eyebrow"><span></span> DO REGISTRO AO ACOMPANHAMENTO DAS EQUIPES</span><h2 id="automation-title">Mudou o caso? <span>A informação circula.</span></h2><p>Simule mudanças no processo e observe a linha do tempo e a notificação demonstrativa.</p></div>
+                <div class="automation-layout"><article class="event-panel"><div class="form-card-heading"><strong>LINHA DO TEMPO</strong><span>RMA-DEMO-2048</span></div><div class="event-list" id="automation-events"></div><div class="event-actions"><button class="event-action" type="button" data-event="analysis">Iniciar análise</button><button class="event-action" type="button" data-event="report">Concluir laudo</button><button class="event-action" type="button" data-event="mail">Simular aviso</button></div></article><aside class="mail-preview"><div class="form-card-heading"><strong>NOTIFICAÇÃO AUTOMÁTICA</strong><span>APENAS SIMULAÇÃO</span></div><div class="mail-envelope"><span>PARA</span><strong>equipe@empresa-exemplo.test</strong><span>ASSUNTO</span><strong id="mail-subject">Atualização do laudo RMA-DEMO-2048</strong><p id="mail-message">O protocolo demonstrativo foi registrado e está aguardando a avaliação da engenharia.</p></div><div class="safe-disclaimer">Nenhum e-mail é enviado. Nenhum contato verdadeiro é utilizado.</div></aside></div>
+            </section>
+
+            <section class="story-slide" id="resultados" data-slide-panel="8" aria-labelledby="results-title" hidden>
+                <div class="section-heading"><span class="eyebrow"><span></span> UM PROCESSO QUE NÃO DEPENDE MAIS DE LEMBRETES</span><h2 id="results-title">Menos idas e vindas. <span>Mais rastreabilidade.</span></h2><p>Indicadores abaixo são hipotéticos e existem apenas para ilustrar os benefícios da digitalização.</p></div>
+                <div class="impact-grid"><article class="impact-card impact-card-primary"><span>PROCESSO CENTRALIZADO</span><strong><i data-counter="100">0</i>%</strong><p>representação fictícia do ciclo acompanhado em um único lugar.</p></article><article class="impact-card"><span>MENOS RETRABALHO</span><strong><i data-counter="72">0</i>%</strong><p>estimativa ilustrativa, sem utilização de métricas empresariais.</p></article><article class="impact-card"><span>LAUDO CONSOLIDADO</span><strong><i data-counter="1">0</i> clique</strong><p>simulação da geração de um documento técnico completo.</p></article></div>
+                <div class="outcome-strip"><span>Vendas e engenharia</span><span>Permissões por perfil</span><span>Histórico do caso</span><span>Laudo em PDF</span><span>Dashboard gerencial</span></div>
+                <div class="results-actions"><a class="primary-button" href="./experiencia/index.html">Experiência completa <span>→</span></a><a class="secondary-button" href="../../../index.html#projetos">Voltar ao portfólio</a><button class="secondary-button" type="button" data-slide="2">Testar abertura</button></div>
+            </section>
+        </div>
+
+        <footer class="story-footer"><button class="slide-control" id="previous-slide" type="button" aria-label="Slide anterior" disabled>←</button><div class="slide-progress" aria-label="Progresso da apresentação"><span id="slide-progress-fill"></span></div><span class="slide-counter"><strong id="current-slide-number">01</strong> / 09</span><button class="slide-control" id="next-slide" type="button" aria-label="Próximo slide">→</button></footer>
+    </main>
+
+    <script src="./app.js" defer></script>
+</body>
+
+</html>

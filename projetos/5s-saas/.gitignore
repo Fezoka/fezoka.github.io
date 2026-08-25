@@ -1,0 +1,14 @@
+# A apresentação pública é estática; os arquivos abaixo pertencem ao sistema
+# corporativo original e nunca devem ser publicados no portfólio.
+app.py
+templates/
+uploads/
+favicon.ico
+*.db
+*.db-*
+*.sqlite
+*.sqlite3
+.env
+.env.*
+__pycache__/
+*.pyc

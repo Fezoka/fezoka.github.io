@@ -1,0 +1,13 @@
+# Somente a demonstração pública pode ser publicada; releases, backups e bancos permanecem locais.
+*
+!.gitignore
+!apresentacao/
+apresentacao/*
+!apresentacao/index.html
+!apresentacao/styles.css
+!apresentacao/app.js
+!apresentacao/experiencia/
+apresentacao/experiencia/*
+!apresentacao/experiencia/index.html
+!apresentacao/experiencia/styles.css
+!apresentacao/experiencia/app.js
