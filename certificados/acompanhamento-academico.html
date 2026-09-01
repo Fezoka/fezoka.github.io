@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Acompanhamento acadêmico de Felipe Roberto Soares no Bacharelado em Ciência da Computação.">
+  <title>Acompanhamento Acadêmico | Felipe Roberto Soares</title>
+  <style>
+    :root {
+      --bg: #090b10;
+      --surface: #11151d;
+      --surface-2: #171c26;
+      --line: rgba(255,255,255,.09);
+      --text: #f5f7fa;
+      --muted: #9da7b5;
+      --green: #10b981;
+      --green-soft: rgba(16,185,129,.13);
+      --cyan: #5eead4;
+      --orange: #fb923c;
+      --shadow: 0 24px 80px rgba(0,0,0,.34);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 80% 0, rgba(16,185,129,.15), transparent 32rem),
+        radial-gradient(circle at 5% 35%, rgba(6,182,212,.08), transparent 28rem),
+        var(--bg);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    a { color: inherit; }
+    button { font: inherit; }
+    .shell { width: min(1160px, calc(100% - 32px)); margin: 0 auto; }
+    .topbar {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      border-bottom: 1px solid var(--line);
+    }
+    .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; font-weight: 800; }
+    .brand-mark {
+      width: 36px; height: 36px; display: grid; place-items: center;
+      border-radius: 11px; background: var(--green); color: #042f24; font-size: 14px;
+      box-shadow: 0 0 28px rgba(16,185,129,.3);
+    }
+    .back-link { text-decoration: none; color: var(--muted); font-size: 14px; }
+    .back-link:hover { color: var(--cyan); }
+    .hero {
+      display: grid;
+      grid-template-columns: 1.35fr .65fr;
+      gap: 48px;
+      align-items: end;
+      padding: 74px 0 46px;
+    }
+    .eyebrow { color: var(--green); font-weight: 800; font-size: 12px; letter-spacing: .18em; }
+    h1 { margin: 17px 0; font-size: clamp(42px, 7vw, 78px); line-height: .98; letter-spacing: -.055em; }
+    h1 span { color: var(--green); }
+    .hero-copy { max-width: 720px; margin: 0; color: var(--muted); font-size: clamp(17px, 2vw, 21px); line-height: 1.65; }
+    .course-card {
+      padding: 26px;
+      background: linear-gradient(145deg, rgba(23,28,38,.96), rgba(13,17,24,.96));
+      border: 1px solid var(--line); border-radius: 22px; box-shadow: var(--shadow);
+    }
+    .course-card small { color: var(--muted); text-transform: uppercase; letter-spacing: .12em; }
+    .course-card strong { display: block; margin: 9px 0 24px; font-size: 21px; line-height: 1.3; }
+    .course-meta { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .course-meta span { padding-top: 13px; border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; }
+    .course-meta b { display: block; color: var(--text); font-size: 15px; margin-bottom: 3px; }
+    .notice {
+      display: flex; gap: 12px; align-items: flex-start; padding: 15px 18px; margin-bottom: 28px;
+      border: 1px solid rgba(94,234,212,.2); border-radius: 14px; background: rgba(94,234,212,.055);
+      color: #cbd5e1; font-size: 13px; line-height: 1.55;
+    }
+    .notice b { color: var(--cyan); white-space: nowrap; }
+    .metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-bottom: 48px; }
+    .metric { padding: 22px; border: 1px solid var(--line); background: rgba(17,21,29,.76); border-radius: 18px; }
+    .metric span { display: block; color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .08em; }
+    .metric strong { display: block; margin-top: 9px; font-size: 29px; letter-spacing: -.04em; }
+    .metric small { color: var(--green); }
+    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 20px; margin-bottom: 21px; }
+    .section-head h2 { margin: 0; font-size: clamp(27px, 4vw, 40px); letter-spacing: -.035em; }
+    .section-head p { max-width: 500px; margin: 0; color: var(--muted); line-height: 1.6; }
+    .tabs { display: flex; gap: 8px; margin: 26px 0; }
+    .tab {
+      cursor: pointer; border: 1px solid var(--line); border-radius: 999px; padding: 10px 17px;
+      color: var(--muted); background: var(--surface); font-weight: 700;
+    }
+    .tab[aria-selected="true"] { color: #052e22; background: var(--green); border-color: var(--green); }
+    .semester { display: none; }
+    .semester.active { display: block; animation: enter .35s ease; }
+    @keyframes enter { from { opacity: 0; transform: translateY(6px); } }
+    .semester-summary {
+      display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: center;
+      padding: 22px 24px; background: var(--green-soft); border: 1px solid rgba(16,185,129,.2); border-radius: 18px; margin-bottom: 16px;
+    }
+    .semester-summary h3 { margin: 0 0 6px; font-size: 20px; }
+    .semester-summary p { margin: 0; color: var(--muted); line-height: 1.55; }
+    .semester-summary strong { font-size: 28px; color: var(--green); }
+    .subjects { display: grid; gap: 10px; }
+    .subject {
+      display: grid; grid-template-columns: minmax(220px, 1.4fr) .8fr 160px 100px;
+      gap: 20px; align-items: center; padding: 19px 21px; background: var(--surface);
+      border: 1px solid var(--line); border-radius: 14px;
+    }
+    .subject:hover { border-color: rgba(16,185,129,.28); transform: translateY(-1px); }
+    .subject-name strong { display: block; margin-bottom: 4px; }
+    .subject-name span, .label { color: var(--muted); font-size: 12px; }
+    .progress { height: 7px; border-radius: 99px; background: #252b36; overflow: hidden; margin-top: 7px; }
+    .progress i { display: block; height: 100%; width: var(--value); border-radius: inherit; background: linear-gradient(90deg, var(--green), var(--cyan)); }
+    .status { justify-self: start; padding: 7px 10px; border-radius: 999px; color: var(--orange); background: rgba(251,146,60,.1); font-size: 11px; font-weight: 800; }
+    .status.done { color: var(--green); background: var(--green-soft); }
+    .grade { text-align: right; }
+    .grade strong { display: block; font-size: 20px; }
+    .grade span { color: var(--muted); font-size: 11px; }
+    .timeline { margin: 64px 0; padding: 34px; background: var(--surface-2); border: 1px solid var(--line); border-radius: 22px; }
+    .timeline h2 { margin: 0 0 25px; }
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .step { position: relative; padding-top: 18px; border-top: 2px solid var(--line); }
+    .step.done { border-color: var(--green); }
+    .step.active { border-color: var(--cyan); }
+    .step b { display: block; margin-bottom: 5px; }
+    .step span { color: var(--muted); font-size: 13px; line-height: 1.5; }
+    footer { padding: 30px 0 48px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; }
+    footer .shell { display: flex; justify-content: space-between; gap: 20px; }
+    @media (max-width: 850px) {
+      .hero { grid-template-columns: 1fr; padding-top: 50px; }
+      .metrics { grid-template-columns: 1fr 1fr; }
+      .subject { grid-template-columns: 1fr 120px; }
+      .subject-progress { grid-column: 1 / -1; order: 3; }
+      .status { justify-self: end; }
+      .grade { grid-column: 2; grid-row: 1; }
+      .steps { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 540px) {
+      .shell { width: min(100% - 22px, 1160px); }
+      .topbar { align-items: flex-start; padding: 17px 0; }
+      .brand span:last-child { display: none; }
+      h1 { font-size: 43px; }
+      .metrics { grid-template-columns: 1fr; }
+      .section-head { display: block; }
+      .section-head p { margin-top: 10px; }
+      .semester-summary { grid-template-columns: 1fr; }
+      .subject { grid-template-columns: 1fr auto; gap: 12px; }
+      .grade { grid-column: 2; grid-row: 1; }
+      footer .shell { display: block; }
+    }
+  </style>
+</head>
+<body>
+  <header class="shell topbar">
+    <a class="brand" href="../index.html#cursos"><span class="brand-mark">FR</span><span>Felipe Roberto Soares</span></a>
+    <a class="back-link" href="../index.html#cursos">← Voltar ao portfólio</a>
+  </header>
+
+  <main class="shell">
+    <section class="hero">
+      <div>
+        <div class="eyebrow">FORMAÇÃO EM ANDAMENTO · CIÊNCIA DA COMPUTAÇÃO</div>
+        <h1>Acompanhamento<br><span>acadêmico.</span></h1>
+        <p class="hero-copy">Uma visão objetiva das disciplinas cursadas, do progresso de estudos e do desempenho obtido ao longo da graduação.</p>
+      </div>
+      <aside class="course-card">
+        <small>Graduação</small>
+        <strong>Bacharelado em Ciência da Computação</strong>
+        <div class="course-meta">
+          <span><b>Estácio</b>Instituição</span>
+          <span><b>Dez/2030</b>Previsão</span>
+        </div>
+      </aside>
+    </section>
+
+    <div class="notice"><b>TRANSPARÊNCIA</b><span>Esta página é um acompanhamento pessoal de estudos, não um certificado oficial. Os resultados apresentados refletem o controle acadêmico do aluno e podem ser atualizados durante o semestre.</span></div>
+
+    <section class="metrics" aria-label="Resumo acadêmico">
+      <article class="metric"><span>Disciplinas mapeadas</span><strong>11</strong><small>+ Labvida institucional</small></article>
+      <article class="metric"><span>Notas consolidadas</span><strong>3</strong><small>média atual: 7,7</small></article>
+      <article class="metric"><span>Melhor resultado</span><strong>8,0</strong><small>em duas disciplinas</small></article>
+      <article class="metric"><span>Situação</span><strong>Cursando</strong><small>evolução contínua</small></article>
+    </section>
+
+    <section aria-labelledby="disciplinas-title">
+      <div class="section-head">
+        <h2 id="disciplinas-title">Disciplinas e desempenho</h2>
+        <p>Os percentuais representam o conteúdo estudado. As notas combinam Labvida, simulados e avaliação quando já disponível.</p>
+      </div>
+      <div class="tabs" role="tablist" aria-label="Selecionar semestre">
+        <button class="tab" id="tab-1" role="tab" aria-selected="true" aria-controls="semestre-1">1º semestre</button>
+        <button class="tab" id="tab-2" role="tab" aria-selected="false" aria-controls="semestre-2">2º semestre</button>
+      </div>
+
+      <div class="semester active" id="semestre-1" role="tabpanel" aria-labelledby="tab-1">
+        <div class="semester-summary"><div><h3>Base técnica e fundamentos</h3><p>Primeiro ciclo com foco em infraestrutura, segurança, lógica e programação.</p></div><strong>67% estudado</strong></div>
+        <div class="subjects">
+          <article class="subject"><div class="subject-name"><strong>Computação em Nuvem</strong><span>Conteúdo e exercícios em andamento</span></div><div class="subject-progress"><span class="label">38% estudado</span><div class="progress"><i style="--value:38%"></i></div></div><span class="status done">CONSOLIDADA</span><div class="grade"><strong>7,0</strong><span>NOTA ATUAL</span></div></article>
+          <article class="subject"><div class="subject-name"><strong>Fundamentos de Redes de Computadores</strong><span>Arquitetura, protocolos e comunicação</span></div><div class="subject-progress"><span class="label">50% estudado</span><div class="progress"><i style="--value:50%"></i></div></div><span class="status done">CONSOLIDADA</span><div class="grade"><strong>8,0</strong><span>NOTA ATUAL</span></div></article>
+          <article class="subject"><div class="subject-name"><strong>Introdução à Segurança da Informação</strong><span>Conteúdo concluído; avaliação aguardada</span></div><div class="subject-progress"><span class="label">100% estudado</span><div class="progress"><i style="--value:100%"></i></div></div><span class="status">PROVA PENDENTE</span><div class="grade"><strong>6,8</strong><span>PARCIAL</span></div></article>
+          <article class="subject"><div class="subject-name"><strong>Matemática e Lógica</strong><span>Raciocínio lógico aplicado à computação</span></div><div class="subject-progress"><span class="label">67% estudado</span><div class="progress"><i style="--value:67%"></i></div></div><span class="status done">CONSOLIDADA</span><div class="grade"><strong>8,0</strong><span>NOTA ATUAL</span></div></article>
+          <article class="subject"><div class="subject-name"><strong>Paradigmas de Linguagens em Python</strong><span>Programação e diferentes paradigmas</span></div><div class="subject-progress"><span class="label">80% estudado</span><div class="progress"><i style="--value:80%"></i></div></div><span class="status">PROVA PENDENTE</span><div class="grade"><strong>6,6</strong><span>PARCIAL</span></div></article>
+        </div>
+      </div>
+
+      <div class="semester" id="semestre-2" role="tabpanel" aria-labelledby="tab-2" hidden>
+        <div class="semester-summary"><div><h3>Desenvolvimento e estruturas</h3><p>Próximo ciclo voltado à construção de aplicações, bancos de dados e arquitetura.</p></div><strong>22% estudado</strong></div>
+        <div class="subjects">
+          <article class="subject"><div class="subject-name"><strong>Desenvolvimento Web</strong><span>Fundamentos de aplicações para a web</span></div><div class="subject-progress"><span class="label">30% estudado</span><div class="progress"><i style="--value:30%"></i></div></div><span class="status">EM ANDAMENTO</span><div class="grade"><strong>—</strong><span>SEM NOTA</span></div></article>
+          <article class="subject"><div class="subject-name"><strong>Sistema de Banco de Dados</strong><span>Modelagem, persistência e consultas</span></div><div class="subject-progress"><span class="label">20% estudado</span><div class="progress"><i style="--value:20%"></i></div></div><span class="status">EM ANDAMENTO</span><div class="grade"><strong>—</strong><span>SEM NOTA</span></div></article>
+          <article class="subject"><div class="subject-name"><strong>Arquitetura de Computadores</strong><span>Organização e funcionamento de sistemas</span></div><div class="subject-progress"><span class="label">20% estudado</span><div class="progress"><i style="--value:20%"></i></div></div><span class="status">EM ANDAMENTO</span><div class="grade"><strong>—</strong><span>SEM NOTA</span></div></article>
+          <article class="subject"><div class="subject-name"><strong>Lógica e Algoritmos</strong><span>Construção e análise de soluções</span></div><div class="subject-progress"><span class="label">20% estudado</span><div class="progress"><i style="--value:20%"></i></div></div><span class="status">EM ANDAMENTO</span><div class="grade"><strong>—</strong><span>SEM NOTA</span></div></article>
+          <article class="subject"><div class="subject-name"><strong>Estruturas de Dados</strong><span>Organização eficiente de informações</span></div><div class="subject-progress"><span class="label">20% estudado</span><div class="progress"><i style="--value:20%"></i></div></div><span class="status">EM ANDAMENTO</span><div class="grade"><strong>—</strong><span>SEM NOTA</span></div></article>
+          <article class="subject"><div class="subject-name"><strong>Formação Sociocultural — Empatia</strong><span>Competências humanas e colaboração</span></div><div class="subject-progress"><span class="label">20% estudado</span><div class="progress"><i style="--value:20%"></i></div></div><span class="status">EM ANDAMENTO</span><div class="grade"><strong>—</strong><span>SEM NOTA</span></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="timeline">
+      <h2>Jornada de formação</h2>
+      <div class="steps">
+        <div class="step done"><b>Fundamentos</b><span>Primeiras disciplinas técnicas e consolidação da base lógica.</span></div>
+        <div class="step active"><b>Construção de software</b><span>Desenvolvimento web, dados, algoritmos e arquitetura.</span></div>
+        <div class="step"><b>Especialização e conclusão</b><span>Aprofundamento, projetos integradores e formação prevista para 2030.</span></div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="shell"><span>Felipe Roberto Soares · Portfólio profissional</span><span>Atualização acadêmica: setembro de 2026</span></div></footer>
+  <script>
+    const tabs = document.querySelectorAll('[role="tab"]');
+    const panels = document.querySelectorAll('[role="tabpanel"]');
+    tabs.forEach((tab, index) => tab.addEventListener('click', () => {
+      tabs.forEach(item => item.setAttribute('aria-selected', 'false'));
+      panels.forEach(panel => { panel.classList.remove('active'); panel.hidden = true; });
+      tab.setAttribute('aria-selected', 'true');
+      panels[index].hidden = false;
+      panels[index].classList.add('active');
+    }));
+  </script>
+</body>
+</html>
