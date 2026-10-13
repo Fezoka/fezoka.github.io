@@ -1372,7 +1372,7 @@
             body>*:not(#cv-print-template) { display: none !important; }
 
             #cv-print-template {
-                display: flex !important; flex-direction: column; width: 190mm; min-height: 281mm;
+                display: flex !important; flex-direction: column; width: 190mm; min-height: 256mm;
                 margin: 0; padding: 0; color: #172436;
                 font-family: 'Inter', 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 9pt;
                 line-height: 1.45; -webkit-print-color-adjust: exact; print-color-adjust: exact;
@@ -1381,7 +1381,7 @@
             #cv-print-template * { box-sizing: border-box; }
 
             #cv-print-template .cv-header {
-                position: relative; margin-bottom: 6mm; padding: 7mm 7mm 6mm; overflow: hidden;
+                position: relative; margin-bottom: 5mm; padding: 5mm 7mm 4mm; overflow: hidden;
                 border-radius: 2.5mm; background: #0b1e3d !important; color: #fff;
             }
 
@@ -1429,7 +1429,7 @@
             }
 
             #cv-print-template .cv-section {
-                margin: 0 0 5mm; break-inside: avoid; page-break-inside: avoid;
+                margin: 0 0 4mm; break-inside: avoid; page-break-inside: avoid;
             }
 
             #cv-print-template .cv-section:last-child { margin-bottom: 0; }
@@ -1453,7 +1453,7 @@
             #cv-print-template p { margin: 0; color: #39475a; font-size: 9pt; line-height: 1.5; }
 
             #cv-print-template .cv-summary {
-                padding: 4.5mm; border: .3mm solid #dbe5ed; border-radius: 1.5mm;
+                padding: 3mm; border: .3mm solid #dbe5ed; border-radius: 1.5mm;
                 background: #f8fafc !important;
             }
 
@@ -1523,7 +1523,7 @@
 
             #cv-print-template .project-list { display: grid; gap: 2.8mm; }
             #cv-print-template .project-item {
-                display: grid; grid-template-columns: 4.5mm 1fr; gap: 2.2mm; padding: 3.8mm 3.4mm;
+                display: grid; grid-template-columns: 4.5mm 1fr; gap: 2.2mm; padding: 3mm 3.4mm;
                 border: .25mm solid #dce6ee; border-radius: 1.4mm; background: #f8fafc !important;
                 break-inside: avoid; page-break-inside: avoid;
             }
@@ -1534,7 +1534,7 @@
             #cv-print-template .project-item p { margin-top: 1mm; font-size: 8pt; line-height: 1.4; }
 
             #cv-print-template .cv-footer {
-                display: flex; justify-content: space-between; gap: 4mm; margin-top: 5mm;
+                display: flex; justify-content: space-between; gap: 4mm; margin-top: 3mm;
                 padding-top: 3mm; border-top: .25mm solid #dce4eb; color: #738092; font-size: 7pt;
             }
         }
@@ -1735,7 +1735,7 @@
                     <h3>Assistente de Desenvolvimento Pleno</h3>
 
                     <p style="color: var(--accent-color); font-weight: 500;">
-                        Ferplast | Set 2023 - Atual
+                        Ferplast | Set 2023 - Ago 2026
                     </p>
 
                     <p style="margin-top: 1rem;">
@@ -1748,6 +1748,17 @@
                 </div>
 
                 <!-- Experiência 3 -->
+                <div class="timeline-item">
+                    <h3>Desenvolvedor de Sistema Júnior</h3>
+                    <p style="color: var(--accent-color); font-weight: 500;">
+                        Ferplast | Ago 2026 - Atual
+                    </p>
+                    <p style="margin-top: 1rem;">
+                        Atuação no desenvolvimento de sistemas na Ferplast.
+                    </p>
+                </div>
+
+                <!-- Experiência 4 -->
                 <div class="timeline-item">
                     <h3>Jovem Aprendiz</h3>
 
@@ -2267,9 +2278,10 @@
             <div class="cv-main">
                 <section class="cv-section">
                     <h2>Resumo profissional</h2>
-                    <p class="cv-summary">Estudante de Ciência da Computação com experiência prática em desenvolvimento
-                        de software, automações em Python, integrações de sistemas e infraestrutura. Atua conectando
-                        tecnologia, operação e qualidade em ambientes orientados pelas normas ISO 9001 e IATF 16949.</p>
+                    <p class="cv-summary">Desenvolvedor de Sistema Júnior na Ferplast e estudante de Ciência da
+                        Computação, com experiência em software, automações em Python, integrações de sistemas e
+                        infraestrutura. Conecta tecnologia, operação e qualidade em ambientes orientados pelas normas
+                        ISO 9001 e IATF 16949.</p>
                 </section>
 
                 <section class="cv-section">
@@ -2290,13 +2302,23 @@
                     <article class="experience-item">
                         <div class="item-header">
                             <h3>Assistente de Desenvolvimento Pleno</h3>
-                            <span class="date-location">Ferplast · Set 2023 - Atual</span>
+                            <span class="date-location">Ferplast · Set 2023 - Ago 2026</span>
                         </div>
                         <ul>
                             <li>Soluções internas em modelo SaaS, automações em Python e integrações para eficiência
                                 operacional.</li>
                             <li>Auditorias internas e atuação no SGQI, com foco em ISO 9001 e IATF 16949.</li>
                             <li>Documentação de processos e desenvolvimento de PPAP para projetos automotivos.</li>
+                        </ul>
+                    </article>
+
+                    <article class="experience-item">
+                        <div class="item-header">
+                            <h3>Desenvolvedor de Sistema Júnior</h3>
+                            <span class="date-location">Ferplast · Ago 2026 - Atual</span>
+                        </div>
+                        <ul>
+                            <li>Atuação no desenvolvimento de sistemas na Ferplast.</li>
                         </ul>
                     </article>
 
