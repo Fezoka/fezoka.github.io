@@ -1365,22 +1365,23 @@
             @page { size: A4 portrait; margin: 8mm 10mm; }
 
             html, body {
-                width: 210mm; min-height: 297mm; margin: 0 !important; padding: 0 !important;
+                width: 190mm; min-height: 0; margin: 0 !important; padding: 0 !important;
                 overflow: visible !important; background: #fff !important;
             }
 
             body>*:not(#cv-print-template) { display: none !important; }
 
             #cv-print-template {
-                display: block !important; width: 190mm; margin: 0; padding: 0; color: #172436;
-                font-family: 'Inter', 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 8.2pt;
-                line-height: 1.34; -webkit-print-color-adjust: exact; print-color-adjust: exact;
+                display: flex !important; flex-direction: column; width: 190mm; min-height: 281mm;
+                margin: 0; padding: 0; color: #172436;
+                font-family: 'Inter', 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 9pt;
+                line-height: 1.45; -webkit-print-color-adjust: exact; print-color-adjust: exact;
             }
 
             #cv-print-template * { box-sizing: border-box; }
 
             #cv-print-template .cv-header {
-                position: relative; margin-bottom: 5mm; padding: 5mm 6mm 4.5mm; overflow: hidden;
+                position: relative; margin-bottom: 6mm; padding: 7mm 7mm 6mm; overflow: hidden;
                 border-radius: 2.5mm; background: #0b1e3d !important; color: #fff;
             }
 
@@ -1390,18 +1391,18 @@
             }
 
             #cv-print-template h1 {
-                margin: 0; color: #fff; font-size: 23pt; font-weight: 800; line-height: 1;
+                margin: 0; color: #fff; font-size: 26pt; font-weight: 800; line-height: 1;
                 letter-spacing: -.5pt;
             }
 
             #cv-print-template .cv-role {
-                margin: 1.5mm 0 3.2mm; color: #26d8ff; font-size: 8.2pt; font-weight: 700;
+                margin: 2mm 0 4mm; color: #26d8ff; font-size: 9pt; font-weight: 700;
                 letter-spacing: 1.1pt; text-transform: uppercase;
             }
 
             #cv-print-template .contact-info {
-                display: flex; flex-wrap: wrap; gap: 1.2mm 3.5mm; margin: 0;
-                color: #d2dce8; font-size: 7.2pt;
+                display: flex; flex-wrap: wrap; gap: 1.6mm 3.5mm; margin: 0;
+                color: #d2dce8; font-size: 7.8pt;
             }
 
             #cv-print-template .contact-info span,
@@ -1413,25 +1414,30 @@
             }
 
             #cv-print-template .cv-grid {
-                display: grid; grid-template-columns: minmax(0, 1.72fr) minmax(0, .88fr);
-                gap: 6mm; align-items: start;
+                display: grid; flex: 1; grid-template-columns: minmax(0, 1.65fr) minmax(0, .95fr);
+                gap: 7mm; align-items: stretch;
+            }
+
+            #cv-print-template .cv-main {
+                display: flex; flex-direction: column; justify-content: space-between;
             }
 
             #cv-print-template .cv-sidebar {
-                padding: 4mm; border-left: 1.2mm solid #26bce0; border-radius: 1.5mm;
+                display: flex; flex-direction: column; justify-content: space-between;
+                padding: 5mm; border-left: 1.2mm solid #26bce0; border-radius: 1.5mm;
                 background: #f2f6fa !important;
             }
 
             #cv-print-template .cv-section {
-                margin: 0 0 4mm; break-inside: avoid; page-break-inside: avoid;
+                margin: 0 0 5mm; break-inside: avoid; page-break-inside: avoid;
             }
 
             #cv-print-template .cv-section:last-child { margin-bottom: 0; }
 
             #cv-print-template h2 {
-                display: flex; align-items: center; gap: 2.2mm; margin: 0 0 2.2mm; padding: 0;
+                display: flex; align-items: center; gap: 2.2mm; margin: 0 0 3mm; padding: 0;
                 border: 0; background: none; color: #0b1e3d; -webkit-text-fill-color: currentColor;
-                font-size: 9.4pt; font-weight: 800; line-height: 1.1; letter-spacing: .65pt;
+                font-size: 10.5pt; font-weight: 800; line-height: 1.15; letter-spacing: .55pt;
                 text-transform: uppercase;
             }
 
@@ -1441,18 +1447,18 @@
             }
 
             #cv-print-template h3 {
-                margin: 0; color: #18263a; font-size: 8.5pt; font-weight: 750; line-height: 1.2;
+                margin: 0; color: #18263a; font-size: 9.3pt; font-weight: 750; line-height: 1.25;
             }
 
-            #cv-print-template p { margin: 0; color: #39475a; font-size: 8.05pt; line-height: 1.42; }
+            #cv-print-template p { margin: 0; color: #39475a; font-size: 9pt; line-height: 1.5; }
 
             #cv-print-template .cv-summary {
-                padding: 3.2mm 3.8mm; border: .3mm solid #dbe5ed; border-radius: 1.5mm;
+                padding: 4.5mm; border: .3mm solid #dbe5ed; border-radius: 1.5mm;
                 background: #f8fafc !important;
             }
 
             #cv-print-template .experience-item {
-                position: relative; margin: 0 0 3mm; padding: 0 0 0 4mm;
+                position: relative; margin: 0 0 4.5mm; padding: 0 0 0 4.5mm;
                 break-inside: avoid; page-break-inside: avoid;
             }
 
@@ -1470,66 +1476,66 @@
 
             #cv-print-template .item-header {
                 display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: baseline;
-                gap: 3mm; margin-bottom: 1.1mm;
+                gap: 2mm; margin-bottom: 2mm;
             }
 
             #cv-print-template .date-location {
-                color: #5c6a7a; font-size: 6.8pt; font-style: normal; font-weight: 650;
+                color: #5c6a7a; font-size: 7.25pt; font-style: normal; font-weight: 650;
                 text-align: right; white-space: nowrap;
             }
 
             #cv-print-template ul { margin: 0; padding-left: 4mm; }
 
             #cv-print-template li {
-                margin: 0 0 .9mm; color: #354457; font-size: 7.65pt; line-height: 1.32;
+                margin: 0 0 1.25mm; color: #354457; font-size: 8.4pt; line-height: 1.4;
             }
 
             #cv-print-template li:last-child { margin-bottom: 0; }
             #cv-print-template li::marker { color: #20aecd; }
 
-            #cv-print-template .side-item { margin-bottom: 2.8mm; break-inside: avoid; }
+            #cv-print-template .side-item { margin-bottom: 4mm; break-inside: avoid; }
             #cv-print-template .side-item:last-child { margin-bottom: 0; }
             #cv-print-template .side-item strong,
             #cv-print-template .side-item span { display: block; }
-            #cv-print-template .side-item strong { color: #1a2a3f; font-size: 7.9pt; line-height: 1.28; }
+            #cv-print-template .side-item strong { color: #1a2a3f; font-size: 8.7pt; line-height: 1.35; }
             #cv-print-template .side-item span {
-                margin-top: .5mm; color: #627083; font-size: 6.9pt; line-height: 1.35;
+                margin-top: 1mm; color: #627083; font-size: 7.7pt; line-height: 1.4;
             }
 
-            #cv-print-template .skill-group { margin-bottom: 2.6mm; }
+            #cv-print-template .skill-group { margin-bottom: 3.8mm; }
             #cv-print-template .skill-group:last-child { margin-bottom: 0; }
             #cv-print-template .skill-group strong {
-                display: block; margin-bottom: .7mm; color: #0b6780; font-size: 7pt;
+                display: block; margin-bottom: 1.1mm; color: #0b6780; font-size: 7.7pt;
                 letter-spacing: .25pt; text-transform: uppercase;
             }
-            #cv-print-template .skill-group p { color: #39495c; font-size: 7.25pt; line-height: 1.4; }
+            #cv-print-template .skill-group p { color: #39495c; font-size: 8pt; line-height: 1.45; }
 
             #cv-print-template .course-list {
-                display: grid; gap: 1.7mm; margin: 0; padding: 0; list-style: none;
+                display: grid; gap: 3mm; margin: 0; padding: 0; list-style: none;
             }
             #cv-print-template .course-list li {
-                position: relative; padding-left: 3mm; color: #3c4a5b; font-size: 7pt; line-height: 1.35;
+                position: relative; padding-left: 3mm; color: #3c4a5b; font-size: 7.7pt; line-height: 1.4;
             }
             #cv-print-template .course-list li::before {
                 position: absolute; top: .9mm; left: 0; width: 1.4mm; height: 1.4mm;
                 border-radius: 50%; background: #20bada !important; content: '';
             }
 
-            #cv-print-template .project-list { display: grid; gap: 1.8mm; }
+            #cv-print-template .project-list { display: grid; gap: 2.8mm; }
             #cv-print-template .project-item {
-                display: grid; grid-template-columns: 4.5mm 1fr; gap: 2.2mm; padding: 2.3mm 2.7mm;
+                display: grid; grid-template-columns: 4.5mm 1fr; gap: 2.2mm; padding: 3.8mm 3.4mm;
                 border: .25mm solid #dce6ee; border-radius: 1.4mm; background: #f8fafc !important;
                 break-inside: avoid; page-break-inside: avoid;
             }
             #cv-print-template .project-number {
-                color: #20aecd; font-size: 7pt; font-weight: 800; line-height: 1.4;
+                color: #20aecd; font-size: 8pt; font-weight: 800; line-height: 1.4;
             }
-            #cv-print-template .project-item strong { display: block; color: #18293e; font-size: 7.7pt; }
-            #cv-print-template .project-item p { margin-top: .5mm; font-size: 7.1pt; line-height: 1.35; }
+            #cv-print-template .project-item strong { display: block; color: #18293e; font-size: 8.5pt; }
+            #cv-print-template .project-item p { margin-top: 1mm; font-size: 8pt; line-height: 1.4; }
 
             #cv-print-template .cv-footer {
-                display: flex; justify-content: space-between; gap: 4mm; margin-top: 3.5mm;
-                padding-top: 2mm; border-top: .25mm solid #dce4eb; color: #738092; font-size: 6.2pt;
+                display: flex; justify-content: space-between; gap: 4mm; margin-top: 5mm;
+                padding-top: 3mm; border-top: .25mm solid #dce4eb; color: #738092; font-size: 7pt;
             }
         }
     </style>
@@ -2252,7 +2258,7 @@
                 <span>(11) 99631-8958</span>
                 <a href="mailto:felipe.r.soares03@gmail.com">felipe.r.soares03@gmail.com</a>
                 <a href="https://www.linkedin.com/in/felipe-soares-018986346/">LinkedIn</a>
-                <a href="https://fezoka.github.io">GitHub</a>
+                <a href="https://github.com/Fezoka/">GitHub</a>
                 <a href="https://fezoka.com">Fezoka.com</a>
             </div>
         </header>
