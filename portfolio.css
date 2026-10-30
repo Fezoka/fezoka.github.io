@@ -1,7 +1,7 @@
 /* Portfólio oficial: layout compacto com a identidade original preservada. */
 html { scroll-padding-top: 78px; }
 body { line-height: 1.58; }
-main .container { max-width: 1140px; padding: 3.9rem 2rem; scroll-margin-top: 75px; }
+main .container { max-width: 1140px; padding: 1.55rem 2rem; scroll-margin-top: 75px; }
 main h2 { font-size: clamp(1.7rem, 2.5vw, 2.15rem); margin-bottom: 1.3rem; }
 main p { margin-bottom: .8rem; }
 nav { padding-top: .8rem; padding-bottom: .8rem; }
@@ -121,7 +121,7 @@ body:has(#video-modal.active) .compact-card-spotlight { opacity: 0; visibility: 
 .compact-menu-toggle { display: none; color: #e9f7f0; background: transparent; border: 1px solid rgba(255,255,255,.23); border-radius: 7px; font: inherit; padding: .5rem .8rem; cursor: pointer; min-height: 42px; }
 
 @media (max-width: 900px) {
-  main .container { padding: 3.2rem 1.35rem; }
+  main .container { padding: 1.5rem 1.35rem; }
   main #inicio { padding-top: 5.75rem; padding-bottom: 1.6rem; }
   main #sobre { padding-top: 1.5rem; }
   #inicio .hero-wrapper { margin-top: 0; gap: 1.7rem; }
@@ -136,7 +136,7 @@ body:has(#video-modal.active) .compact-card-spotlight { opacity: 0; visibility: 
 }
 
 @media (max-width: 650px) {
-  main .container { padding: 2.85rem 1.15rem; }
+  main .container { padding: 1.35rem 1.15rem; }
   main #inicio { padding-top: 5.5rem; padding-bottom: 1.4rem; }
   #inicio .glitch { font-size: clamp(2.4rem, 10vw, 3.2rem); }
   #inicio .profile-photo-container { width: 172px; height: 172px; }
