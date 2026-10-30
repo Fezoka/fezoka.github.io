@@ -1,0 +1,163 @@
+/* Portfólio oficial: layout compacto com a identidade original preservada. */
+html { scroll-padding-top: 78px; }
+body { line-height: 1.58; }
+main .container { max-width: 1140px; padding: 3.9rem 2rem; scroll-margin-top: 75px; }
+main h2 { font-size: clamp(1.7rem, 2.5vw, 2.15rem); margin-bottom: 1.3rem; }
+main p { margin-bottom: .8rem; }
+nav { padding-top: .8rem; padding-bottom: .8rem; }
+.nav-links { gap: 1.45rem; }
+.nav-links a { font-size: .83rem; letter-spacing: .045em; }
+
+/* Primeira dobra enxuta, preservando glitch, foto e botões. */
+main #inicio { min-height: min(760px, 80svh); padding-top: 7.2rem; padding-bottom: 3rem; }
+#inicio .hero-wrapper { gap: clamp(2rem, 5vw, 5rem); }
+#inicio .glitch { font-size: clamp(3.1rem, 6.2vw, 5.6rem); line-height: 1.1; }
+#inicio .profile-photo-container { width: clamp(190px, 24vw, 275px); height: auto; aspect-ratio: 1; }
+#inicio .btn-group { margin-top: 1.4rem; gap: .65rem; }
+#inicio .btn { padding: .65rem 1.25rem; letter-spacing: .02em; }
+#inicio #typewriter { font-size: 1rem !important; min-height: 2rem !important; }
+
+/* Textos, competências e experiências continuam completos, porém mais fáceis de varrer. */
+#sobre p { max-width: 83ch; }
+#habilidades .habilidades-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin-top: 1.25rem; }
+#habilidades .habilidade-card { padding: 1.35rem; }
+#habilidades .habilidade-card h3 { font-size: 1.04rem; line-height: 1.35; margin-bottom: .7rem; padding-bottom: .65rem; }
+#habilidades .habilidade-card li { font-size: .87rem; line-height: 1.48; padding-top: .28rem; padding-bottom: .28rem; }
+#experiencia .timeline { margin-top: 1.6rem; }
+#experiencia .timeline-item { margin-bottom: 1.4rem; padding: 1.5rem 1.8rem; }
+#experiencia .timeline-item h3 { margin-bottom: .35rem; }
+#experiencia .timeline-item p[style] { margin-top: .45rem !important; }
+#experiencia .timeline-list { margin-top: .65rem; }
+#experiencia .timeline-list li { margin-bottom: .5rem; }
+
+/* Foco editorial com contorno verde uniforme, sem brilho neon exagerado. */
+.compact-card-spotlight {
+  position: fixed;
+  inset: 0 auto auto 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  z-index: 1500;
+  border: 1px solid rgba(69, 220, 163, .9);
+  border-radius: 12px;
+  background: transparent;
+  box-shadow: 0 0 0 250vmax rgba(5, 9, 15, .46), 0 18px 38px rgba(0, 0, 0, .2), inset 0 0 0 1px rgba(69, 220, 163, .11);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .2s ease-out, visibility .2s;
+}
+.compact-card-spotlight::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 23px;
+  width: 64px;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(129, 255, 198, .9), transparent);
+}
+.compact-card-spotlight.is-visible { opacity: 1; visibility: visible; }
+body:has(#video-modal.active) .compact-card-spotlight { opacity: 0; visibility: hidden; }
+
+/* O mesmo destaque verde aparece em habilidades, experiência, projetos e cursos. */
+#habilidades .habilidade-card:hover,
+#habilidades .habilidade-card:focus-within,
+#experiencia .timeline-item:hover,
+#experiencia .timeline-item:focus-within,
+#projetos .projects-list > .card:hover,
+#projetos .projects-list > .card:focus-within,
+#cursos .cards-grid > .card:hover,
+#cursos .cards-grid > .card:focus-within {
+  border-color: rgba(69, 220, 163, .8);
+  box-shadow: 0 13px 30px rgba(0, 0, 0, .24), 0 0 15px rgba(30, 163, 107, .075);
+}
+
+/* O antigo hover ampliava o círculo e criava um rastro verde na timeline. */
+#experiencia .timeline-item { transition: border-color .22s ease-out, box-shadow .22s ease-out; }
+#experiencia .timeline-item:hover { transform: none; }
+#experiencia .timeline-item::before {
+  width: 16px;
+  height: 16px;
+  background: #12161d;
+  border: 2px solid rgba(84, 180, 155, .7);
+  box-shadow: none;
+  transition: border-color .2s ease-out, background .2s ease-out, box-shadow .2s ease-out;
+}
+#experiencia .timeline-item:is(:hover, :focus-within)::before {
+  background: radial-gradient(circle, rgba(94, 208, 179, .9) 0 2px, #12161d 3px);
+  border-color: rgba(165, 213, 201, .82);
+  box-shadow: 0 0 0 4px rgba(69, 187, 156, .075);
+  transform: none;
+}
+#experiencia .timeline-item::after { display: none; }
+
+/* O problema principal: projetos imensos empilhados. */
+#projetos .projects-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: stretch; gap: 1.15rem; padding: .8rem 0 0; }
+#projetos .projects-list > .card { min-width: 0; padding: 1.4rem; transition: border-color .2s ease, transform .2s ease; }
+#projetos .projects-list > .card:first-child { border-color: rgba(16,185,129,.55); }
+#projetos .projects-list > .card:hover { transform: translateY(-3px); }
+#projetos .projects-list > .card h3 { font-size: 1.17rem; line-height: 1.3; margin-bottom: .6rem; }
+#projetos .projects-list > .card > p { font-size: .91rem; line-height: 1.58; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+#projetos .projects-list > .card:has(.more-content.visible) > p { display: block; }
+#projetos .projects-list > .card .btn-more { margin-top: .3rem; font-size: .84rem; padding: .38rem .9rem; }
+#projetos .projects-list > .card .video-container { margin-top: 1rem; max-height: none; aspect-ratio: 16 / 9; }
+#projetos .projects-list > .card .more-content { margin-top: .9rem; padding-top: .9rem; font-size: .9rem; }
+#projetos .projects-list > .card .more-content li { line-height: 1.5; margin-bottom: .4rem; }
+#projetos .projects-list > .card.portfolio-compact-hidden,
+#cursos .cards-grid > .card.portfolio-compact-hidden { display: none !important; }
+
+.compact-list-actions { display: flex; justify-content: center; margin-top: 1.25rem; }
+.compact-list-toggle { appearance: none; cursor: pointer; background: rgba(16,185,129,.09); color: #70e7b7; border: 1px solid rgba(16,185,129,.47); border-radius: 7px; font: inherit; font-size: .92rem; font-weight: 600; min-height: 44px; padding: .65rem 1.45rem; transition: background .2s, border-color .2s; }
+.compact-list-toggle:hover { background: rgba(16,185,129,.17); border-color: #10b981; }
+.compact-list-toggle:focus-visible, nav button:focus-visible, a:focus-visible, .btn-more:focus-visible { outline: 2px solid #6ee7b7; outline-offset: 3px; }
+
+/* Certificados resumidos na página, com acesso a todos por demanda. */
+#cursos .cards-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; padding: .8rem 0 0; }
+#cursos .cards-grid > .card { min-width: 0; padding: 1.3rem; }
+#cursos .cards-grid > .card h3 { font-size: 1.05rem; line-height: 1.35; }
+#cursos .cards-grid > .card p { font-size: .9rem; }
+
+/* Menu realmente navegável em telas pequenas. */
+.compact-menu-toggle { display: none; color: #e9f7f0; background: transparent; border: 1px solid rgba(255,255,255,.23); border-radius: 7px; font: inherit; padding: .5rem .8rem; cursor: pointer; min-height: 42px; }
+
+@media (max-width: 900px) {
+  main .container { padding: 3.2rem 1.35rem; }
+  main #inicio { min-height: auto; padding-top: 7rem; padding-bottom: 3rem; }
+  #inicio .hero-wrapper { margin-top: 0; gap: 1.7rem; }
+  #inicio .glitch { font-size: clamp(2.6rem, 7vw, 4.3rem); }
+  #inicio .profile-photo-container { width: 200px; height: 200px; }
+  #habilidades .habilidades-grid, #cursos .cards-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .compact-menu-toggle { display: block; }
+  nav { position: relative; }
+  nav .nav-links { display: none; position: absolute; top: 100%; left: 1rem; right: 1rem; flex-direction: column; gap: 0; background: #171a20; border: 1px solid rgba(255,255,255,.13); border-radius: 10px; padding: .55rem; box-shadow: 0 12px 22px rgba(0,0,0,.35); }
+  nav .nav-links.compact-menu-open { display: flex; }
+  nav .nav-links a { display: block; padding: .7rem 1rem; }
+}
+
+@media (max-width: 650px) {
+  main .container { padding: 2.85rem 1.15rem; }
+  main #inicio { padding-top: 6.5rem; padding-bottom: 2.2rem; }
+  #inicio .glitch { font-size: clamp(2.4rem, 10vw, 3.2rem); }
+  #inicio .profile-photo-container { width: 172px; height: 172px; }
+  #inicio .btn-group { gap: .55rem; }
+  #inicio .btn { padding: .66rem .8rem; font-size: .85rem; }
+  #habilidades .habilidades-grid, #projetos .projects-list, #cursos .cards-grid { grid-template-columns: 1fr; }
+  #experiencia .timeline { padding-left: 1.35rem; }
+  #experiencia .timeline-item { padding: 1.2rem; }
+  #experiencia .timeline-item::before { left: calc(-1.35rem - 10px); }
+  #projetos .projects-list > .card { padding: 1.15rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .compact-card-spotlight,
+  #habilidades .habilidade-card,
+  #experiencia .timeline-item,
+  #projetos .projects-list > .card,
+  #cursos .cards-grid > .card { transition: none !important; }
+  #habilidades .habilidade-card:hover,
+  #experiencia .timeline-item:hover,
+  #projetos .projects-list > .card:hover,
+  #cursos .cards-grid > .card:hover { transform: none !important; }
+  .rain, .glitch::before, .glitch::after { display: none !important; }
+  .glitch, .profile-photo-container, .fade-in, .drop { animation: none !important; transition: none !important; }
+  .fade-in { opacity: 1 !important; transform: none !important; }
+}
