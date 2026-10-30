@@ -1763,14 +1763,42 @@
             </div>
         </section>
 
-        <!-- Projetos (1 por linha e modo foco com YouTube) -->
+        <!-- Projetos (1 por linha, com capas e demonstrações) -->
         <section id="projetos" class="container fade-in">
             <h2>Projetos</h2>
             <p>Confira alguns dos meus trabalhos.</p>
 
             <div class="projects-list">
 
-                <!-- Projeto 1: Marketplace Scout AI -->
+                <!-- Projeto 1: Ferplast — Site Institucional -->
+                <div class="card">
+                    <h3>Ferplast — Site Institucional</h3>
+                    <p>
+                        Site institucional da Ferplast, com identidade visual inspirada no ambiente industrial e
+                        apresentação das soluções em plásticos, da fábrica e do compromisso com a qualidade.
+                        A navegação facilita o acesso à história da empresa e aos canais de contato.
+                    </p>
+
+                    <button class="btn-more" type="button" aria-expanded="false" aria-controls="ferplast-detalhes">Ver mais</button>
+                    <div class="more-content" id="ferplast-detalhes">
+                        <h4>Sobre o projeto</h4>
+                        <ul>
+                            <li><strong>Presença digital:</strong> apresentação institucional da Ferplast e de suas soluções em plásticos.</li>
+                            <li><strong>Organização:</strong> seções dedicadas a soluções, fábrica, qualidade, história e contato.</li>
+                            <li><strong>Identidade visual:</strong> composição industrial em azul e prata, com elementos tridimensionais em destaque.</li>
+                        </ul>
+                        <p>Projeto publicado em <a href="https://ferplast.com.br/" target="_blank" rel="noopener noreferrer">ferplast.com.br ↗</a>.</p>
+                    </div>
+
+                    <a class="video-container project-cover-link" href="https://ferplast.com.br/"
+                        target="_blank" rel="noopener noreferrer" aria-label="Visitar o site da Ferplast (abre em uma nova aba)">
+                        <img class="project-video" src="src/ferplast-site.jpg" width="1878" height="956"
+                            loading="lazy" alt="Página inicial do site da Ferplast, com logotipo azul e prata e engrenagens industriais">
+                        <span class="five-s-interactive-badge" aria-hidden="true">VISITAR SITE ↗</span>
+                    </a>
+                </div>
+
+                <!-- Projeto 2: Marketplace Scout AI -->
                 <div class="card">
                     <h3>Marketplace Scout AI</h3>
                     <p>
@@ -1824,7 +1852,7 @@
                     </div>
                 </div>
 
-                <!-- Projeto 2: Sistema de Gestão de Laudos e Garantias (RMA Automator) -->
+                <!-- Projeto 3: Sistema de Gestão de Laudos e Garantias (RMA Automator) -->
                 <div class="card">
                     <h3>Sistema de Gestão de Laudos e Garantias (RMA Automator)</h3>
                     <p>
@@ -1886,7 +1914,7 @@
                     </a>
                 </div>
 
-                <!-- Projeto 3: Sistema de Gestão e Auditoria 5S Corporativo -->
+                <!-- Projeto 4: Sistema de Gestão e Auditoria 5S Corporativo -->
                 <div class="card">
                     <h3>Sistema de Gestão e Auditoria 5S Corporativo</h3>
                     <p>
@@ -1944,7 +1972,7 @@
                     </a>
                 </div>
 
-                <!-- Projeto 4: Modernização do OEE Industrial SENAI -->
+                <!-- Projeto 5: Modernização do OEE Industrial SENAI -->
                 <div class="card">
                     <h3>Modernização do OEE Industrial — Protheus, WISE e Produção Real</h3>
                     <p>
@@ -2005,7 +2033,7 @@
                     </a>
                 </div>
 
-                <!-- Projeto 5: Planejamento Inteligente da Ferramentaria -->
+                <!-- Projeto 6: Planejamento Inteligente da Ferramentaria -->
                 <div class="card">
                     <h3>Planejamento Inteligente da Ferramentaria</h3>
                     <p>
@@ -2062,7 +2090,7 @@
                     </a>
                 </div>
 
-                <!-- Projeto 5: Automação de Refugo e Borra integrada ao TOTVS Protheus -->
+                <!-- Projeto 7: Automação de Refugo e Borra integrada ao TOTVS Protheus -->
                 <div class="card">
                     <h3>Automação de Refugo e Borra integrada ao TOTVS Protheus</h3>
                     <p>
@@ -2491,7 +2519,9 @@
                 const content = this.parentElement.querySelector('.more-content');
                 if (content) {
                     content.classList.toggle('visible');
-                    this.textContent = content.classList.contains('visible') ? 'Ver menos' : 'Ver mais';
+                    const isExpanded = content.classList.contains('visible');
+                    this.textContent = isExpanded ? 'Ver menos' : 'Ver mais';
+                    this.setAttribute('aria-expanded', String(isExpanded));
                 }
             });
         });
